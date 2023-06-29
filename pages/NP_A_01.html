@@ -36,6 +36,35 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
+		<!-- gsap -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"
+			integrity="sha512-GQ5/eIhs41UXpG6fGo4xQBpwSEj9RrBvMuKyE2h/2vw3a9x85T1Bt0JglOUVJJLeyIUl/S/kCdDXlE/n7zCjIg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"
+			integrity="sha512-6BvDODEWgjWWyBrg6YFio6xmzgKWpf54tDlnCtG05m++/jgh/7jQcx6jUJrq44lB84cf68FzYiT0LipabA5g8g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<!-- aos -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+			integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+			integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 	</head>
 	<body>
 		<div class="cm">
@@ -134,22 +163,85 @@
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
 									<div class="cm-inner">
-										<div class="cm-main-keyvisual__title">
-											We will lead our company<br />
-											to become The best magnetic <br />
-											product supplier in the world
+										<div class="cm-main-keyvisual__inner">
+											<div class="cm-main-keyvisual__title">
+												<p><span class="animate">We will lead our company</span></p>
+												<p><span class="animate">to become The best magnetic</span></p>
+												<p><span class="animate">product supplier in the world</span></p>
+											</div>
+											<div class="cm-main-keyvisual__info">
+												<div class="cm-main-keyvisual__info-bar"></div>
+												<div class="cm-main-keyvisual__info-pagination"><strong>01</strong><span>/</span>04</div>
+												<button>stop</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="cm-inner">
+										<div class="cm-main-keyvisual__inner">
+											<div class="cm-main-keyvisual__title">
+												<p><span>We will lead our company</span></p>
+												<p><span>to become The best magnetic</span></p>
+												<p><span>product supplier in the world</span></p>
+											</div>
+											<div class="cm-main-keyvisual__info">
+												<div class="cm-main-keyvisual__info-bar"></div>
+												<div class="cm-main-keyvisual__info-pagination"><strong>02</strong><span>/</span>04</div>
+												<button>stop</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="cm-inner">
+										<div class="cm-main-keyvisual__inner">
+											<div class="cm-main-keyvisual__title">
+												<p><span>We will lead our company</span></p>
+												<p><span>to become The best magnetic</span></p>
+												<p><span>product supplier in the world</span></p>
+											</div>
+											<div class="cm-main-keyvisual__info">
+												<div class="cm-main-keyvisual__info-bar"></div>
+												<div class="cm-main-keyvisual__info-pagination"><strong>03</strong><span>/</span>04</div>
+												<button>stop</button>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="swiper-pagination"></div>
 						</div>
 						<script>
-							var swiper = new Swiper('.cm-main-keyvisual .swiper', {
-								pagination: {
-									el: '.cm-main-keyvisual .swiper-pagination',
-									type: 'fraction',
+							var swiperKeyvisual = new Swiper('.cm-main-keyvisual .swiper', {
+								effect: 'fade',
+								autoplay: {
+									delay: 4000,
+									disableOnInteraction: false,
 								},
+								loop: true,
+								on: {
+									init: function () {
+										$('.cm-main-keyvisual__info-bar').removeClass('animate');
+										$('.swiper-slide-active .cm-main-keyvisual__info-bar').addClass('animate');
+									},
+									slideChangeTransitionStart: function (i) {
+										$('.cm-main-keyvisual__info-bar').removeClass('animate');
+										$('.swiper-slide-active .cm-main-keyvisual__info-bar').addClass('animate');
+
+										$('.cm-main-keyvisual__title p span').removeClass('animate');
+										$('.swiper-slide-active .cm-main-keyvisual__title p span').addClass('animate');
+									},
+								},
+							});
+							$('.cm-main-keyvisual__info button').on('click', function () {
+								$(this).toggleClass('stop');
+								if ($(this).hasClass('stop')) {
+									swiperKeyvisual.autoplay.stop();
+									$('.cm-main-keyvisual__info-bar').removeClass('animate');
+								} else {
+									swiperKeyvisual.autoplay.start();
+									$('.swiper-slide-active .cm-main-keyvisual__info-bar').addClass('animate');
+								}
 							});
 						</script>
 					</div>
@@ -166,7 +258,7 @@
 										전자장치에서 전류의 변화량에 비례하여 전압의 변화를<br />
 										유도하는 수동부품 입니다.
 									</div>
-									<div class="cm-main-products-item__link">See Details</div>
+									<div class="cm-main-products-item__link"><span>See Details</span></div>
 								</a>
 								<a href="" class="cm-main-products-item">
 									<div class="cm-main-products-item__thumb">
@@ -177,7 +269,7 @@
 										Radio Frequency 신호의 송수신기 역할을 하는<br />
 										전자부품입니다.
 									</div>
-									<div class="cm-main-products-item__link">See Details</div>
+									<div class="cm-main-products-item__link"><span>See Details</span></div>
 								</a>
 								<a href="" class="cm-main-products-item">
 									<div class="cm-main-products-item__thumb">
@@ -185,7 +277,7 @@
 									</div>
 									<h3 class="cm-main-products-item__title">EMC Components</h3>
 									<div class="cm-main-products-item__text">전자장치에서 전자파 노이즈를 제거하는 필터입니다.</div>
-									<div class="cm-main-products-item__link">See Details</div>
+									<div class="cm-main-products-item__link"><span>See Details</span></div>
 								</a>
 								<a href="" class="cm-main-products-item">
 									<div class="cm-main-products-item__thumb">
@@ -193,7 +285,7 @@
 									</div>
 									<h3 class="cm-main-products-item__title">Transformers</h3>
 									<div class="cm-main-products-item__text">전자장치에서 승압과 감압을 해주는 전자부품 입니다.</div>
-									<div class="cm-main-products-item__link">See Details</div>
+									<div class="cm-main-products-item__link"><span>See Details</span></div>
 								</a>
 							</div>
 						</div>
@@ -203,7 +295,7 @@
 							<div class="cm-main-service__head">
 								<h2 class="cm-main-service__title">E-Service</h2>
 								<div class="cm-main-service__text">Coilmaster introduce the latest technology and new product.</div>
-								<a href="" class="cm-main-service__more">Read More</a>
+								<a href="" class="cm-main-service__more"><span>Read More</span></a>
 							</div>
 							<div class="cm-main-service__list">
 								<a href="" class="cm-main-service-item cm-main-service-item--play">
@@ -235,6 +327,26 @@
 					</div>
 					<div class="cm-main-applications">
 						<h2 class="cm-main-applications__title">Applications</h2>
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="cm-inner">
+										<div class="cm-main-keyvisual__inner">
+											<div class="cm-main-keyvisual__title">
+												<p><span class="animate">We will lead our company</span></p>
+												<p><span class="animate">to become The best magnetic</span></p>
+												<p><span class="animate">product supplier in the world</span></p>
+											</div>
+											<div class="cm-main-keyvisual__info">
+												<div class="cm-main-keyvisual__info-bar"></div>
+												<div class="cm-main-keyvisual__info-pagination"><strong>01</strong><span>/</span>04</div>
+												<button>stop</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="cm-main-globalnetwork">
 						<div class="cm-inner">
@@ -242,12 +354,12 @@
 							<div class="cm-main-globalnetwork__text">We will show you the location of CoilMaster of KOREA, HONGKONG, CHINA, THAILAND, USA, THAILAND.</div>
 							<div class="cm-main-globalnetwork-map">
 								<div class="cm-main-globalnetwork-map__item europe">
-									<div class="line"></div>
+									<div class="line"><span></span></div>
 									<strong>EUROPE</strong>
 									<p>Hungary Sales Office</p>
 								</div>
 								<div class="cm-main-globalnetwork-map__item china">
-									<div class="line"></div>
+									<div class="line"><span></span></div>
 									<strong>CHINA</strong>
 									<p>
 										Wendeng China Factory<br />
@@ -256,12 +368,12 @@
 									</p>
 								</div>
 								<div class="cm-main-globalnetwork-map__item thailand">
-									<div class="line"></div>
+									<div class="line"><span></span></div>
 									<strong>THAILAND</strong>
 									<p>Thailand Factory</p>
 								</div>
 								<div class="cm-main-globalnetwork-map__item korea">
-									<div class="line"></div>
+									<div class="line"><span></span></div>
 									<strong>KOREA</strong>
 									<p>
 										Iksan Head Office<br />
@@ -270,17 +382,33 @@
 									</p>
 								</div>
 								<div class="cm-main-globalnetwork-map__item hongkong">
-									<div class="line"></div>
+									<div class="line"><span></span></div>
 									<strong>HONGKONG</strong>
 									<p>H.K Sales Office</p>
 								</div>
 								<div class="cm-main-globalnetwork-map__item usa">
-									<div class="line"></div>
+									<div class="line"><span></span></div>
 									<strong>USA</strong>
 									<p>Los Angeles Sales Office</p>
 								</div>
 							</div>
 						</div>
+						<script>
+							$('.cm-main-globalnetwork-map__item').hover(
+								function () {
+									// over
+									$('.cm-main-globalnetwork-map__item').removeClass('none');
+									$('.cm-main-globalnetwork-map__item').removeClass('active');
+									$('.cm-main-globalnetwork-map__item').addClass('none');
+									$(this).addClass('active');
+								},
+								function () {
+									// out
+									$('.cm-main-globalnetwork-map__item').removeClass('none');
+									$('.cm-main-globalnetwork-map__item').removeClass('active');
+								}
+							);
+						</script>
 					</div>
 					<div class="cm-main-history">
 						<h2 class="cm-main-history__title">
@@ -289,33 +417,45 @@
 								성장을 이루어 갑니다.
 							</div>
 						</h2>
-						<div class="swiper">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
+						<div class="cm-main-history__text">
+							<div class="cm-inner">
+								<div class="cm-main-history-item">
 									<div class="cm-inner">
-										<img src="../assets/images/main/history01.jpg" alt="" />
-									</div>
-									<div class="cm-main-history-item">
-										<div class="cm-inner">
-											<div class="cm-main-history-item__year">1996</div>
-											<div class="cm-main-history-item__title">Established</div>
-											<div class="cm-main-history-item__text">
-												1996년 창업 이래, SMD 관련<br />
-												한국 제 1의 코일 제조 회사로 성장
-											</div>
-											<a href="" class="cm-main-history-item__more"> See Details </a>
+										<div class="cm-main-history-item__year">1996</div>
+										<div class="cm-main-history-item__title">Established</div>
+										<div class="cm-main-history-item__text">
+											1996년 창업 이래, SMD 관련<br />
+											한국 제 1의 코일 제조 회사로 성장
 										</div>
+										<a href="" class="cm-main-history-item__more"> See Details </a>
 									</div>
 								</div>
+								<div class="cm-main-history-item__bar">
+									1
+									<p><span></span></p>
+									3
+								</div>
 							</div>
-							<div class="swiper-pagination"></div>
 						</div>
+
+						<div class="cm-main-history__cover"></div>
 						<script>
-							var swiper = new Swiper('.cm-main-history .swiper', {
-								pagination: {
-									el: '.cm-main-history .swiper-pagination',
-									type: 'fraction',
+							gsap.to($('.cm-main-history__cover'), {
+								scrollTrigger: {
+									trigger: $('.cm-main-history'),
+									start: '0',
+									end: '+=1600',
+									// markers: true,
+									toggleActions: 'play pause reverse pause',
+									scrub: 1,
+									pin: true,
+									invalidateOnRefresh: true,
+									pinSpacing: true,
+									anticipatePin: 1,
 								},
+								xPercent: +0,
+								x: () => innerWidth,
+								ease: 'none',
 							});
 						</script>
 					</div>
