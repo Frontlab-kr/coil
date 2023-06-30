@@ -171,6 +171,11 @@ $mobile: 992px;
 					background: url(../images/header-lang-open.png) no-repeat 50% 50%;
 				}
 			}
+			&.active {
+			}
+			address {
+				display: none;
+			}
 		}
 		&-search {
 			&__open {
@@ -376,6 +381,10 @@ $mobile: 992px;
 			border-radius: 90px;
 			font-size: 0;
 			line-height: 0;
+			transition: all 0.2s ease-in-out;
+			height: 0;
+			overflow: hidden;
+			opacity: 0;
 			&::before {
 				content: '';
 				display: block;
@@ -384,8 +393,38 @@ $mobile: 992px;
 				background: url(../images/quick-top.png) no-repeat 50% 50%;
 			}
 		}
+		&.active & {
+			&__top {
+				height: 90px;
+				opacity: 1;
+			}
+		}
 	}
 
+	//component
+	&-chip {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 40px;
+		padding: 0 16px;
+		border-radius: 20px;
+		border: solid 2px #2762b0;
+		font-size: 16px;
+		font-weight: 500;
+		font-stretch: normal;
+		font-style: normal;
+		line-height: 1.5;
+		letter-spacing: normal;
+		text-align: left;
+		color: #2762b0;
+		transition: all 0.1s ease;
+		&:hover {
+			box-shadow: 0px 5px 10px 0 rgba(11, 45, 91, 0.25);
+			background-color: #2762b0;
+			color: #fff;
+		}
+	}
 	//page
 	&-main {
 		&::before {
@@ -410,6 +449,7 @@ $mobile: 992px;
 				height: 100vh;
 				&-slide {
 					background: url(../images/main/kv.png) no-repeat 50% 50%;
+					background-size: cover;
 					transition: all 1s ease;
 					.cm-inner {
 						display: flex;
@@ -778,6 +818,187 @@ $mobile: 992px;
 			}
 		}
 		&-applications {
+			position: relative;
+			height: 916px;
+			background-color: #fff;
+			overflow: hidden;
+			.swiper-slide {
+				display: flex;
+				height: 916px;
+				background-color: #fff;
+			}
+			&__info {
+				width: 412px;
+				margin-top: 200px;
+			}
+			&__title {
+				margin-bottom: 52px;
+				font-size: 52px;
+				font-weight: bold;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: 1;
+				letter-spacing: -0.78px;
+				color: #191919;
+			}
+			&__text {
+				margin-bottom: 38px;
+				strong {
+					font-size: 38px;
+					font-weight: 600;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 1.5;
+					letter-spacing: -0.57px;
+					text-align: left;
+					color: #2762b0;
+				}
+				p {
+					margin-top: 10px;
+					font-size: 18px;
+					font-weight: normal;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 1.5;
+					letter-spacing: normal;
+					text-align: left;
+					color: #666;
+				}
+			}
+			&__chip {
+				.cm-chip {
+					margin: 0 6px 9px 0;
+				}
+			}
+			&__thumb {
+				height: 608px;
+				margin-top: 120px;
+				padding: 22px;
+				border: solid 2px #cdcdcd;
+				border-radius: 564px;
+				img {
+					width: 564px;
+					height: 564px;
+					object-fit: cover;
+					border-radius: 564px;
+					box-shadow: 0px 10px 18px 0 rgba(20, 20, 20, 0.3);
+				}
+			}
+			&__nav {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				align-items: center;
+				width: 364px;
+				p {
+					position: relative;
+					z-index: 20;
+					display: flex;
+					flex-direction: column;
+					position: relative;
+					left: -7px;
+					margin-bottom: 50px;
+					a {
+						display: inline-flex;
+						align-items: center;
+						margin: 48px 0;
+						height: 40px;
+						font-size: 24px;
+						font-weight: normal;
+						font-stretch: normal;
+						font-style: normal;
+						line-height: 1.5;
+						letter-spacing: -0.36px;
+						text-align: left;
+						color: #cdcdcd;
+						transition: all 0.1s ease;
+						&:hover {
+							color: #666;
+							&::before {
+								background-color: #666;
+							}
+						}
+						&:before {
+							content: '';
+							display: block;
+							width: 12px;
+							height: 12px;
+							margin-right: 16px;
+							background-color: #cdcdcd;
+							border-radius: 12px;
+							transition: all 0.1s ease;
+						}
+						&.active {
+							font-size: 28px;
+							font-weight: bold;
+							color: #2762b0;
+							letter-spacing: -0.42px;
+							&:before {
+								width: 16px;
+								height: 16px;
+								margin-right: 12px;
+								background-color: #2762b0;
+							}
+						}
+						&:nth-child(1),
+						&:nth-child(3) {
+							margin-left: 14px;
+						}
+					}
+				}
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					width: 1600px;
+					height: 1600px;
+					margin-top: -20px;
+					border-radius: 100000px;
+					transform: translateY(-50%);
+					border: solid 2px #cdcdcd;
+					z-index: 10;
+				}
+			}
+			.swiper-button {
+				&-prev {
+					left: 50%;
+					right: auto;
+					width: 42px;
+					height: 42px;
+					margin: 295px 0 0 -50px;
+					border-radius: 42px;
+					background: #ddd url(../images/main/applications_prev.png) no-repeat 45% 50%;
+					transition: all 0.1s ease;
+					&:after {
+						display: none;
+					}
+					&:hover {
+						box-shadow: 0px 5px 10px 0 rgba(11, 45, 91, 0.25);
+						background-color: #2762b0;
+					}
+				}
+				&-next {
+					left: 50%;
+					right: auto;
+					width: 42px;
+					height: 42px;
+					margin: 295px 0 0 4px;
+					border-radius: 42px;
+					background: #ddd url(../images/main/applications_next.png) no-repeat 55% 50%;
+					transition: all 0.1s ease;
+					&:after {
+						display: none;
+					}
+					&:hover {
+						box-shadow: 0px 5px 10px 0 rgba(11, 45, 91, 0.25);
+						background-color: #2762b0;
+					}
+				}
+			}
 		}
 		&-globalnetwork {
 			height: 980px;
@@ -995,7 +1216,7 @@ $mobile: 992px;
 		&-history {
 			position: relative;
 			height: 100vh;
-			background: #fff url(../images/main/history.jpg) no-repeat 0 100%;
+			background: #fff url(../images/main/history.jpg) no-repeat 50% 100%;
 			overflow: hidden;
 			&__cover {
 				position: absolute;
@@ -1004,7 +1225,6 @@ $mobile: 992px;
 				bottom: 0;
 				width: 2000px;
 				margin-left: -300px;
-				background-color: #f60;
 				background-color: #fff;
 				opacity: 1;
 			}
@@ -1074,13 +1294,28 @@ $mobile: 992px;
 				&__bar {
 					display: flex;
 					align-items: center;
+					position: absolute;
+					left: 0;
+					bottom: -68px;
 					p {
 						position: relative;
 						display: block;
 						width: 55px;
 						height: 1px;
-						margin: 0 15px;
+						margin: 0 15px 0 10px;
 						background-color: #ebeced;
+						overflow: hidden;
+						em {
+							min-width: 8px;
+							font-style: normal;
+						}
+						span {
+							position: absolute;
+							top: 0;
+							left: 0;
+							bottom: 0;
+							background-color: #2762b0;
+						}
 					}
 					font-size: 14px;
 					font-weight: normal;
@@ -1100,8 +1335,8 @@ $mobile: 992px;
 				}
 			}
 		}
-		.pin-spacer {
-			background: #f60;
-		}
+		// .pin-spacer {
+		// 	background: #f60;
+		// }
 	}
 }

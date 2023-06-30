@@ -124,12 +124,14 @@
 							</li>
 						</ul>
 					</nav>
-					<div class="cm-header__lang">
-						<strong>KOR</strong>
-						<ul>
-							<li><a href="/">KOR</a></li>
-							<li><a href="/">ENG</a></li>
-						</ul>
+					<div class="cm-header-lang">
+						<div class="cm-header-lang__select">
+							<strong><a href="">KOR</a></strong>
+							<ul>
+								<li><a href="/">KOR</a></li>
+								<li><a href="/">ENG</a></li>
+							</ul>
+						</div>
 						<address>Copylight © 2023 Coilmaster. All Rights Reserved.</address>
 					</div>
 					<div class="cm-header-search">
@@ -326,27 +328,117 @@
 						</div>
 					</div>
 					<div class="cm-main-applications">
-						<h2 class="cm-main-applications__title">Applications</h2>
-						<div class="swiper">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="cm-inner">
-										<div class="cm-main-keyvisual__inner">
-											<div class="cm-main-keyvisual__title">
-												<p><span class="animate">We will lead our company</span></p>
-												<p><span class="animate">to become The best magnetic</span></p>
-												<p><span class="animate">product supplier in the world</span></p>
+						<div class="cm-inner">
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="cm-main-applications__info">
+											<h2 class="cm-main-applications__title">Applications</h2>
+											<div class="cm-main-applications__text">
+												<strong> TV </strong>
+												<p>
+													Search CoilMaster products for<br />
+													TV application.
+												</p>
 											</div>
-											<div class="cm-main-keyvisual__info">
-												<div class="cm-main-keyvisual__info-bar"></div>
-												<div class="cm-main-keyvisual__info-pagination"><strong>01</strong><span>/</span>04</div>
-												<button>stop</button>
+											<div class="cm-main-applications__chip">
+												<a href="" class="cm-chip">Tuner</a>
+												<a href="" class="cm-chip">USB, HDMI</a>
+												<a href="" class="cm-chip">LAN</a><br />
+												<a href="" class="cm-chip">SMPS</a>
+												<a href="" class="cm-chip">Sound</a>
+												<a href="" class="cm-chip">T-Con</a><br />
+												<a href="" class="cm-chip">DC-DC Converter</a>
 											</div>
+										</div>
+										<div class="cm-main-applications__thumb">
+											<img src="../assets/images/main/applications01.jpg" alt="" />
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="cm-main-applications__info">
+											<h2 class="cm-main-applications__title">Applications</h2>
+											<div class="cm-main-applications__text">
+												<strong>
+													Smart phone<br />
+													& Tablet
+												</strong>
+												<p>
+													Search CoilMaster products for<br />
+													Smart phone & Tablet PC application.
+												</p>
+											</div>
+											<div class="cm-main-applications__chip">
+												<a href="" class="cm-chip">RF Circuit</a>
+												<a href="" class="cm-chip">Display</a><br />
+												<a href="" class="cm-chip">Camera Module</a>
+												<a href="" class="cm-chip">Power Management</a>
+											</div>
+										</div>
+										<div class="cm-main-applications__thumb">
+											<img src="../assets/images/main/applications02.jpg" alt="" />
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="cm-main-applications__info">
+											<h2 class="cm-main-applications__title">Applications</h2>
+											<div class="cm-main-applications__text">
+												<strong> Automotive </strong>
+												<p>
+													Search CoilMaster products for<br />
+													Automotive application.
+												</p>
+											</div>
+											<div class="cm-main-applications__chip">
+												<a href="" class="cm-chip">ANV</a>
+												<a href="" class="cm-chip">Ethernet, CAN-BUS and Flex-Ray</a><br />
+												<a href="" class="cm-chip">LED Head lamp</a>
+												<a href="" class="cm-chip">Sound</a>
+												<a href="" class="cm-chip">BMS</a><br />
+												<a href="" class="cm-chip">Ultrasonic Distance measuring</a><br />
+												<a href="" class="cm-chip">RKE, PKE, TPMS</a>
+												<a href="" class="cm-chip">Engine ECU, Motor</a>
+											</div>
+										</div>
+										<div class="cm-main-applications__thumb">
+											<img src="../assets/images/main/applications03.jpg" alt="" />
 										</div>
 									</div>
 								</div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div>
+							<div class="cm-main-applications__nav">
+								<p>
+									<a href="javascript:void(0)" onclick="swiperApplications.slideToLoop(0)">TV</a>
+									<a href="javascript:void(0)" onclick="swiperApplications.slideToLoop(1)" class="active">Smartphone & Tablet</a>
+									<a href="javascript:void(0)" onclick="swiperApplications.slideToLoop(2)">Automotive</a>
+								</p>
 							</div>
 						</div>
+						<script>
+							var swiperApplications = new Swiper('.cm-main-applications .swiper', {
+								effect: 'fade',
+								// autoplay: {
+								// 	delay: 4000,
+								// 	disableOnInteraction: false,
+								// },
+								initialSlide: 1,
+								loop: true,
+								navigation: {
+									nextEl: '.cm-main-applications .swiper-button-next',
+									prevEl: '.cm-main-applications .swiper-button-prev',
+								},
+								on: {
+									init: function () {},
+									slideChangeTransitionStart: function (i) {
+										$('.cm-main-applications__nav p a').removeClass('active');
+										$('.cm-main-applications__nav p a:eq(' + i.realIndex + ')').addClass('active');
+										console.log(i.realIndex);
+									},
+								},
+							});
+						</script>
 					</div>
 					<div class="cm-main-globalnetwork">
 						<div class="cm-inner">
@@ -419,9 +511,9 @@
 						</h2>
 						<div class="cm-main-history__text">
 							<div class="cm-inner">
-								<div class="cm-main-history-item">
+								<div class="cm-main-history-item item01">
 									<div class="cm-inner">
-										<div class="cm-main-history-item__year">1996</div>
+										<div class="cm-main-history-item__year">0</div>
 										<div class="cm-main-history-item__title">Established</div>
 										<div class="cm-main-history-item__text">
 											1996년 창업 이래, SMD 관련<br />
@@ -431,7 +523,7 @@
 									</div>
 								</div>
 								<div class="cm-main-history-item__bar">
-									1
+									<em>1</em>
 									<p><span></span></p>
 									3
 								</div>
@@ -452,11 +544,63 @@
 									invalidateOnRefresh: true,
 									pinSpacing: true,
 									anticipatePin: 1,
+									onEnter: animateNumber,
+									onUpdate: function (self) {
+										var progress = self.progress;
+										var rangeStart = 1;
+										var rangeEnd = 100;
+										var value = rangeStart + (rangeEnd - rangeStart) * progress;
+
+										if (value < 20) {
+											$('.cm-main-history-item__bar em').text('1');
+										}
+										if (value > 20) {
+											$('.cm-main-history-item__bar em').text('2');
+										}
+										if (value > 40) {
+											$('.cm-main-history-item__bar em').text('3');
+										}
+										$('.cm-main-history-item__bar span').css('width', value + '%');
+									},
 								},
 								xPercent: +0,
 								x: () => innerWidth,
 								ease: 'none',
 							});
+
+							// 스크립트 실행 시 초기값 설정
+							var currentNumber = Math.floor(Math.random() * 10000); // 0부터 9999까지의 랜덤 숫자 설정
+							var targetNumber = Math.floor(Math.random() * 10000); // 0부터 9999까지의 랜덤 숫자 설정
+
+							// 숫자 표시 함수
+							function displayNumber() {
+								var numberDisplay = document.getElementsByClassName('cm-main-history-item__year')[0];
+								if (numberDisplay) {
+									numberDisplay.textContent = currentNumber.toString().padStart(4, '0');
+								}
+							}
+
+							// 숫자 애니메이션 함수
+							function animateNumber() {
+								if (currentNumber !== targetNumber) {
+									// 현재 숫자와 지정 숫자가 다른 경우
+									var randomOffset = Math.floor(Math.random() * 10) - 5; // -5부터 4까지의 랜덤 숫자
+									currentNumber += randomOffset; // 현재 숫자에 랜덤 오프셋을 더함
+									if (currentNumber < 0) {
+										currentNumber = 0; // 숫자가 음수가 되는 경우 0으로 설정
+									} else if (currentNumber > 9999) {
+										currentNumber = 9999; // 숫자가 9999를 초과하는 경우 9999로 설정
+									}
+									displayNumber(); // 숫자 표시 업데이트
+									requestAnimationFrame(animateNumber); // 애니메이션 계속 진행
+								}
+							}
+
+							// 2초 후에 숫자 고정
+							setTimeout(function () {
+								currentNumber = targetNumber;
+								displayNumber();
+							}, 2000);
 						</script>
 					</div>
 				</div>
@@ -465,7 +609,24 @@
 			<div class="cm-quick">
 				<a href="" class="cm-quick__inquiry"> INQUIRY </a>
 				<a href="" class="cm-quick__product"> PRODUCT </a>
-				<a href="" class="cm-quick__top"> TOP </a>
+				<a href="javascript:void(0)" class="cm-quick__top"> TOP </a>
+				<script>
+					$('.cm-quick__top').on('click', function () {
+						window.scrollTo({
+							top: 0,
+							behavior: 'smooth',
+						});
+					});
+					window.addEventListener('scroll', () => {
+						const scrollPosition = window.scrollY;
+						if (scrollPosition > 100) {
+							$('.cm-quick').addClass('active');
+						}
+						if (scrollPosition < 100) {
+							$('.cm-quick').removeClass('active');
+						}
+					});
+				</script>
 			</div>
 
 			<footer id="cm-footer" class="cm-footer">
