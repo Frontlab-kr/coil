@@ -65,6 +65,26 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<script>
+			function setZoomLevel() {
+				const screenWidth = window.innerWidth;
+
+				if (screenWidth >= 993 && screenWidth <= 1500) {
+					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
+					document.body.style.zoom = `${zoomPercentage}%`;
+				} else {
+					document.body.style.zoom = '100%';
+				}
+			}
+
+			$(window).on('resize', function () {
+				//setZoomLevel();
+			});
+			$(document).ready(function () {
+				AOS.init();
+				//setZoomLevel();
+			});
+		</script>
 	</head>
 	<body>
 		<div class="cm">
@@ -75,65 +95,107 @@
 				<div class="cm-inner">
 					<div class="cm-header__logo"><a href="/">CoilMaster</a></div>
 					<nav class="cm-header-gnb">
-						<a href="" class="cm-header-gnb__open">메뉴 열기</a>
-						<a href="" class="cm-header-gnb__close">메뉴 닫기</a>
-						<ul>
-							<li class="active">
-								<a href="">PRODUCTS</a>
-								<ul>
-									<li><a href="">Inductors</a></li>
-									<li><a href="">RF Components</a></li>
-									<li><a href="">EMS Components</a></li>
-									<li><a href="">Transformers</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">APPLICATIONS</a>
-								<ul>
-									<li><a href="">Smartphone & Tablet</a></li>
-									<li><a href="">TV</a></li>
-									<li><a href="">Automotive</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">E-SERVICE</a>
-								<ul>
-									<li><a href="">E-Service</a></li>
-									<li><a href="">E-Card</a></li>
-									<li><a href="">E-Catalogue</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">SUPPORT</a>
-								<ul>
-									<li><a href="">뉴스 및 공지사항</a></li>
-									<li><a href="">FAQ</a></li>
-									<li><a href="">문의</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">ABOUT US</a>
-								<ul>
-									<li><a href="">CEO 인사말</a></li>
-									<li><a href="">회사 연혁</a></li>
-									<li><a href="">CI 소개</a></li>
-									<li><a href="">인증서 및 상장</a></li>
-									<li><a href="">회사 약도</a></li>
-									<li><a href="">인재 채용</a></li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-					<div class="cm-header-lang">
-						<div class="cm-header-lang__select">
-							<strong><a href="">KOR</a></strong>
+						<a href="javascript:void(0)" class="cm-header-gnb__open">메뉴 열기</a>
+						<a href="javascript:void(0)" class="cm-header-gnb__close">메뉴 닫기</a>
+						<div class="cm-header-gnb__layer">
+							<div class="cm-header-gnb__layer-logo"><a href="/">CoilMaster</a></div>
 							<ul>
-								<li><a href="/">KOR</a></li>
-								<li><a href="/">ENG</a></li>
+								<li class="active">
+									<a href="/products">PRODUCTS</a>
+									<ul>
+										<li><a href="">Inductors</a></li>
+										<li><a href="">RF Components</a></li>
+										<li><a href="">EMS Components</a></li>
+										<li><a href="">Transformers</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/applications">APPLICATIONS</a>
+									<ul>
+										<li><a href="">Smartphone & Tablet</a></li>
+										<li><a href="">TV</a></li>
+										<li><a href="">Automotive</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/e-service">E-SERVICE</a>
+									<ul>
+										<li><a href="">E-Service</a></li>
+										<li><a href="">E-Card</a></li>
+										<li><a href="">E-Catalogue</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/support">SUPPORT</a>
+									<ul>
+										<li><a href="">뉴스 및 공지사항</a></li>
+										<li><a href="">FAQ</a></li>
+										<li><a href="">문의</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/about-us">ABOUT US</a>
+									<ul>
+										<li><a href="">CEO 인사말</a></li>
+										<li><a href="">회사 연혁</a></li>
+										<li><a href="">CI 소개</a></li>
+										<li><a href="">인증서 및 상장</a></li>
+										<li><a href="">회사 약도</a></li>
+										<li><a href="">인재 채용</a></li>
+									</ul>
+								</li>
 							</ul>
+							<div class="cm-header-lang">
+								<div class="cm-header-lang__select">
+									<strong><a href="javascript:void(0)">KOR</a></strong>
+									<ul>
+										<li class="active"><a href="/">KOR</a></li>
+										<li><a href="/">ENG</a></li>
+									</ul>
+								</div>
+								<address>Copylight © 2023 Coilmaster. All Rights Reserved.</address>
+								<script>
+									$('.cm-header-lang__select').on('click', function () {
+										$('.cm-header-lang__select').toggleClass('active');
+									});
+									$(document).on('click', function (e) {
+										var target = $(e.target);
+										if (target.is('.cm-header-lang__select strong a')) {
+											return;
+										}
+										$('.cm-header-lang__select').removeClass('active');
+									});
+									$(document).keyup(function (e) {
+										if (e.key === 'Escape') {
+											$('.cm-header-lang__select').removeClass('active');
+										}
+									});
+								</script>
+							</div>
 						</div>
-						<address>Copylight © 2023 Coilmaster. All Rights Reserved.</address>
-					</div>
+						<script>
+							$('.cm-header-gnb__open').on('click', function () {
+								$('html').addClass('mode-gnb');
+							});
+							$('.cm-header-gnb__close').on('click', function () {
+								$('html').removeClass('mode-gnb');
+							});
+							$('.cm-header-gnb__layer > ul > li > a').on('click', function () {
+								var windowWidth = $(window).width();
+								if (windowWidth >= 992) {
+								} else {
+									$('.cm-header-gnb__layer > ul > li').removeClass('active');
+									$(this).parents('li').addClass('active');
+									return false;
+								}
+							});
+							$(document).keyup(function (e) {
+								if (e.key === 'Escape') {
+									$('html').removeClass('mode-gnb');
+								}
+							});
+						</script>
+					</nav>
 					<div class="cm-header-search">
 						<a href="javascript:void(0)" class="cm-header-search__open">검색 열기</a>
 						<div class="cm-header-search__layer">
@@ -147,13 +209,26 @@
 								</div>
 							</div>
 						</div>
+						<script>
+							$('.cm-header-search__open,.cm-header-search__close').on('click', function () {
+								$('html').toggleClass('mode-search');
+							});
+							$(document).keyup(function (e) {
+								if (e.key === 'Escape') {
+									$('html').removeClass('mode-search');
+								}
+							});
+						</script>
 					</div>
 				</div>
 				<script>
-					$(document).ready(function () {
-						$('.cm-header-search__open,.cm-header-search__close').on('click', function () {
-							$('html').toggleClass('mode-search');
-						});
+					$(window).on('resize', function () {
+						var windowWidth = $(window).width();
+						if (windowWidth >= 992) {
+							$('html').removeClass('mode-gnb');
+							$('html').removeClass('mode-search');
+						} else {
+						}
 					});
 				</script>
 			</header>
@@ -169,7 +244,7 @@
 											<div class="cm-main-keyvisual__title">
 												<p><span class="animate">We will lead our company</span></p>
 												<p><span class="animate">to become The best magnetic</span></p>
-												<p><span class="animate">product supplier in the world</span></p>
+												<p><span class="animate"> in the world</span></p>
 											</div>
 											<div class="cm-main-keyvisual__info">
 												<div class="cm-main-keyvisual__info-bar"></div>
@@ -249,83 +324,128 @@
 					</div>
 					<div class="cm-main-products">
 						<div class="cm-inner">
-							<h2 class="cm-main-products__title">Products</h2>
-							<div class="cm-main-products__list">
-								<a href="" class="cm-main-products-item">
-									<div class="cm-main-products-item__thumb">
-										<img src="../assets/images/main/product01.png" alt="" />
+							<h2 class="cm-main-products__title" data-aos="fade-up">Products</h2>
+							<div class="cm-main-products__list" data-aos="fade-up">
+								<div class="swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<a href="" class="cm-main-products-item">
+												<div class="cm-main-products-item__thumb">
+													<img src="../assets/images/main/product01.png" alt="" />
+												</div>
+												<h3 class="cm-main-products-item__title">Inductors(Coils)</h3>
+												<div class="cm-main-products-item__text">
+													전자장치에서 전류의 변화량에 비례하여 전압의 변화를<br />
+													유도하는 수동부품 입니다.
+												</div>
+												<div class="cm-main-products-item__link"><span>See Details</span></div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="" class="cm-main-products-item">
+												<div class="cm-main-products-item__thumb">
+													<img src="../assets/images/main/product02.png" alt="" />
+												</div>
+												<h3 class="cm-main-products-item__title">RF Components</h3>
+												<div class="cm-main-products-item__text">
+													Radio Frequency 신호의 송수신기 역할을 하는<br />
+													전자부품입니다.
+												</div>
+												<div class="cm-main-products-item__link"><span>See Details</span></div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="" class="cm-main-products-item">
+												<div class="cm-main-products-item__thumb">
+													<img src="../assets/images/main/product03.png" alt="" />
+												</div>
+												<h3 class="cm-main-products-item__title">EMC Components</h3>
+												<div class="cm-main-products-item__text">전자장치에서 전자파 노이즈를 제거하는 필터입니다.</div>
+												<div class="cm-main-products-item__link"><span>See Details</span></div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="" class="cm-main-products-item">
+												<div class="cm-main-products-item__thumb">
+													<img src="../assets/images/main/product04.png" alt="" />
+												</div>
+												<h3 class="cm-main-products-item__title">Transformers</h3>
+												<div class="cm-main-products-item__text">전자장치에서 승압과 감압을 해주는 전자부품 입니다.</div>
+												<div class="cm-main-products-item__link"><span>See Details</span></div>
+											</a>
+										</div>
 									</div>
-									<h3 class="cm-main-products-item__title">Inductors(Coils)</h3>
-									<div class="cm-main-products-item__text">
-										전자장치에서 전류의 변화량에 비례하여 전압의 변화를<br />
-										유도하는 수동부품 입니다.
-									</div>
-									<div class="cm-main-products-item__link"><span>See Details</span></div>
-								</a>
-								<a href="" class="cm-main-products-item">
-									<div class="cm-main-products-item__thumb">
-										<img src="../assets/images/main/product02.png" alt="" />
-									</div>
-									<h3 class="cm-main-products-item__title">RF Components</h3>
-									<div class="cm-main-products-item__text">
-										Radio Frequency 신호의 송수신기 역할을 하는<br />
-										전자부품입니다.
-									</div>
-									<div class="cm-main-products-item__link"><span>See Details</span></div>
-								</a>
-								<a href="" class="cm-main-products-item">
-									<div class="cm-main-products-item__thumb">
-										<img src="../assets/images/main/product03.png" alt="" />
-									</div>
-									<h3 class="cm-main-products-item__title">EMC Components</h3>
-									<div class="cm-main-products-item__text">전자장치에서 전자파 노이즈를 제거하는 필터입니다.</div>
-									<div class="cm-main-products-item__link"><span>See Details</span></div>
-								</a>
-								<a href="" class="cm-main-products-item">
-									<div class="cm-main-products-item__thumb">
-										<img src="../assets/images/main/product04.png" alt="" />
-									</div>
-									<h3 class="cm-main-products-item__title">Transformers</h3>
-									<div class="cm-main-products-item__text">전자장치에서 승압과 감압을 해주는 전자부품 입니다.</div>
-									<div class="cm-main-products-item__link"><span>See Details</span></div>
-								</a>
+								</div>
 							</div>
+							<script>
+								var swiperProducts = new Swiper('.cm-main-products .swiper', {
+									slidesPerView: 'auto',
+									spaceBetween: 20,
+									freeMode: true,
+								});
+							</script>
 						</div>
 					</div>
 					<div class="cm-main-service">
 						<div class="cm-inner">
 							<div class="cm-main-service__head">
-								<h2 class="cm-main-service__title">E-Service</h2>
-								<div class="cm-main-service__text">Coilmaster introduce the latest technology and new product.</div>
-								<a href="" class="cm-main-service__more"><span>Read More</span></a>
+								<h2 class="cm-main-service__title" data-aos="fade-up">E-Service</h2>
+								<div class="cm-main-service__text" data-aos="fade-up">Coilmaster introduce the latest technology and new product.</div>
+								<a href="" class="cm-main-service__more" data-aos="fade-up"><span>Read More</span></a>
 							</div>
-							<div class="cm-main-service__list">
-								<a href="" class="cm-main-service-item cm-main-service-item--play">
-									<div class="cm-main-service-item__thumb">
-										<img src="../assets/images/main/service01.png" alt="" />
+							<div class="cm-main-service__list" data-aos="fade-up">
+								<div class="swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<a href="" class="cm-main-service-item cm-main-service-item--play">
+												<div class="cm-main-service-item__thumb">
+													<img src="../assets/images/main/service01.png" alt="" />
+												</div>
+												<div class="cm-main-service-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="" class="cm-main-service-item">
+												<div class="cm-main-service-item__thumb">
+													<img src="../assets/images/main/service02.png" alt="" />
+												</div>
+												<div class="cm-main-service-item__text">Automotive Ethernet Common Mode Chokes</div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="" class="cm-main-service-item">
+												<div class="cm-main-service-item__thumb">
+													<img src="../assets/images/main/service03.png" alt="" />
+												</div>
+												<div class="cm-main-service-item__text">CoilMaster PoC Inductor (Eng ver.)</div>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href="" class="cm-main-service-item">
+												<div class="cm-main-service-item__thumb">
+													<img src="../assets/images/main/service04.png" alt="" />
+												</div>
+												<div class="cm-main-service-item__text">Inductor for Class-D Audio Amplifiers</div>
+											</a>
+										</div>
 									</div>
-									<div class="cm-main-service-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
-								</a>
-								<a href="" class="cm-main-service-item">
-									<div class="cm-main-service-item__thumb">
-										<img src="../assets/images/main/service02.png" alt="" />
-									</div>
-									<div class="cm-main-service-item__text">Automotive Ethernet Common Mode Chokes</div>
-								</a>
-								<a href="" class="cm-main-service-item">
-									<div class="cm-main-service-item__thumb">
-										<img src="../assets/images/main/service03.png" alt="" />
-									</div>
-									<div class="cm-main-service-item__text">CoilMaster PoC Inductor (Eng ver.)</div>
-								</a>
-								<a href="" class="cm-main-service-item">
-									<div class="cm-main-service-item__thumb">
-										<img src="../assets/images/main/service04.png" alt="" />
-									</div>
-									<div class="cm-main-service-item__text">Inductor for Class-D Audio Amplifiers</div>
-								</a>
+								</div>
 							</div>
 						</div>
+						<script>
+							var swiperService = new Swiper('.cm-main-service .swiper', {
+								loop: true,
+								slidesPerView: 'auto',
+								spaceBetween: 20,
+								freeMode: true,
+								centeredSlides: true,
+								breakpoints: {
+									992: {
+										spaceBetween: 24,
+									},
+								},
+							});
+						</script>
 					</div>
 					<div class="cm-main-applications">
 						<div class="cm-inner">
@@ -357,8 +477,8 @@
 									</div>
 									<div class="swiper-slide">
 										<div class="cm-main-applications__info">
-											<h2 class="cm-main-applications__title">Applications</h2>
-											<div class="cm-main-applications__text">
+											<h2 class="cm-main-applications__title" data-aos="fade-up">Applications</h2>
+											<div class="cm-main-applications__text" data-aos="fade-up">
 												<strong>
 													Smart phone<br />
 													& Tablet
@@ -368,14 +488,14 @@
 													Smart phone & Tablet PC application.
 												</p>
 											</div>
-											<div class="cm-main-applications__chip">
+											<div class="cm-main-applications__chip" data-aos="fade-up">
 												<a href="" class="cm-chip">RF Circuit</a>
 												<a href="" class="cm-chip">Display</a><br />
 												<a href="" class="cm-chip">Camera Module</a>
 												<a href="" class="cm-chip">Power Management</a>
 											</div>
 										</div>
-										<div class="cm-main-applications__thumb">
+										<div class="cm-main-applications__thumb" data-aos="fade-up">
 											<img src="../assets/images/main/applications02.jpg" alt="" />
 										</div>
 									</div>
@@ -405,11 +525,11 @@
 										</div>
 									</div>
 								</div>
-								<div class="swiper-button-next"></div>
-								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next" data-aos="fade-up"></div>
+								<div class="swiper-button-prev" data-aos="fade-up"></div>
 							</div>
 							<div class="cm-main-applications__nav">
-								<p>
+								<p data-aos="fade-left">
 									<a href="javascript:void(0)" onclick="swiperApplications.slideToLoop(0)">TV</a>
 									<a href="javascript:void(0)" onclick="swiperApplications.slideToLoop(1)" class="active">Smartphone & Tablet</a>
 									<a href="javascript:void(0)" onclick="swiperApplications.slideToLoop(2)">Automotive</a>
@@ -423,6 +543,7 @@
 								// 	delay: 4000,
 								// 	disableOnInteraction: false,
 								// },
+								autoHeight: true,
 								initialSlide: 1,
 								loop: true,
 								navigation: {
@@ -442,15 +563,17 @@
 					</div>
 					<div class="cm-main-globalnetwork">
 						<div class="cm-inner">
-							<h2 class="cm-main-globalnetwork__title">Global Network</h2>
-							<div class="cm-main-globalnetwork__text">We will show you the location of CoilMaster of KOREA, HONGKONG, CHINA, THAILAND, USA, THAILAND.</div>
-							<div class="cm-main-globalnetwork-map">
-								<div class="cm-main-globalnetwork-map__item europe">
+							<h2 class="cm-main-globalnetwork__title" data-aos="fade-up">Global Network</h2>
+							<div class="cm-main-globalnetwork__text" data-aos="fade-up">
+								We will show you the location of CoilMaster of KOREA, HONGKONG, CHINA, THAILAND, USA, THAILAND.
+							</div>
+							<div class="cm-main-globalnetwork-map" data-aos="fade-up">
+								<div class="cm-main-globalnetwork-map__item europe" data-aos="fade-left">
 									<div class="line"><span></span></div>
 									<strong>EUROPE</strong>
 									<p>Hungary Sales Office</p>
 								</div>
-								<div class="cm-main-globalnetwork-map__item china">
+								<div class="cm-main-globalnetwork-map__item china" data-aos="fade-left">
 									<div class="line"><span></span></div>
 									<strong>CHINA</strong>
 									<p>
@@ -459,12 +582,12 @@
 										Zhaoqing China Factory
 									</p>
 								</div>
-								<div class="cm-main-globalnetwork-map__item thailand">
+								<div class="cm-main-globalnetwork-map__item thailand" data-aos="fade-left">
 									<div class="line"><span></span></div>
 									<strong>THAILAND</strong>
 									<p>Thailand Factory</p>
 								</div>
-								<div class="cm-main-globalnetwork-map__item korea">
+								<div class="cm-main-globalnetwork-map__item korea" data-aos="fade-left">
 									<div class="line"><span></span></div>
 									<strong>KOREA</strong>
 									<p>
@@ -473,16 +596,50 @@
 										Suwon Sales Office
 									</p>
 								</div>
-								<div class="cm-main-globalnetwork-map__item hongkong">
+								<div class="cm-main-globalnetwork-map__item hongkong" data-aos="fade-left">
 									<div class="line"><span></span></div>
 									<strong>HONGKONG</strong>
 									<p>H.K Sales Office</p>
 								</div>
-								<div class="cm-main-globalnetwork-map__item usa">
+								<div class="cm-main-globalnetwork-map__item usa" data-aos="fade-left">
 									<div class="line"><span></span></div>
 									<strong>USA</strong>
 									<p>Los Angeles Sales Office</p>
 								</div>
+							</div>
+							<div class="cm-main-globalnetwork__info" data-aos="fade-up">
+								<dl>
+									<dt>KOREA</dt>
+									<dd>
+										Iksan Head Office<br />
+										Ilsan Sales Office<br />
+										Suwon Sales Office
+									</dd>
+								</dl>
+								<dl>
+									<dt>CHINA</dt>
+									<dd>
+										Wendeng China Factory<br />
+										China Sales Office<br />
+										Zhaoqing China Factory
+									</dd>
+								</dl>
+								<dl>
+									<dt>USA</dt>
+									<dd>Los Angeles Sales Office</dd>
+								</dl>
+								<dl>
+									<dt>EUROPE</dt>
+									<dd>Hungary Sales Office</dd>
+								</dl>
+								<dl>
+									<dt>THAILAND</dt>
+									<dd>Thailand Factory</dd>
+								</dl>
+								<dl>
+									<dt>HONGKONG</dt>
+									<dd>H.K Sales Office</dd>
+								</dl>
 							</div>
 						</div>
 						<script>
@@ -503,7 +660,7 @@
 						</script>
 					</div>
 					<div class="cm-main-history">
-						<h2 class="cm-main-history__title">
+						<h2 class="cm-main-history__title" data-aos="fade-up">
 							<div class="cm-inner">
 								변화와 혁신을 통해<br />
 								성장을 이루어 갑니다.
@@ -511,18 +668,40 @@
 						</h2>
 						<div class="cm-main-history__text">
 							<div class="cm-inner">
-								<div class="cm-main-history-item item01">
+								<div class="cm-main-history-item item01 active">
 									<div class="cm-inner">
-										<div class="cm-main-history-item__year">0</div>
-										<div class="cm-main-history-item__title">Established</div>
-										<div class="cm-main-history-item__text">
+										<div class="cm-main-history-item__year" data-aos="fade-up">1996</div>
+										<div class="cm-main-history-item__title" data-aos="fade-up">Established</div>
+										<div class="cm-main-history-item__text" data-aos="fade-up">
 											1996년 창업 이래, SMD 관련<br />
 											한국 제 1의 코일 제조 회사로 성장
 										</div>
-										<a href="" class="cm-main-history-item__more"> See Details </a>
+										<a href="" class="cm-main-history-item__more" data-aos="fade-up"> See Details </a>
 									</div>
 								</div>
-								<div class="cm-main-history-item__bar">
+								<div class="cm-main-history-item item02">
+									<div class="cm-inner">
+										<div class="cm-main-history-item__year" data-aos="fade-up">11</div>
+										<div class="cm-main-history-item__title" data-aos="fade-up">Global Office</div>
+										<div class="cm-main-history-item__text" data-aos="fade-up">
+											전세계 11개 글로벌 오피스와<br />
+											R&D센터를 통한 기술 혁신
+										</div>
+										<a href="" class="cm-main-history-item__more" data-aos="fade-up"> See Details </a>
+									</div>
+								</div>
+								<div class="cm-main-history-item item03">
+									<div class="cm-inner">
+										<div class="cm-main-history-item__year" data-aos="fade-up">500</div>
+										<div class="cm-main-history-item__title" data-aos="fade-up">Technology Fast</div>
+										<div class="cm-main-history-item__text" data-aos="fade-up">
+											아시아-태평양 지역 고속성장<br />
+											500대 기업에 선정
+										</div>
+										<a href="" class="cm-main-history-item__more" data-aos="fade-up"> See Details </a>
+									</div>
+								</div>
+								<div class="cm-main-history-item__bar" data-aos="fade-up">
 									<em>1</em>
 									<p><span></span></p>
 									3
@@ -536,29 +715,35 @@
 								scrollTrigger: {
 									trigger: $('.cm-main-history'),
 									start: '0',
-									end: '+=1600',
-									// markers: true,
+									end: '+=1000',
+									//markers: true,
 									toggleActions: 'play pause reverse pause',
-									scrub: 1,
+									scrub: 3,
 									pin: true,
 									invalidateOnRefresh: true,
 									pinSpacing: true,
 									anticipatePin: 1,
-									onEnter: animateNumber,
+									///onEnter: randomToFixed(),
 									onUpdate: function (self) {
 										var progress = self.progress;
 										var rangeStart = 1;
 										var rangeEnd = 100;
 										var value = rangeStart + (rangeEnd - rangeStart) * progress;
 
-										if (value < 20) {
+										if (value < 30) {
 											$('.cm-main-history-item__bar em').text('1');
+											$('.cm-main-history-item').removeClass('active');
+											$('.cm-main-history-item.item01').addClass('active');
 										}
-										if (value > 20) {
+										if (value > 30) {
 											$('.cm-main-history-item__bar em').text('2');
+											$('.cm-main-history-item').removeClass('active');
+											$('.cm-main-history-item.item02').addClass('active');
 										}
-										if (value > 40) {
+										if (value > 50) {
 											$('.cm-main-history-item__bar em').text('3');
+											$('.cm-main-history-item').removeClass('active');
+											$('.cm-main-history-item.item03').addClass('active');
 										}
 										$('.cm-main-history-item__bar span').css('width', value + '%');
 									},
@@ -567,46 +752,12 @@
 								x: () => innerWidth,
 								ease: 'none',
 							});
-
-							// 스크립트 실행 시 초기값 설정
-							var currentNumber = Math.floor(Math.random() * 10000); // 0부터 9999까지의 랜덤 숫자 설정
-							var targetNumber = Math.floor(Math.random() * 10000); // 0부터 9999까지의 랜덤 숫자 설정
-
-							// 숫자 표시 함수
-							function displayNumber() {
-								var numberDisplay = document.getElementsByClassName('cm-main-history-item__year')[0];
-								if (numberDisplay) {
-									numberDisplay.textContent = currentNumber.toString().padStart(4, '0');
-								}
-							}
-
-							// 숫자 애니메이션 함수
-							function animateNumber() {
-								if (currentNumber !== targetNumber) {
-									// 현재 숫자와 지정 숫자가 다른 경우
-									var randomOffset = Math.floor(Math.random() * 10) - 5; // -5부터 4까지의 랜덤 숫자
-									currentNumber += randomOffset; // 현재 숫자에 랜덤 오프셋을 더함
-									if (currentNumber < 0) {
-										currentNumber = 0; // 숫자가 음수가 되는 경우 0으로 설정
-									} else if (currentNumber > 9999) {
-										currentNumber = 9999; // 숫자가 9999를 초과하는 경우 9999로 설정
-									}
-									displayNumber(); // 숫자 표시 업데이트
-									requestAnimationFrame(animateNumber); // 애니메이션 계속 진행
-								}
-							}
-
-							// 2초 후에 숫자 고정
-							setTimeout(function () {
-								currentNumber = targetNumber;
-								displayNumber();
-							}, 2000);
 						</script>
 					</div>
 				</div>
 			</div>
 
-			<div class="cm-quick">
+			<div class="cm-quick" data-aos="fade-up">
 				<a href="" class="cm-quick__inquiry"> INQUIRY </a>
 				<a href="" class="cm-quick__product"> PRODUCT </a>
 				<a href="javascript:void(0)" class="cm-quick__top"> TOP </a>
