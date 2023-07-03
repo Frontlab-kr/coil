@@ -246,7 +246,26 @@
 				</div>
 				<div class="cm-inner">
 					<div class="cm-breadcrumb">
-						<a href="" class="cm-breadcrumb__home">홈</a>
+						<a href="" class="cm-breadcrumb__home">Home</a>
+						<div class="cm-breadcrumb__select">
+							<strong>PRODUCTS</strong>
+							<ul>
+								<li><a href="/products">PRODUCTS</a></li>
+								<li><a href="/applications">APPLICATIONS</a></li>
+								<li><a href="/e-service">E-SERVICE</a></li>
+								<li><a href="/support">SUPPORT</a></li>
+								<li><a href="/about-us">ABOUT US</a></li>
+							</ul>
+						</div>
+						<div class="cm-breadcrumb__select">
+							<strong>Inductors(Coils)</strong>
+							<ul>
+								<li><a href="">Inductors(Coils)</a></li>
+								<li><a href="">RF Components</a></li>
+								<li><a href="">EMC Components</a></li>
+								<li><a href="">Transformers</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="cm-products">
@@ -278,46 +297,63 @@
 									<div class="swiper">
 										<div class="swiper-wrapper">
 											<div class="swiper-slide">
-												<a href="" class="cm-products-spotlights-item cm-products-spotlights-item--play">
-													<div class="cm-products-spotlights-item__thumb">
+												<a href="" class="cm-main-service-item cm-main-service-item--play" data-aos="fade-up" data-aos-delay="100">
+													<div class="cm-main-service-item__thumb">
 														<img src="../assets/images/main/service01.png" alt="" />
 													</div>
-													<div class="cm-products-spotlights-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+													<div class="cm-main-service-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
 												</a>
 											</div>
 											<div class="swiper-slide">
-												<a href="" class="cm-products-spotlights-item">
-													<div class="cm-products-spotlights-item__thumb">
+												<a href="" class="cm-main-service-item" data-aos="fade-up" data-aos-delay="200">
+													<div class="cm-main-service-item__thumb">
 														<img src="../assets/images/main/service02.png" alt="" />
 													</div>
-													<div class="cm-products-spotlights-item__text">Automotive Ethernet Common Mode Chokes</div>
+													<div class="cm-main-service-item__text">Automotive Ethernet Common Mode Chokes</div>
 												</a>
 											</div>
 											<div class="swiper-slide">
-												<a href="" class="cm-products-spotlights-item">
-													<div class="cm-products-spotlights-item__thumb">
+												<a href="" class="cm-main-service-item" data-aos="fade-up" data-aos-delay="300">
+													<div class="cm-main-service-item__thumb">
 														<img src="../assets/images/main/service03.png" alt="" />
 													</div>
-													<div class="cm-products-spotlights-item__text">CoilMaster PoC Inductor (Eng ver.)</div>
+													<div class="cm-main-service-item__text">CoilMaster PoC Inductor (Eng ver.)</div>
 												</a>
 											</div>
 											<div class="swiper-slide">
-												<a href="" class="cm-products-spotlights-item">
-													<div class="cm-products-spotlights-item__thumb">
+												<a href="" class="cm-main-service-item" data-aos="fade-up" data-aos-delay="400">
+													<div class="cm-main-service-item__thumb">
 														<img src="../assets/images/main/service04.png" alt="" />
 													</div>
-													<div class="cm-products-spotlights-item__text">Inductor for Class-D Audio Amplifiers</div>
+													<div class="cm-main-service-item__text">Inductor for Class-D Audio Amplifiers</div>
 												</a>
 											</div>
 										</div>
 										<div class="swiper-button-next"></div>
 										<div class="swiper-button-prev"></div>
+										<div class="swiper-pagination"></div>
 									</div>
 								</div>
 								<script>
-									var swiperApplications = new Swiper('.cm-products-spotlights .swiper', {
-										slidesPerView: 4,
-										spaceBetween: 24,
+									var swiperService = new Swiper('.cm-products-spotlights .swiper', {
+										loop: true,
+										slidesPerView: 'auto',
+										spaceBetween: 20,
+										//freeMode: true,
+										centeredSlides: true,
+										breakpoints: {
+											992: {
+												loop: false,
+												spaceBetween: 24,
+											},
+										},
+										navigation: {
+											nextEl: '.cm-products-spotlights .swiper-button-next',
+											prevEl: '.cm-products-spotlights .swiper-button-prev',
+										},
+										pagination: {
+											el: '.cm-products-spotlights .swiper-pagination',
+										},
 									});
 								</script>
 							</div>
@@ -327,27 +363,82 @@
 						<div class="cm-products-lineup">
 							<h3 class="cm-products-lineup__title">Product Lineup</h3>
 							<div class="cm-products-lineup__tab">
-								<a href=""><span>SMD Power Inductor</span></a>
-								<a href=""><span>Duble Core Shield Power Inductors</span></a>
-								<a href=""><span>High Current Shield Power Inductors</span></a>
-								<a href=""><span>Air Core Inductors</span></a>
-								<a href=""><span>Air Core Inductors for RF Circuits</span></a>
-								<a href=""><span>Ferrite Chip Inductors for General Circuits</span></a>
-								<a href=""
-									><span
-										>Ceramic Chip Inductors<br />
-										for High Frequency Circuits</span
-									></a
-								>
-								<a href=""><span>Choke Coils for PFC</span></a>
+								<div class="swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<a href="">
+												<img src="../assets/images/products/lineup-img01.png" alt="" />
+												<span>SMD Power Inductor</span>
+											</a>
+										</div>
+										<div class="swiper-slide">
+											<a href=""><span>Duble Core Shield Power Inductors</span></a>
+										</div>
+										<div class="swiper-slide">
+											<a href=""><span>High Current Shield Power Inductors</span></a>
+										</div>
+										<div class="swiper-slide">
+											<a href=""><span>Air Core Inductors</span></a>
+										</div>
+										<div class="swiper-slide">
+											<a href=""><span>Air Core Inductors for RF Circuits</span></a>
+										</div>
+										<div class="swiper-slide">
+											<a href=""><span>Ferrite Chip Inductors for General Circuits</span></a>
+										</div>
+										<div class="swiper-slide">
+											<a href=""
+												><span
+													>Ceramic Chip Inductors<br />
+													for High Frequency Circuits</span
+												></a
+											>
+										</div>
+										<div class="swiper-slide">
+											<a href=""><span>Choke Coils for PFC</span></a>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="cm-products-lineup__text">
-								<strong>SMD Power Inductor 란?</strong>
+								<h4>SMD Power Inductor 란?</h4>
 								<p>
 									전원 공급 장치 및 회로에 적용되는 인덕터로, Metal composite 또는 Ferrite 재료로 생산합니다.<br />
 									주로 특정 전압을 필요한 전압으로 변환하기 위한 회로에 사용되며, IC에 안정적인 전력을 공급하는 역할을 합니다.<br />
 									해당 인덕터는 전원회로에 사용되므로 전류 인가 시 인덕턴스를 유지하고, 저저항의 특성을 갖도록 제작됩니다.
 								</p>
+								<div class="cm-products-lineup-image">
+									<div class="cm-products-lineup-image__item">
+										<dl>
+											<dt>Metal Series</dt>
+											<dd>
+												<p>
+													<span><img src="../assets/images/products/lineup-img01-01.png" alt="" /></span>
+													Pin type
+												</p>
+												<p>
+													<span><img src="../assets/images/products/lineup-img01-02.png" alt="" /></span>
+													도금 type
+												</p>
+											</dd>
+										</dl>
+									</div>
+									<div class="cm-products-lineup-image__item">
+										<dl>
+											<dt>Ferrite Series</dt>
+											<dd>
+												<p>
+													<span><img src="../assets/images/products/lineup-img01-03.png" alt="" /></span>
+													Non Shield type
+												</p>
+												<p>
+													<span><img src="../assets/images/products/lineup-img01-04.png" alt="" /></span>
+													Shield type
+												</p>
+											</dd>
+										</dl>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="cm-products-list">
