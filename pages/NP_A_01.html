@@ -68,12 +68,13 @@
 		<script>
 			function setZoomLevel() {
 				const screenWidth = window.innerWidth;
+				const targetElement = document.getElementById('targetId');
 
 				if (screenWidth >= 993 && screenWidth <= 1500) {
 					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.body.style.zoom = `${zoomPercentage}%`;
+					targetElement.style.zoom = `${zoomPercentage}%`;
 				} else {
-					document.body.style.zoom = '100%';
+					targetElement.style.zoom = '100%';
 				}
 			}
 

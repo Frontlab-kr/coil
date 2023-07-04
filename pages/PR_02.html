@@ -71,9 +71,9 @@
 
 				if (screenWidth >= 993 && screenWidth <= 1500) {
 					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.body.style.zoom = `${zoomPercentage}%`;
+					document.documentElement.style.zoom = `${zoomPercentage}%`;
 				} else {
-					document.body.style.zoom = '100%';
+					document.documentElement.style.zoom = '100%';
 				}
 			}
 
@@ -271,10 +271,33 @@
 				<div class="cm-products">
 					<div class="cm-inner">
 						<div class="cm-products__menu">
-							<h2>Inductors(Coils)</h2>
-							<a href="">RF Components</a>
-							<a href="">EMC Components</a>
-							<a href="">Transformers</a>
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<h2>Inductors(Coils)</h2>
+									</div>
+									<div class="swiper-slide">
+										<a href="">RF Components</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">EMC Components</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">Transformers</a>
+									</div>
+								</div>
+							</div>
+							<script>
+								var swiperProductsMenu = new Swiper('.cm-products__menu .swiper', {
+									slidesPerView: 'auto',
+									spaceBetween: 20,
+									breakpoints: {
+										992: {
+											spaceBetween: 40,
+										},
+									},
+								});
+							</script>
 						</div>
 					</div>
 					<div class="cm-products__bg">
@@ -286,7 +309,7 @@
 								<div class="cm-products-head__text">
 									<p>
 										CoilMaster는<br />
-										원료 기술, 권선 기술, 공정 자동화설비 기술을 통해<br />
+										원료 기술, 권선 기술, 공정 자동화설비 기술을 통해<br class="pc" />
 										고효율의 최적화 된 제품을 공급합니다.
 									</p>
 								</div>
@@ -328,14 +351,46 @@
 													<div class="cm-main-service-item__text">Inductor for Class-D Audio Amplifiers</div>
 												</a>
 											</div>
+											<div class="swiper-slide">
+												<a href="" class="cm-main-service-item cm-main-service-item--play" data-aos="fade-up" data-aos-delay="100">
+													<div class="cm-main-service-item__thumb">
+														<img src="../assets/images/main/service01.png" alt="" />
+													</div>
+													<div class="cm-main-service-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+												</a>
+											</div>
+											<div class="swiper-slide">
+												<a href="" class="cm-main-service-item" data-aos="fade-up" data-aos-delay="200">
+													<div class="cm-main-service-item__thumb">
+														<img src="../assets/images/main/service02.png" alt="" />
+													</div>
+													<div class="cm-main-service-item__text">Automotive Ethernet Common Mode Chokes</div>
+												</a>
+											</div>
+											<div class="swiper-slide">
+												<a href="" class="cm-main-service-item" data-aos="fade-up" data-aos-delay="300">
+													<div class="cm-main-service-item__thumb">
+														<img src="../assets/images/main/service03.png" alt="" />
+													</div>
+													<div class="cm-main-service-item__text">CoilMaster PoC Inductor (Eng ver.)</div>
+												</a>
+											</div>
+											<div class="swiper-slide">
+												<a href="" class="cm-main-service-item" data-aos="fade-up" data-aos-delay="400">
+													<div class="cm-main-service-item__thumb">
+														<img src="../assets/images/main/service04.png" alt="" />
+													</div>
+													<div class="cm-main-service-item__text">Inductor for Class-D Audio Amplifiers</div>
+												</a>
+											</div>
 										</div>
-										<div class="swiper-button-next"></div>
-										<div class="swiper-button-prev"></div>
-										<div class="swiper-pagination"></div>
 									</div>
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-pagination"></div>
 								</div>
 								<script>
-									var swiperService = new Swiper('.cm-products-spotlights .swiper', {
+									var swiperSpotlights = new Swiper('.cm-products-spotlights .swiper', {
 										loop: true,
 										slidesPerView: 'auto',
 										spaceBetween: 20,
@@ -343,8 +398,9 @@
 										centeredSlides: true,
 										breakpoints: {
 											992: {
-												loop: false,
+												slidesPerView: 4,
 												spaceBetween: 24,
+												centeredSlides: false,
 											},
 										},
 										navigation: {
@@ -441,21 +497,133 @@
 								</div>
 							</div>
 						</div>
-						<div class="cm-products-list">
-							<div class="cm-products-list__tab">
-								<a href="" class="active">Power Inductors</a>
-								<a href="">Coupled Power Inductors</a>
-								<a href="">Inductors for Class D Amplifier</a>
-								<a href="">Chip Inductors</a>
-								<a href="">Choke Coils for PFC</a>
-								<a href="">Toroidal Choke Coils</a>
-								<a href="">Transfonder Coils</a>
-								<a href="">LED Drive Inductors</a>
+						<div class="cm-products-lineup-list">
+							<div class="pc">
+								<div class="cm-products-lineup-list__tab">
+									<a href="" class="active">Power Inductors</a>
+									<a href="">Coupled Power Inductors</a>
+									<a href="">Inductors for Class D Amplifier</a>
+									<a href="">Chip Inductors</a>
+									<a href="">Choke Coils for PFC</a>
+									<a href="">Toroidal Choke Coils</a>
+									<a href="">Transfonder Coils</a>
+									<a href="">LED Drive Inductors</a>
+								</div>
 							</div>
-							<div class="cm-products-list__item">
+							<div class="mo">
+								<div class="cm-products-lineup-list__select">
+									<select>
+										<option>Power Inductors</option>
+										<option>Coupled Power Inductors</option>
+										<option>Inductors for Class D Amplifier</option>
+										<option>Chip Inductors</option>
+										<option>Choke Coils for PFC</option>
+										<option>Toroidal Choke Coils</option>
+										<option>Transfonder Coils</option>
+										<option>LED Drive Inductors</option>
+									</select>
+								</div>
+							</div>
+							<div class="cm-products-lineup-list__item">
 								<h4>Power Inductors</h4>
+
+								<div class="cm-products-table">
+									<div class="cm-products-table__scroll">
+										<table>
+											<thead>
+												<tr>
+													<th>Image</th>
+													<th>Catalog</th>
+													<th>Automotive<br />Grade</th>
+													<th>Features</th>
+													<th>Series</th>
+													<th>Part Number</th>
+													<th>LxW(mm)</th>
+													<th>Height (mm) Max.</th>
+													<th>Inductance (uH)</th>
+													<th>DCR (mo) Max.</th>
+													<th>Isat (A) Typ.</th>
+													<th>Itemp (A) Typ.</th>
+													<th>Inquiry</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
 							</div>
 						</div>
+						<script>
+							var swiperProductsLineup = new Swiper('.cm-products-lineup .swiper', {
+								slidesPerView: 'auto',
+								spaceBetween: 10,
+								breakpoints: {
+									992: {
+										spaceBetween: 0,
+									},
+								},
+							});
+						</script>
 					</div>
 				</div>
 			</div>
