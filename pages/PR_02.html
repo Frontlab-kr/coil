@@ -67,22 +67,30 @@
 		/>
 		<script>
 			function setZoomLevel() {
-				const screenWidth = window.innerWidth;
+				var windowWidth = window.innerWidth;
+				var minSize = 993;
+				var maxSize = 1460;
+				var minFontSize = 66;
+				var maxFontSize = 100;
 
-				if (screenWidth >= 993 && screenWidth <= 1500) {
-					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.documentElement.style.zoom = `${zoomPercentage}%`;
-				} else {
-					document.documentElement.style.zoom = '100%';
+				if (windowWidth >= minSize && windowWidth <= maxSize) {
+					var percentage = (windowWidth - minSize) / (maxSize - minSize);
+					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
+					var result = (fontSize / 100) * 6.25;
+					document.documentElement.style.setProperty('--font-size', result + '%');
+					console.log(result);
+				}
+				if (windowWidth <= minSize) {
+					document.documentElement.style.setProperty('--font-size', '6.25%');
 				}
 			}
 
 			$(window).on('resize', function () {
-				//setZoomLevel();
+				setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				//setZoomLevel();
+				setZoomLevel();
 			});
 		</script>
 	</head>
@@ -549,6 +557,2299 @@
 											</thead>
 
 											<tbody>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<div class="cm-products-lineup-list__item">
+								<h4>Power Inductors</h4>
+
+								<div class="cm-products-table">
+									<div class="cm-products-table__scroll">
+										<table>
+											<thead>
+												<tr>
+													<th>Image</th>
+													<th>Catalog</th>
+													<th>Automotive<br />Grade</th>
+													<th>Features</th>
+													<th>Series</th>
+													<th>Part Number</th>
+													<th>LxW(mm)</th>
+													<th>Height (mm) Max.</th>
+													<th>Inductance (uH)</th>
+													<th>DCR (mo) Max.</th>
+													<th>Isat (A) Typ.</th>
+													<th>Itemp (A) Typ.</th>
+													<th>Inquiry</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<a href="/storage/items/CMMPF-SB.png">
+															<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
+														</a>
+													</td>
+
+													<td>
+														<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf" class="btn btn-sm btn-info text-white">PDF</a>
+													</td>
+
+													<td>
+														<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvcFhu3fFYcMSw5HYpMwqgzx8WwV0jkOCzg&amp;usqp=CAU" />
+													</td>
+
+													<td>
+														<span class="cm-badge">Shield</span>
+														<span class="cm-badge">Metal</span>
+														<span class="cm-badge">Wire wound</span>
+														<span class="cm-badge">Plating</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_series-CMMPF-SB">CMMPF-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field part_type-CMMPF15100QL-SB">CMMPF15100QL-SB</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_lw-15x15">15x15</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_height-11.00">11.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_inductance-4.70~33.00">4.70~33.00 uH</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_dcr_max-3.00~18.60">3.00~18.60 mΩ</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_isat_typ-17.00~50.00">17.00~50.00</span>
+													</td>
+
+													<td class="pl-2 pr-2">
+														<span class="product_item_field s_itemp_typ-22.00~35.00">22.00~35.00 A</span>
+													</td>
+
+													<td>
+														<a href="javascript:void(0)" class="btn btn-success btn-contact-seller" data-toggle="modal" data-target="#messageModal"> ? </a>
+													</td>
+												</tr>
 												<tr>
 													<td>
 														<a href="/storage/items/CMMPF-SB.png">

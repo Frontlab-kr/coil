@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CoilMaster Pub</title>
+
+		<!-- default -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+			integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link rel="stylesheet" href="../assets/css/common.css" />
+
+		<!-- SmoothScroll -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
+			integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<!-- swiper -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"
+			integrity="sha512-3Ei7OPFo83kw3cPbDLeLhn/YF8tZB7Vs8sfli0B/KEekureL5eosDeshYFICCvt4K8i0yUil/lK3cSiic2Wjkg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.css"
+			integrity="sha512-Aeqz1zfbRIQHDPsvEobXzaeXDyh8CUqRdvy6QBCQEbxIc/vazrTdpjEufMbxSW61+7a5vIDDuGh8z5IekVG0YA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- gsap -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"
+			integrity="sha512-GQ5/eIhs41UXpG6fGo4xQBpwSEj9RrBvMuKyE2h/2vw3a9x85T1Bt0JglOUVJJLeyIUl/S/kCdDXlE/n7zCjIg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"
+			integrity="sha512-6BvDODEWgjWWyBrg6YFio6xmzgKWpf54tDlnCtG05m++/jgh/7jQcx6jUJrq44lB84cf68FzYiT0LipabA5g8g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<!-- aos -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+			integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+			integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<script>
+			function setZoomLevel() {
+				const screenWidth = window.innerWidth;
+
+				if (screenWidth >= 993 && screenWidth <= 1500) {
+					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
+					document.documentElement.style.zoom = `${zoomPercentage}%`;
+				} else {
+					document.documentElement.style.zoom = '100%';
+				}
+			}
+
+			$(window).on('resize', function () {
+				//setZoomLevel();
+			});
+			$(document).ready(function () {
+				AOS.init();
+				//setZoomLevel();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="cm">
+			<div class="cm-skip">
+				<a href="">본문영역 바로가기</a>
+			</div>
+			<header id="cm-header" class="cm-header">
+				<div class="cm-inner">
+					<div class="cm-header__logo"><a href="/">CoilMaster</a></div>
+					<nav class="cm-header-gnb">
+						<a href="javascript:void(0)" class="cm-header-gnb__open">메뉴 열기</a>
+						<a href="javascript:void(0)" class="cm-header-gnb__close">메뉴 닫기</a>
+						<div class="cm-header-gnb__layer">
+							<div class="cm-header-gnb__layer-logo"><a href="/">CoilMaster</a></div>
+							<ul>
+								<li class="active">
+									<a href="/products">PRODUCTS</a>
+									<ul>
+										<li><a href="">Inductors</a></li>
+										<li><a href="">RF Components</a></li>
+										<li><a href="">EMS Components</a></li>
+										<li><a href="">Transformers</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/applications">APPLICATIONS</a>
+									<ul>
+										<li><a href="">Smartphone & Tablet</a></li>
+										<li><a href="">TV</a></li>
+										<li><a href="">Automotive</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/e-service">E-SERVICE</a>
+									<ul>
+										<li><a href="">E-Service</a></li>
+										<li><a href="">E-Card</a></li>
+										<li><a href="">E-Catalogue</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/support">SUPPORT</a>
+									<ul>
+										<li><a href="">뉴스 및 공지사항</a></li>
+										<li><a href="">FAQ</a></li>
+										<li><a href="">문의</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="/about-us">ABOUT US</a>
+									<ul>
+										<li><a href="">CEO 인사말</a></li>
+										<li><a href="">회사 연혁</a></li>
+										<li><a href="">CI 소개</a></li>
+										<li><a href="">인증서 및 상장</a></li>
+										<li><a href="">회사 약도</a></li>
+										<li><a href="">인재 채용</a></li>
+									</ul>
+								</li>
+							</ul>
+							<div class="cm-header-lang">
+								<div class="cm-header-lang__select">
+									<strong><a href="javascript:void(0)">KOR</a></strong>
+									<ul>
+										<li class="active"><a href="/">KOR</a></li>
+										<li><a href="/">ENG</a></li>
+									</ul>
+								</div>
+								<address>Copylight © 2023 Coilmaster. All Rights Reserved.</address>
+								<script>
+									$('.cm-header-lang__select').on('click', function () {
+										$('.cm-header-lang__select').toggleClass('active');
+									});
+									$(document).on('click', function (e) {
+										var target = $(e.target);
+										if (target.is('.cm-header-lang__select strong a')) {
+											return;
+										}
+										$('.cm-header-lang__select').removeClass('active');
+									});
+									$(document).keyup(function (e) {
+										if (e.key === 'Escape') {
+											$('.cm-header-lang__select').removeClass('active');
+										}
+									});
+								</script>
+							</div>
+						</div>
+						<script>
+							$('.cm-header-gnb__open').on('click', function () {
+								$('html').addClass('mode-gnb');
+							});
+							$('.cm-header-gnb__close').on('click', function () {
+								$('html').removeClass('mode-gnb');
+							});
+							$('.cm-header-gnb__layer > ul > li > a').on('click', function () {
+								var windowWidth = $(window).width();
+								if (windowWidth >= 992) {
+								} else {
+									$('.cm-header-gnb__layer > ul > li').removeClass('active');
+									$(this).parents('li').addClass('active');
+									return false;
+								}
+							});
+							$(document).keyup(function (e) {
+								if (e.key === 'Escape') {
+									$('html').removeClass('mode-gnb');
+								}
+							});
+						</script>
+					</nav>
+					<div class="cm-header-search">
+						<a href="javascript:void(0)" class="cm-header-search__open">검색 열기</a>
+						<div class="cm-header-search__layer">
+							<div class="cm-inner">
+								<a href="javascript:void(0)" class="cm-header-search__close">검색 닫기</a>
+								<div class="cm-header-search__form">
+									<form action="">
+										<input type="text" placeholder="검색어를 입력하세요" />
+										<button>검색</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<script>
+							$('.cm-header-search__open,.cm-header-search__close').on('click', function () {
+								$('html').toggleClass('mode-search');
+							});
+							$(document).keyup(function (e) {
+								if (e.key === 'Escape') {
+									$('html').removeClass('mode-search');
+								}
+							});
+						</script>
+					</div>
+				</div>
+				<script>
+					$(window).on('resize', function () {
+						var windowWidth = $(window).width();
+						if (windowWidth >= 992) {
+							$('html').removeClass('mode-gnb');
+							$('html').removeClass('mode-search');
+						} else {
+						}
+					});
+				</script>
+			</header>
+
+			<div id="cm-body" class="cm-body">
+				<div class="cm-body__header">
+					<div class="cm-inner">
+						<img src="../assets/images/products/header.jpg" alt="" />
+						<h1>뉴스 및 공지사항</h1>
+					</div>
+				</div>
+				<div class="cm-inner">
+					<div class="cm-breadcrumb">
+						<a href="" class="cm-breadcrumb__home">Home</a>
+						<div class="cm-breadcrumb__select">
+							<strong>E-SERVICE</strong>
+							<ul>
+								<li><a href="/products">PRODUCTS</a></li>
+								<li><a href="/applications">APPLICATIONS</a></li>
+								<li><a href="/e-service">E-SERVICE</a></li>
+								<li><a href="/support">SUPPORT</a></li>
+								<li><a href="/about-us">ABOUT US</a></li>
+							</ul>
+						</div>
+						<div class="cm-breadcrumb__select">
+							<strong>E-Service</strong>
+							<ul>
+								<li><a href="">E-Service</a></li>
+								<li><a href="">E-Card</a></li>
+								<li><a href="">E-Catalogue</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="cm-service">
+					<div class="cm-service-head">
+						<div class="cm-service-head__form">
+							<form action="">
+								<input type="text" placeholder="검색어를 입력하세요" />
+								<button>검색</button>
+							</form>
+						</div>
+					</div>
+					<div class="cm-service-tab">
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="">ALL<em>10</em></a>
+									<a href=""></a>
+								</div>
+							</div>
+						</div>
+						<script>
+							var swiperServiceTab = new Swiper('.cm-service-tab .swiper', {
+								slidesPerView: 'auto',
+								spaceBetween: 20,
+								breakpoints: {
+									992: {
+										spaceBetween: 40,
+									},
+								},
+							});
+						</script>
+					</div>
+					<div class="cm-service-total">
+						<div class="cm-service-total">
+							<span class="cm-service-total__all">Total <strong>17</strong></span>
+							<span class="cm-service-total__current">1 Page</span>
+						</div>
+					</div>
+					<div class="cm-service-list">
+						<a href="" class="cm-service-list-item">
+							<div class="cm-service-list-item__thumb">
+								<img src="" alt="" />
+							</div>
+							<div class="cm-service-list-item__text">텍스트</div>
+						</a>
+						<div class="cm-service-list__none">없어</div>
+					</div>
+					<nav class="cm-pagination">
+						<ul>
+							<li><a href="#">Previous</a></li>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">Next</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+
+			<div class="cm-quick">
+				<a href="" class="cm-quick__inquiry"> INQUIRY </a>
+				<a href="" class="cm-quick__product"> PRODUCT </a>
+				<a href="javascript:void(0)" class="cm-quick__top"> TOP </a>
+				<script>
+					$('.cm-quick__top').on('click', function () {
+						window.scrollTo({
+							top: 0,
+							behavior: 'smooth',
+						});
+					});
+					window.addEventListener('scroll', () => {
+						const scrollPosition = window.scrollY;
+						if (scrollPosition > 100) {
+							$('.cm-quick').addClass('active');
+						}
+						if (scrollPosition < 100) {
+							$('.cm-quick').removeClass('active');
+						}
+					});
+				</script>
+			</div>
+
+			<footer id="cm-footer" class="cm-footer">
+				<div class="cm-inner">
+					<div class="cm-footer__info">
+						<a href="/">CoilMaster</a>
+						<address>Copylight © 2023 Coilmaster. All Rights Reserved.</address>
+					</div>
+					<div class="cm-footer__social">
+						<a href="https://www.facebook.com/CoilmasterNo1" class="facebook" target="_blank">facebook</a>
+						<a href="https://twitter.com/coilmaster" class="twitter" target="_blank">twitter</a>
+						<a href="https://www.youtube.com/@coilmasterno1" class="youtube" target="_blank">youtube</a>
+						<a href="https://www.linkedin.com/company/coilmaster-usa-inc-/posts/?feedView=all" class="linkedin" target="_blank">linkedin</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
