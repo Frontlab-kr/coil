@@ -65,24 +65,33 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
 		<script>
 			function setZoomLevel() {
-				const screenWidth = window.innerWidth;
+				var windowWidth = window.innerWidth;
+				var minSize = 993;
+				var maxSize = 1480;
+				var minFontSize = 66;
+				var maxFontSize = 100;
 
-				if (screenWidth >= 993 && screenWidth <= 1500) {
-					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.documentElement.style.zoom = `${zoomPercentage}%`;
-				} else {
-					document.documentElement.style.zoom = '100%';
+				if (windowWidth >= minSize && windowWidth <= maxSize) {
+					var percentage = (windowWidth - minSize) / (maxSize - minSize);
+					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
+					var result = (fontSize / 100) * 6.25;
+					document.documentElement.style.setProperty('--font-size', result + '%');
+					console.log(result);
+				}
+				if (windowWidth <= minSize) {
+					document.documentElement.style.setProperty('--font-size', '6.25%');
 				}
 			}
 
 			$(window).on('resize', function () {
-				//setZoomLevel();
+				setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				//setZoomLevel();
+				setZoomLevel();
 			});
 		</script>
 	</head>
@@ -130,7 +139,7 @@
 									<ul>
 										<li><a href="">뉴스 및 공지사항</a></li>
 										<li><a href="">FAQ</a></li>
-										<li><a href="">문의</a></li>
+										<li><a href="">INQUIRY</a></li>
 									</ul>
 								</li>
 								<li>
@@ -236,8 +245,9 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/products/header.jpg" alt="" />
+						<img src="../assets/images/support/header.jpg" alt="INQUIRY" />
 						<h1>INQUIRY</h1>
+						<p></p>
 					</div>
 				</div>
 				<div class="cm-inner">
@@ -254,19 +264,26 @@
 							</ul>
 						</div>
 						<div class="cm-breadcrumb__select">
-							<strong>FAQ</strong>
+							<strong>INQUIRY</strong>
 							<ul>
 								<li><a href="">뉴스 및 공지사항</a></li>
 								<li><a href="">FAQ</a></li>
-								<li><a href="">문의</a></li>
+								<li><a href="">INQUIRY</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="cm-inquiry">
-					<div class="cm-inquiry__title">
-						<h2>제품, 기술, 인증, 채용, 회사 등 <strong>궁금하신 점</strong>에 대해 남겨 주시면 입력하신 이메일 주소로 빠른 시일 내로 답변.</h2>
-						<p>텍스트</p>
+				<div class="cm-support">
+					<div class="cm-inner">
+						<div class="cm-support-inquiry">
+							<div class="cm-support-inquiry__title">
+								<h2>
+									제품, 기술, 인증, 채용, 회사 등 <strong>궁금하신 점</strong>에 대해 남겨 주시면<br />
+									입력하신 이메일 주소로 빠른 시일 내로 답변 드리겠습니다.
+								</h2>
+								<p>※ 남겨주신 내용은 coilmaster@coilmaster.com 으로 전송됩니다.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

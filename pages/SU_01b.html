@@ -65,24 +65,33 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
 		<script>
 			function setZoomLevel() {
-				const screenWidth = window.innerWidth;
+				var windowWidth = window.innerWidth;
+				var minSize = 993;
+				var maxSize = 1480;
+				var minFontSize = 66;
+				var maxFontSize = 100;
 
-				if (screenWidth >= 993 && screenWidth <= 1500) {
-					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.documentElement.style.zoom = `${zoomPercentage}%`;
-				} else {
-					document.documentElement.style.zoom = '100%';
+				if (windowWidth >= minSize && windowWidth <= maxSize) {
+					var percentage = (windowWidth - minSize) / (maxSize - minSize);
+					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
+					var result = (fontSize / 100) * 6.25;
+					document.documentElement.style.setProperty('--font-size', result + '%');
+					console.log(result);
+				}
+				if (windowWidth <= minSize) {
+					document.documentElement.style.setProperty('--font-size', '6.25%');
 				}
 			}
 
 			$(window).on('resize', function () {
-				//setZoomLevel();
+				setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				//setZoomLevel();
+				setZoomLevel();
 			});
 		</script>
 	</head>
@@ -130,7 +139,7 @@
 									<ul>
 										<li><a href="">뉴스 및 공지사항</a></li>
 										<li><a href="">FAQ</a></li>
-										<li><a href="">문의</a></li>
+										<li><a href="">INQUIRY</a></li>
 									</ul>
 								</li>
 								<li>
@@ -236,8 +245,9 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/products/header.jpg" alt="" />
+						<img src="../assets/images/support/header.jpg" alt="뉴스 및 공지사항" />
 						<h1>뉴스 및 공지사항</h1>
+						<p></p>
 					</div>
 				</div>
 				<div class="cm-inner">
@@ -258,39 +268,66 @@
 							<ul>
 								<li><a href="">뉴스 및 공지사항</a></li>
 								<li><a href="">FAQ</a></li>
-								<li><a href="">문의</a></li>
+								<li><a href="">INQUIRY</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="cm-news">
+				<div class="cm-support">
 					<div class="cm-inner">
-						<div class="cm-news-view">
-							<div class="cm-news-view-head">
-								<h2>제목</h2>
-								<div class="cm-news-view-head-info">
-									<div class="cm-news-view-head-info__date"><strong>작성일</strong> 2023-06-23</div>
-									<div class="cm-news-view-head-info__social">
+						<div class="cm-support-view">
+							<div class="cm-support-view-head">
+								<h2>CoilMaster MMPP Series (Low Temperature Metal Molding Power Inductor)</h2>
+								<div class="cm-support-view-head-info">
+									<div class="cm-support-view-head-info__text">
+										<p><strong>작성일</strong> 2023-06-23</p>
+									</div>
+									<div class="cm-support-view-head-info__social">
 										<a href="javascript:void(0)" class="facebook" target="_blank">facebook</a>
 										<a href="javascript:void(0)" class="twitter" target="_blank">twitter</a>
 										<a href="javascript:void(0)" class="linkedin" target="_blank">linkedin</a>
 									</div>
 								</div>
 							</div>
-							<div class="cm-news-view-body">
-								<div class="cm-news-view-body__text">본문내용</div>
-								<div class="cm-news-view-body__file">
+							<div class="cm-support-view-body">
+								<div class="cm-support-view-body__text">
+									<strong>SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지</strong>는<br />
+									Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램에 사용됩니다.<br />
+									대부분 CCM (Continuous Conduction Mode)에서 작동하는 SEPIC은 비 반전 출력 전압을 제공하며, 일반적으로 배터리 구동 시스템 및 자동차
+									응용프로그램에 사용됩니다.<br />
+									이러한 응용프로그램은 배터리의 충전 상태에 따라 배터리 입력전압, 버스라인 전압이 원하는 출력 전압보다 크거나 작을 수 있습니다.<br />
+									SEPIC 토폴로지는 출력 전압의 위, 아래를 포함하여 더 넓은 입력 전압 범위에서 출력 전압을 조절할 수 있기 때문에 더 많은 배터리 방전 사이클 동안
+									작동 할 수 있습니다.<br />
+									 <br />
+									인덕터 L1, L2는 단일 자기 코어에 함께 감겨져 있지 않아도 되지만, L1, L2가 밀접하게 결합되면 리플 전류가 이들 사이에서 분할되고,<br />
+									필요한 인덕턴스가 절반으로 줄어듭니다.<br />
+									예를 들어, 2개의 22uH 단일 인덕터를 권선 당 11uH 의 하나의 결합 인덕터로 대체 할 수 있으며, <br />
+									잠재적으로 더 작은 인덕터를 선택하거나 DCR이 낮고, 전류 처리가 더 큰 동일한 크기를 선택할 수 있습니다.<br />
+									뿐만 아니라 두 개의 단일 부품이 하나로 결합 된 인덕터를 선택하면 보드 공간을 절약하고 비용을 절감 할 수 있습니다.<br />
+									<strong>CoilMaster의 신제품 Coupled Inductor “ CMMPP10080LH-DB type “ 입니다. </strong> (하단에 링크 클릭하시면 spec 확인하실 수 있습니다.)
+								</div>
+								<div class="cm-support-view-body__file">
 									<p>
-										<a href="https://www.youtube.com/watch?v=dsgan8jxdV0&list=RDfGSNmwQc-os&index=4"
-											>https://www.youtube.com/watch?v=dsgan8jxdV0&list=RDfGSNmwQc-os&index=4</a
-										>
+										<a href="http://www.coilmaster.com/pdf/CMMPP10080HL-DB.pdf">http://www.coilmaster.com/pdf/CMMPP10080HL-DB.pdf</a>
+									</p>
+									<p>
+										<a href="http://www.coilmaster.com/pdf/CMMPP10080HL-DB.pdf">http://www.coilmaster.com/pdf/CMMPP10080HL-DB.pdf</a>
 									</p>
 								</div>
 							</div>
-							<div class="cm-news-view-foot">
-								<a href=""><strong>Prev</strong>텍스트</a>
-								<a href="" class="cm-button">List</a>
-								<a href=""><strong>Next</strong>텍스트</a>
+							<div class="cm-support-view-foot">
+								<a href=""
+									><strong>Prev</strong>
+									<p>
+										SEPIC 토폴로지와 Coupled InductorSEPIC 토폴로지와 Coupled InductorSEPIC 토폴로지와 Coupled InductorSEPIC 토폴로지와 Coupled InductorSEPIC
+										토폴로지와 Coupled Inductor
+									</p></a
+								>
+								<a href="" class="cm-button"><span>List</span></a>
+								<a href=""
+									><strong>Next</strong>
+									<p>게시글이 없습니다.</p></a
+								>
 							</div>
 						</div>
 					</div>

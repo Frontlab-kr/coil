@@ -65,24 +65,33 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
 		<script>
 			function setZoomLevel() {
-				const screenWidth = window.innerWidth;
+				var windowWidth = window.innerWidth;
+				var minSize = 993;
+				var maxSize = 1480;
+				var minFontSize = 66;
+				var maxFontSize = 100;
 
-				if (screenWidth >= 993 && screenWidth <= 1500) {
-					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.documentElement.style.zoom = `${zoomPercentage}%`;
-				} else {
-					document.documentElement.style.zoom = '100%';
+				if (windowWidth >= minSize && windowWidth <= maxSize) {
+					var percentage = (windowWidth - minSize) / (maxSize - minSize);
+					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
+					var result = (fontSize / 100) * 6.25;
+					document.documentElement.style.setProperty('--font-size', result + '%');
+					console.log(result);
+				}
+				if (windowWidth <= minSize) {
+					document.documentElement.style.setProperty('--font-size', '6.25%');
 				}
 			}
 
 			$(window).on('resize', function () {
-				//setZoomLevel();
+				setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				//setZoomLevel();
+				setZoomLevel();
 			});
 		</script>
 	</head>
@@ -130,7 +139,7 @@
 									<ul>
 										<li><a href="">뉴스 및 공지사항</a></li>
 										<li><a href="">FAQ</a></li>
-										<li><a href="">문의</a></li>
+										<li><a href="">INQUIRY</a></li>
 									</ul>
 								</li>
 								<li>
@@ -236,8 +245,9 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/products/header.jpg" alt="" />
-						<h1>뉴스 및 공지사항</h1>
+						<img src="../assets/images/support/header.jpg" alt="FAQ" />
+						<h1>FAQ</h1>
+						<p></p>
 					</div>
 				</div>
 				<div class="cm-inner">
@@ -258,68 +268,126 @@
 							<ul>
 								<li><a href="">뉴스 및 공지사항</a></li>
 								<li><a href="">FAQ</a></li>
-								<li><a href="">문의</a></li>
+								<li><a href="">INQUIRY</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="cm-faq">
-					<div class="cm-faq__tab">
-						<div class="swiper">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<a href="">전체</a>
-								</div>
-								<div class="swiper-slide">
-									<a href="">분류1</a>
-								</div>
-								<div class="swiper-slide">
-									<a href="">분류2</a>
-								</div>
-								<div class="swiper-slide">
-									<a href="">분류3</a>
+				<div class="cm-support">
+					<div class="cm-inner">
+						<div class="cm-support__tab">
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="">전체</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류1</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류2</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류3</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">전체</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류1</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류2</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류3</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">전체</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류1</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류2</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류3</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">전체</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류1</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류2</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">분류3</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<script>
-							var swiperFaqTab = new Swiper('.cm-faq__tab .swiper', {
-								slidesPerView: 'auto',
-								spaceBetween: 20,
-								breakpoints: {
-									992: {
-										spaceBetween: 40,
+							<script>
+								var swiperFaqTab = new Swiper('.cm-support__tab .swiper', {
+									slidesPerView: 'auto',
+									spaceBetween: 30,
+									breakpoints: {
+										992: {
+											spaceBetween: 40,
+										},
 									},
-								},
-							});
-						</script>
-					</div>
-					<div class="cm-faq-accordion">
-						<div class="cm-faq-accordion-item">
-							<div class="cm-faq-accordion-item__title">
-								<a href="">
-									<strong>10</strong>
-									<p>코일마스터 faq 문의 제목</p>
-								</a>
-							</div>
-							<div class="cm-faq-accordion-item__contents">어쩌고~~저쩌고~~</div>
+								});
+							</script>
 						</div>
-						<div class="cm-faq-accordion-item">
-							<div class="cm-faq-accordion-item__title">
-								<a href="">
-									<strong>10</strong>
-									<p>코일마스터 faq 문의 제목</p>
-								</a>
+						<div class="cm-support-accordion">
+							<div class="cm-support-accordion-item">
+								<div class="cm-support-accordion-item__title">
+									<a href="javascript:void(0)">
+										<strong>10</strong>
+										<p>
+											코일마스터 faq 문의 제목코일마스터 faq 문의 제목코일마스터 faq 문의 제목코일마스터 faq 문의 제목코일마스터 faq 문의 제목코일마스터 faq
+											문의 제목코일마스터 faq 문의 제목코일마스터 faq 문의 제목 코일마스터 faq 문의 제목코일마스터 faq 문의 제목코일마스터 faq 문의
+											제목코일마스터 faq 문의 제목코일마스터 faq 문의 제목코일마스터 faq 문의 제목코일마스터 faq 문의 제목코일마스터 faq 문의 제목코일마스터 faq
+											문의 제목코일마스터 faq 문의 제목
+										</p>
+									</a>
+								</div>
+								<div class="cm-support-accordion-item__contents">
+									FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의
+									내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ
+									문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다.
+									FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다. FAQ 문의 내용입니다.
+								</div>
 							</div>
-							<div class="cm-faq-accordion-item__contents">어쩌고~~저쩌고~~</div>
-						</div>
-						<div class="cm-faq-accordion-item">
-							<div class="cm-faq-accordion-item__title">
-								<a href="">
-									<strong>10</strong>
-									<p>코일마스터 faq 문의 제목</p>
-								</a>
+							<div class="cm-support-accordion-item">
+								<div class="cm-support-accordion-item__title">
+									<a href="javascript:void(0)">
+										<strong>9</strong>
+										<p>코일마스터 faq 문의 제목</p>
+									</a>
+								</div>
+								<div class="cm-support-accordion-item__contents">어쩌고~~저쩌고~~</div>
 							</div>
-							<div class="cm-faq-accordion-item__contents">어쩌고~~저쩌고~~</div>
+							<div class="cm-support-accordion-item">
+								<div class="cm-support-accordion-item__title">
+									<a href="javascript:void(0)">
+										<strong>8</strong>
+										<p>코일마스터 faq 문의 제목</p>
+									</a>
+								</div>
+								<div class="cm-support-accordion-item__contents">어쩌고~~저쩌고~~</div>
+							</div>
+							<script>
+								$('.cm-support-accordion-item__title a').on('click', function () {
+									if ($(this).parents('.cm-support-accordion-item').hasClass('active')) {
+										$('.cm-support-accordion-item').removeClass('active');
+									} else {
+										$('.cm-support-accordion-item').removeClass('active');
+										$(this).parents('.cm-support-accordion-item').addClass('active');
+									}
+								});
+							</script>
 						</div>
 					</div>
 				</div>

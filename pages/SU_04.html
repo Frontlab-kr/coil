@@ -65,24 +65,33 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
 		<script>
 			function setZoomLevel() {
-				const screenWidth = window.innerWidth;
+				var windowWidth = window.innerWidth;
+				var minSize = 993;
+				var maxSize = 1480;
+				var minFontSize = 66;
+				var maxFontSize = 100;
 
-				if (screenWidth >= 993 && screenWidth <= 1500) {
-					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.documentElement.style.zoom = `${zoomPercentage}%`;
-				} else {
-					document.documentElement.style.zoom = '100%';
+				if (windowWidth >= minSize && windowWidth <= maxSize) {
+					var percentage = (windowWidth - minSize) / (maxSize - minSize);
+					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
+					var result = (fontSize / 100) * 6.25;
+					document.documentElement.style.setProperty('--font-size', result + '%');
+					console.log(result);
+				}
+				if (windowWidth <= minSize) {
+					document.documentElement.style.setProperty('--font-size', '6.25%');
 				}
 			}
 
 			$(window).on('resize', function () {
-				//setZoomLevel();
+				setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				//setZoomLevel();
+				setZoomLevel();
 			});
 		</script>
 	</head>
@@ -130,7 +139,7 @@
 									<ul>
 										<li><a href="">뉴스 및 공지사항</a></li>
 										<li><a href="">FAQ</a></li>
-										<li><a href="">문의</a></li>
+										<li><a href="">INQUIRY</a></li>
 									</ul>
 								</li>
 								<li>
@@ -236,7 +245,7 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/products/header.jpg" alt="" />
+						<img src="../assets/images/support/header.jpg" alt="뉴스 및 공지사항" />
 						<h1>뉴스 및 공지사항</h1>
 					</div>
 				</div>
@@ -258,7 +267,7 @@
 							<ul>
 								<li><a href="">뉴스 및 공지사항</a></li>
 								<li><a href="">FAQ</a></li>
-								<li><a href="">문의</a></li>
+								<li><a href="">INQUIRY</a></li>
 							</ul>
 						</div>
 					</div>
