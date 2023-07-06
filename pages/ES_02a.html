@@ -65,24 +65,33 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
 		<script>
 			function setZoomLevel() {
-				const screenWidth = window.innerWidth;
+				var windowWidth = window.innerWidth;
+				var minSize = 993;
+				var maxSize = 1480;
+				var minFontSize = 66;
+				var maxFontSize = 100;
 
-				if (screenWidth >= 993 && screenWidth <= 1500) {
-					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.documentElement.style.zoom = `${zoomPercentage}%`;
-				} else {
-					document.documentElement.style.zoom = '100%';
+				if (windowWidth >= minSize && windowWidth <= maxSize) {
+					var percentage = (windowWidth - minSize) / (maxSize - minSize);
+					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
+					var result = (fontSize / 100) * 6.25;
+					document.documentElement.style.setProperty('--font-size', result + '%');
+					console.log(result);
+				}
+				if (windowWidth <= minSize) {
+					document.documentElement.style.setProperty('--font-size', '6.25%');
 				}
 			}
 
 			$(window).on('resize', function () {
-				//setZoomLevel();
+				setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				//setZoomLevel();
+				setZoomLevel();
 			});
 		</script>
 	</head>
@@ -236,15 +245,16 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/products/header.jpg" alt="" />
-						<h1>뉴스 및 공지사항</h1>
+						<img src="../assets/images/service/header.jpg" alt="E-Card" />
+						<h1>E-Card</h1>
+						<p>각종 행사 및 이벤트에 고객사에 보낸 다양한 메시지를 담고 있습니다.</p>
 					</div>
 				</div>
 				<div class="cm-inner">
 					<div class="cm-breadcrumb">
 						<a href="" class="cm-breadcrumb__home">Home</a>
 						<div class="cm-breadcrumb__select">
-							<strong>SUPPORT</strong>
+							<strong>E-SERVICE</strong>
 							<ul>
 								<li><a href="/products">PRODUCTS</a></li>
 								<li><a href="/applications">APPLICATIONS</a></li>
@@ -254,40 +264,199 @@
 							</ul>
 						</div>
 						<div class="cm-breadcrumb__select">
-							<strong>뉴스 및 공지사항</strong>
+							<strong>E-Card</strong>
 							<ul>
-								<li><a href="">뉴스 및 공지사항</a></li>
-								<li><a href="">FAQ</a></li>
-								<li><a href="">INQUIRY</a></li>
+								<li><a href="">E-Service</a></li>
+								<li><a href="">E-Card</a></li>
+								<li><a href="">E-Catalogue</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="cm-support">
+				<div class="cm-card">
 					<div class="cm-inner">
-						<div class="cm-support-total">
-							<div class="cm-support-total">
-								<span class="cm-support-total__all">Total <strong>17</strong></span>
-								<span class="cm-support-total__current">1 Page</span>
-							</div>
+						<div class="cm-total">
+							<p>Total <strong>17</strong></p>
+							<span>1 Page</span>
 						</div>
-						<div class="cm-support-list">
-							<div class="cm-support-list-item">
-								<div class="cm-support-list-item__thumb">
-									<img src="" alt="" />
-								</div>
-								<div class="cm-support-list-item__title">제목</div>
-								<div class="cm-support-list-item__text">텍스트</div>
-								<div class="cm-support-list-item__date">2023-06-23</div>
+						<div class="cm-sort">
+							<div class="pc">
+								<strong>연도</strong>
+								<select>
+									<option value="">전체</option>
+									<option value="">전체</option>
+									<option value="">전체</option>
+									<option value="">전체</option>
+								</select>
 							</div>
+							<div class="mo"></div>
+						</div>
+						<!-- <div class="cm-list-none">
+							<p>검색결과가 없습니다.</p>
+						</div> -->
+						<div class="cm-list-card">
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">2018 크리스마스 카드</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">
+									2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스
+									카드2018 크리스마스 카드2018 크리스마스 카드
+								</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">2018 크리스마스 카드</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">
+									2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스
+									카드2018 크리스마스 카드2018 크리스마스 카드
+								</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">2018 크리스마스 카드</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">
+									2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스
+									카드2018 크리스마스 카드2018 크리스마스 카드
+								</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">2018 크리스마스 카드</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">
+									2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스
+									카드2018 크리스마스 카드2018 크리스마스 카드
+								</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">2018 크리스마스 카드</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">
+									2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스
+									카드2018 크리스마스 카드2018 크리스마스 카드
+								</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">2018 크리스마스 카드</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
+							<a href="" class="cm-list-card-item">
+								<div class="cm-list-card-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-card-item__text">
+									2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스 카드2018 크리스마스
+									카드2018 크리스마스 카드2018 크리스마스 카드
+								</div>
+								<div class="cm-list-card-item__info">
+									<p><strong>날짜</strong>2023-06-23</p>
+									<p><strong>조회수</strong>256</p>
+								</div>
+							</a>
 						</div>
 						<nav class="cm-pagination">
 							<ul>
-								<li><a href="#">Previous</a></li>
-								<li><a href="#">1</a></li>
+								<li class="first"><a href="#">First</a></li>
+								<li class="prev"><a href="#">Previous</a></li>
+								<li class="active"><a href="#">1</a></li>
 								<li><a href="#">2</a></li>
 								<li><a href="#">3</a></li>
-								<li><a href="#">Next</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li class="next"><a href="#">Next</a></li>
+								<li class="last"><a href="#">Last</a></li>
 							</ul>
 						</nav>
 					</div>

@@ -65,24 +65,33 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
 		<script>
 			function setZoomLevel() {
-				const screenWidth = window.innerWidth;
+				var windowWidth = window.innerWidth;
+				var minSize = 993;
+				var maxSize = 1480;
+				var minFontSize = 66;
+				var maxFontSize = 100;
 
-				if (screenWidth >= 993 && screenWidth <= 1500) {
-					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.documentElement.style.zoom = `${zoomPercentage}%`;
-				} else {
-					document.documentElement.style.zoom = '100%';
+				if (windowWidth >= minSize && windowWidth <= maxSize) {
+					var percentage = (windowWidth - minSize) / (maxSize - minSize);
+					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
+					var result = (fontSize / 100) * 6.25;
+					document.documentElement.style.setProperty('--font-size', result + '%');
+					console.log(result);
+				}
+				if (windowWidth <= minSize) {
+					document.documentElement.style.setProperty('--font-size', '6.25%');
 				}
 			}
 
 			$(window).on('resize', function () {
-				//setZoomLevel();
+				setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				//setZoomLevel();
+				setZoomLevel();
 			});
 		</script>
 	</head>
@@ -236,8 +245,9 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/products/header.jpg" alt="" />
-						<h1>뉴스 및 공지사항</h1>
+						<img src="../assets/images/service/header.jpg" alt="E-service" />
+						<h1>E-service</h1>
+						<p>코일마스터의 최신 기술과 신제품을 소개합니다.</p>
 					</div>
 				</div>
 				<div class="cm-inner">
@@ -264,59 +274,133 @@
 					</div>
 				</div>
 				<div class="cm-service">
-					<div class="cm-service-head">
-						<div class="cm-service-head__form">
-							<form action="">
-								<input type="text" placeholder="검색어를 입력하세요" />
-								<button>검색</button>
-							</form>
+					<div class="cm-inner">
+						<div class="cm-search">
+							<div class="cm-search__form">
+								<form action="">
+									<input type="text" placeholder="검색어를 입력하세요" />
+									<button>검색</button>
+								</form>
+							</div>
 						</div>
-					</div>
-					<div class="cm-service-tab">
-						<div class="swiper">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<a href="">ALL<em>10</em></a>
-									<a href=""></a>
+						<div class="cm-tab">
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="">ALL</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">Inductors(Coils)</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">RF Coils</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">EMC Components</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="">Transformers</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<script>
-							var swiperServiceTab = new Swiper('.cm-service-tab .swiper', {
-								slidesPerView: 'auto',
-								spaceBetween: 20,
-								breakpoints: {
-									992: {
-										spaceBetween: 40,
+							<script>
+								var swiperTab = new Swiper('.cm-tab .swiper', {
+									slidesPerView: 'auto',
+									spaceBetween: 30,
+									breakpoints: {
+										992: {
+											spaceBetween: 40,
+										},
 									},
-								},
-							});
-						</script>
-					</div>
-					<div class="cm-service-total">
-						<div class="cm-service-total">
-							<span class="cm-service-total__all">Total <strong>17</strong></span>
-							<span class="cm-service-total__current">1 Page</span>
+								});
+							</script>
 						</div>
+						<div class="cm-total">
+							<p>Total <strong>17</strong></p>
+							<span>1 Page</span>
+						</div>
+						<!-- <div class="cm-list-none">
+							<p>검색결과가 없습니다.</p>
+						</div> -->
+						<div class="cm-list-thumb">
+							<a href="" class="cm-list-thumb-item cm-list-thumb-item--play">
+								<div class="cm-list-thumb-item__thumb">
+									<span></span>
+									<img src="https://picsum.photos/500/500" alt="" />
+								</div>
+								<div class="cm-list-thumb-item__text"><i class="ico-youtube"></i>Coilmaster’s Metal Molding Power Inductor MMP Series</div>
+							</a>
+							<a href="" class="cm-list-thumb-item cm-list-thumb-item--play">
+								<div class="cm-list-thumb-item__thumb">
+									<span></span>
+									<img src="../assets/images/main/service01.png" alt="" />
+								</div>
+								<div class="cm-list-thumb-item__text"><i class="ico-youtube"></i>Automotive CAN FD Common Mode Choke Mode Chokes</div>
+							</a>
+							<a href="" class="cm-list-thumb-item cm-list-thumb-item--play">
+								<div class="cm-list-thumb-item__thumb">
+									<span></span>
+									<img src="../assets/images/main/service01.png" alt="" />
+								</div>
+								<div class="cm-list-thumb-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+							</a>
+							<a href="" class="cm-list-thumb-item cm-list-thumb-item--play">
+								<div class="cm-list-thumb-item__thumb">
+									<span></span>
+									<img src="../assets/images/main/service01.png" alt="" />
+								</div>
+								<div class="cm-list-thumb-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+							</a>
+							<a href="" class="cm-list-thumb-item cm-list-thumb-item--play">
+								<div class="cm-list-thumb-item__thumb">
+									<span></span>
+									<img src="../assets/images/main/service01.png" alt="" />
+								</div>
+								<div class="cm-list-thumb-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+							</a>
+							<a href="" class="cm-list-thumb-item cm-list-thumb-item--play">
+								<div class="cm-list-thumb-item__thumb">
+									<span></span>
+									<img src="../assets/images/main/service01.png" alt="" />
+								</div>
+								<div class="cm-list-thumb-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+							</a>
+							<a href="" class="cm-list-thumb-item cm-list-thumb-item--play">
+								<div class="cm-list-thumb-item__thumb">
+									<span></span>
+									<img src="../assets/images/main/service01.png" alt="" />
+								</div>
+								<div class="cm-list-thumb-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+							</a>
+							<a href="" class="cm-list-thumb-item cm-list-thumb-item--play">
+								<div class="cm-list-thumb-item__thumb">
+									<span></span>
+									<img src="../assets/images/main/service01.png" alt="" />
+								</div>
+								<div class="cm-list-thumb-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+							</a>
+							<a href="" class="cm-list-thumb-item cm-list-thumb-item--play">
+								<div class="cm-list-thumb-item__thumb">
+									<span></span>
+									<img src="../assets/images/main/service01.png" alt="" />
+								</div>
+								<div class="cm-list-thumb-item__text">Automotive CAN FD Common Mode Choke Mode Chokes</div>
+							</a>
+						</div>
+						<nav class="cm-pagination">
+							<ul>
+								<li class="first"><a href="#">First</a></li>
+								<li class="prev"><a href="#">Previous</a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li class="next"><a href="#">Next</a></li>
+								<li class="last"><a href="#">Last</a></li>
+							</ul>
+						</nav>
 					</div>
-					<div class="cm-service-list">
-						<a href="" class="cm-service-list-item">
-							<div class="cm-service-list-item__thumb">
-								<img src="" alt="" />
-							</div>
-							<div class="cm-service-list-item__text">텍스트</div>
-						</a>
-						<div class="cm-service-list__none">없어</div>
-					</div>
-					<nav class="cm-pagination">
-						<ul>
-							<li><a href="#">Previous</a></li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">Next</a></li>
-						</ul>
-					</nav>
 				</div>
 			</div>
 

@@ -65,24 +65,33 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
 		<script>
 			function setZoomLevel() {
-				const screenWidth = window.innerWidth;
+				var windowWidth = window.innerWidth;
+				var minSize = 993;
+				var maxSize = 1480;
+				var minFontSize = 66;
+				var maxFontSize = 100;
 
-				if (screenWidth >= 993 && screenWidth <= 1500) {
-					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.documentElement.style.zoom = `${zoomPercentage}%`;
-				} else {
-					document.documentElement.style.zoom = '100%';
+				if (windowWidth >= minSize && windowWidth <= maxSize) {
+					var percentage = (windowWidth - minSize) / (maxSize - minSize);
+					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
+					var result = (fontSize / 100) * 6.25;
+					document.documentElement.style.setProperty('--font-size', result + '%');
+					console.log(result);
+				}
+				if (windowWidth <= minSize) {
+					document.documentElement.style.setProperty('--font-size', '6.25%');
 				}
 			}
 
 			$(window).on('resize', function () {
-				//setZoomLevel();
+				setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				//setZoomLevel();
+				setZoomLevel();
 			});
 		</script>
 	</head>
@@ -236,15 +245,16 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/products/header.jpg" alt="" />
-						<h1>뉴스 및 공지사항</h1>
+						<img src="../assets/images/service/header.jpg" alt="E-service" />
+						<h1>E-service</h1>
+						<p>코일마스터의 최신 기술과 신제품을 소개합니다.</p>
 					</div>
 				</div>
 				<div class="cm-inner">
 					<div class="cm-breadcrumb">
 						<a href="" class="cm-breadcrumb__home">Home</a>
 						<div class="cm-breadcrumb__select">
-							<strong>SUPPORT</strong>
+							<strong>E-SERVICE</strong>
 							<ul>
 								<li><a href="/products">PRODUCTS</a></li>
 								<li><a href="/applications">APPLICATIONS</a></li>
@@ -254,42 +264,83 @@
 							</ul>
 						</div>
 						<div class="cm-breadcrumb__select">
-							<strong>뉴스 및 공지사항</strong>
+							<strong>E-Service</strong>
 							<ul>
-								<li><a href="">뉴스 및 공지사항</a></li>
-								<li><a href="">FAQ</a></li>
-								<li><a href="">INQUIRY</a></li>
+								<li><a href="">E-Service</a></li>
+								<li><a href="">E-Card</a></li>
+								<li><a href="">E-Catalogue</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="cm-support">
 					<div class="cm-inner">
-						<div class="cm-support-total">
-							<div class="cm-support-total">
-								<span class="cm-support-total__all">Total <strong>17</strong></span>
-								<span class="cm-support-total__current">1 Page</span>
-							</div>
-						</div>
-						<div class="cm-support-list">
-							<div class="cm-support-list-item">
-								<div class="cm-support-list-item__thumb">
-									<img src="" alt="" />
+						<div class="cm-view">
+							<div class="cm-view-head">
+								<h2>CoilMaster MMPP Series (Low Temperature Metal Molding Power Inductor)</h2>
+								<div class="cm-view-head-info">
+									<div class="cm-view-head-info__text">
+										<p><strong>작성일</strong> 2023-06-23</p>
+										<p><strong>조회수</strong> 256</p>
+									</div>
+									<div class="cm-view-head-info__social">
+										<a href="javascript:void(0)" class="facebook" target="_blank">facebook</a>
+										<a href="javascript:void(0)" class="twitter" target="_blank">twitter</a>
+										<a href="javascript:void(0)" class="linkedin" target="_blank">linkedin</a>
+									</div>
 								</div>
-								<div class="cm-support-list-item__title">제목</div>
-								<div class="cm-support-list-item__text">텍스트</div>
-								<div class="cm-support-list-item__date">2023-06-23</div>
+							</div>
+							<div class="cm-view-body">
+								<div class="cm-view-body__text">
+									<iframe
+										width="1560"
+										height="600"
+										src="https://www.youtube.com/embed/XALYHA2OUSE"
+										title="YouTube video player"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										allowfullscreen
+									></iframe>
+									<br />
+									<strong>SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지</strong>는<br />
+									Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램에 사용됩니다.<br />
+									대부분 CCM (Continuous Conduction Mode)에서 작동하는 SEPIC은 비 반전 출력 전압을 제공하며, 일반적으로 배터리 구동 시스템 및 자동차
+									응용프로그램에 사용됩니다.<br />
+									이러한 응용프로그램은 배터리의 충전 상태에 따라 배터리 입력전압, 버스라인 전압이 원하는 출력 전압보다 크거나 작을 수 있습니다.<br />
+									SEPIC 토폴로지는 출력 전압의 위, 아래를 포함하여 더 넓은 입력 전압 범위에서 출력 전압을 조절할 수 있기 때문에 더 많은 배터리 방전 사이클 동안
+									작동 할 수 있습니다.<br />
+									 <br />
+									인덕터 L1, L2는 단일 자기 코어에 함께 감겨져 있지 않아도 되지만, L1, L2가 밀접하게 결합되면 리플 전류가 이들 사이에서 분할되고,<br />
+									필요한 인덕턴스가 절반으로 줄어듭니다.<br />
+									예를 들어, 2개의 22uH 단일 인덕터를 권선 당 11uH 의 하나의 결합 인덕터로 대체 할 수 있으며, <br />
+									잠재적으로 더 작은 인덕터를 선택하거나 DCR이 낮고, 전류 처리가 더 큰 동일한 크기를 선택할 수 있습니다.<br />
+									뿐만 아니라 두 개의 단일 부품이 하나로 결합 된 인덕터를 선택하면 보드 공간을 절약하고 비용을 절감 할 수 있습니다.<br />
+									<strong>CoilMaster의 신제품 Coupled Inductor “ CMMPP10080LH-DB type “ 입니다. </strong> (하단에 링크 클릭하시면 spec 확인하실 수 있습니다.)
+								</div>
+								<div class="cm-view-body__file">
+									<p>
+										<a href="http://www.coilmaster.com/pdf/CMMPP10080HL-DB.pdf">http://www.coilmaster.com/pdf/CMMPP10080HL-DB.pdf</a>
+									</p>
+									<p>
+										<a href="http://www.coilmaster.com/pdf/CMMPP10080HL-DB.pdf">http://www.coilmaster.com/pdf/CMMPP10080HL-DB.pdf</a>
+									</p>
+								</div>
+							</div>
+							<div class="cm-view-foot">
+								<a href=""
+									><strong>Prev</strong>
+									<p>
+										SEPIC 토폴로지와 Coupled InductorSEPIC 토폴로지와 Coupled InductorSEPIC 토폴로지와 Coupled InductorSEPIC 토폴로지와 Coupled InductorSEPIC
+										토폴로지와 Coupled Inductor
+									</p></a
+								>
+								<a href="" class="cm-button"><span>List</span></a>
+								<a href=""
+									><strong>Next</strong>
+									<p>게시글이 없습니다.</p></a
+								>
 							</div>
 						</div>
-						<nav class="cm-pagination">
-							<ul>
-								<li><a href="#">Previous</a></li>
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">Next</a></li>
-							</ul>
-						</nav>
 					</div>
 				</div>
 			</div>
