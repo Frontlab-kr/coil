@@ -2250,6 +2250,21 @@ body {
 			display: none;
 		}
 	}
+	&-sort {
+		strong {
+			margin-right: 10px;
+			font-size: 14px;
+			font-weight: bold;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.5;
+			letter-spacing: -0.21px;
+			text-align: left;
+			color: #343434;
+		}
+		select {
+		}
+	}
 	&-button {
 		position: relative;
 		display: flex;

@@ -2578,6 +2578,17 @@ body::-webkit-scrollbar-thumb {
     display: none;
   }
 }
+.cm-sort strong {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.21px;
+  text-align: left;
+  color: #343434;
+}
 .cm-button {
   position: relative;
   display: flex;
