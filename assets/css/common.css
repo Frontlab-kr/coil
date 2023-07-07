@@ -1300,6 +1300,30 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   color: #000;
 }
+.cm-badge--structure {
+  border-color: #2b64ab;
+  background-color: #ebf4ff;
+}
+.cm-badge--material {
+  border-color: #9d65b2;
+  background-color: #f8ebff;
+}
+.cm-badge--winding {
+  border-color: #ff5f83;
+  background-color: #ffe7ec;
+}
+.cm-badge--terminal {
+  border-color: #74a54c;
+  background-color: #f1ffe6;
+}
+.cm-badge--type {
+  border-color: #ff9f5f;
+  background-color: #fff4e7;
+}
+.cm-badge--coretype {
+  border-color: #a6a6a6;
+  background-color: #f5f5f5;
+}
 .cm-search {
   display: flex;
   align-items: center;
