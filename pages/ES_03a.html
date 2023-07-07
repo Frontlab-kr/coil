@@ -65,24 +65,33 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
 		<script>
 			function setZoomLevel() {
-				const screenWidth = window.innerWidth;
+				var windowWidth = window.innerWidth;
+				var minSize = 993;
+				var maxSize = 1480;
+				var minFontSize = 66;
+				var maxFontSize = 100;
 
-				if (screenWidth >= 993 && screenWidth <= 1500) {
-					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
-					document.documentElement.style.zoom = `${zoomPercentage}%`;
-				} else {
-					document.documentElement.style.zoom = '100%';
+				if (windowWidth >= minSize && windowWidth <= maxSize) {
+					var percentage = (windowWidth - minSize) / (maxSize - minSize);
+					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
+					var result = (fontSize / 100) * 6.25;
+					document.documentElement.style.setProperty('--font-size', result + '%');
+					console.log(result);
+				}
+				if (windowWidth <= minSize) {
+					document.documentElement.style.setProperty('--font-size', '6.25%');
 				}
 			}
 
 			$(window).on('resize', function () {
-				//setZoomLevel();
+				setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				//setZoomLevel();
+				setZoomLevel();
 			});
 		</script>
 	</head>
@@ -233,18 +242,19 @@
 				</script>
 			</header>
 
-			<div id="cm-body" class="cm-body">
+			<div id="cm-body" class="cm-body cm-body--bg">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/products/header.jpg" alt="" />
-						<h1>뉴스 및 공지사항</h1>
+						<img src="../assets/images/service/header.jpg" alt="E-Catalogue" />
+						<h1>E-Catalogue</h1>
+						<p>코일마스터의 모든 제품을 정리한 카탈로그를 다운로드 받으실 수 있습니다.</p>
 					</div>
 				</div>
 				<div class="cm-inner">
 					<div class="cm-breadcrumb">
 						<a href="" class="cm-breadcrumb__home">Home</a>
 						<div class="cm-breadcrumb__select">
-							<strong>SUPPORT</strong>
+							<strong>E-SERVICE</strong>
 							<ul>
 								<li><a href="/products">PRODUCTS</a></li>
 								<li><a href="/applications">APPLICATIONS</a></li>
@@ -254,42 +264,78 @@
 							</ul>
 						</div>
 						<div class="cm-breadcrumb__select">
-							<strong>뉴스 및 공지사항</strong>
+							<strong>E-Catalogue</strong>
 							<ul>
-								<li><a href="">뉴스 및 공지사항</a></li>
-								<li><a href="">FAQ</a></li>
-								<li><a href="">INQUIRY</a></li>
+								<li><a href="">E-Service</a></li>
+								<li><a href="">E-Card</a></li>
+								<li><a href="">E-Catalogue</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="cm-support">
+				<div class="cm-catalogue">
 					<div class="cm-inner">
-						<div class="cm-total">
-							<div class="cm-total">
-								<span class="cm-total__all">Total <strong>17</strong></span>
-								<span class="cm-total__current">1 Page</span>
-							</div>
+						<div class="cm-catalogue__title">
+							코일마스터의<br />
+							<strong>모든 제품을 정리한 카탈로그</strong>를<br />
+							다운로드 받으실 수 있습니다.
 						</div>
-						<div class="cm-support-list">
-							<div class="cm-support-list-item">
-								<div class="cm-support-list-item__thumb">
-									<img src="" alt="" />
+						<div class="cm-catalogue-list">
+							<div class="cm-catalogue-list-item">
+								<div class="cm-catalogue-list-item__thumb">
+									<img src="../assets/images/service/Inductors.png" alt="Inductors(Coils)" />
 								</div>
-								<div class="cm-support-list-item__title">제목</div>
-								<div class="cm-support-list-item__text">텍스트</div>
-								<div class="cm-support-list-item__date">2023-06-23</div>
+								<div class="cm-catalogue-list-item__info">
+									<strong>Inductors(Coils)</strong>
+									<p>고효율의 최적화 된 제품을 공급 합니다.<br />디테일한 정보를 카탈로그로 확인하세요</p>
+									<button class="cm-button download">
+										<span>Download</span>
+									</button>
+								</div>
+							</div>
+							<div class="cm-catalogue-list-item">
+								<div class="cm-catalogue-list-item__thumb">
+									<img src="../assets/images/service/EMC.png" alt="EMC Component & Transformer" />
+								</div>
+								<div class="cm-catalogue-list-item__info">
+									<strong>
+										EMC Component<br />
+										& Transformer
+									</strong>
+									<p>디테일한 정보를 카탈로그로 확인하세요</p>
+									<button class="cm-button download">
+										<span>Download</span>
+									</button>
+								</div>
+							</div>
+							<div class="cm-catalogue-list-item">
+								<div class="cm-catalogue-list-item__thumb">
+									<img src="../assets/images/service/Automotive.png" alt="Automotive" />
+								</div>
+								<div class="cm-catalogue-list-item__info">
+									<strong>Automotive</strong>
+									<p>
+										TS16949 인증과 AEC-Q200에 만족하는 제품만을 생산합니다. <br />
+										디테일한 정보를 카탈로그로 확인하세요
+									</p>
+									<button class="cm-button download">
+										<span>Download</span>
+									</button>
+								</div>
+							</div>
+							<div class="cm-catalogue-list-item">
+								<div class="cm-catalogue-list-item__thumb">
+									<img src="../assets/images/service/SMPS.png" alt="SMPS" />
+								</div>
+								<div class="cm-catalogue-list-item__info">
+									<strong>SMPS</strong>
+									<p>디테일한 정보를 카탈로그로 확인하세요</p>
+									<button class="cm-button download">
+										<span>Download</span>
+									</button>
+								</div>
 							</div>
 						</div>
-						<nav class="cm-pagination">
-							<ul>
-								<li><a href="#">Previous</a></li>
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">Next</a></li>
-							</ul>
-						</nav>
 					</div>
 				</div>
 			</div>
