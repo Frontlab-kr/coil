@@ -5094,6 +5094,7 @@ body {
 					border-radius: 4px;
 					border: solid 1px #cdcdcd;
 					background-color: #fff;
+					transition: all 0.1s ease;
 					&::before {
 						@include google-icon();
 						content: '\e5c7';
@@ -5104,6 +5105,13 @@ body {
 						&::before {
 							content: '\e5c5';
 						}
+					}
+					&:hover {
+						border-color: #2762b0;
+						color: #2762b0;
+					}
+					&.active {
+						background-color: #b1c8e6;
 					}
 				}
 			}
