@@ -65,6 +65,7 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
 		<script>
 			function setZoomLevel() {
 				var windowWidth = window.innerWidth;
@@ -97,7 +98,7 @@
 	<body>
 		<div class="cm">
 			<div class="cm-skip">
-				<a href="">본문영역 바로가기</a>
+				<a href="#cm-body">본문영역 바로가기</a>
 			</div>
 			<header id="cm-header" class="cm-header">
 				<div class="cm-inner">
@@ -238,24 +239,6 @@
 						} else {
 						}
 					});
-					// 스크롤 이벤트를 감지하는 함수
-
-					function handleScroll() {
-						var targetElement = document.querySelector('.cm-products-lineup');
-						var targetOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;
-						console.log(targetOffset);
-
-						var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-						if (scrollPosition >= targetOffset) {
-							$('html').addClass('mode-sticky');
-						} else if (scrollPosition <= targetOffset) {
-							$('html').removeClass('mode-sticky');
-						}
-					}
-
-					// 스크롤 이벤트 리스너를 등록합니다
-					window.addEventListener('scroll', handleScroll);
 				</script>
 			</header>
 
@@ -316,61 +299,513 @@
 					</div>
 					<div class="cm-products-search">
 						<div class="cm-inner">
-							<h3 class="cm-products-lineup__title">Product Lineup</h3>
-							<div class="cm-products-lineup__list">
-								<a href="" class="active">Power Inductors</a>
-								<a href="">Coupled Power Inductors</a>
-								<a href="">Inductors for Class D Amplifier</a>
-								<a href="">Chip Inductors</a>
-								<a href="">Choke Coils for PFC</a>
-								<a href="">Toroidal Choke Coils</a>
-								<a href="">Transfonder Coils</a>
-								<a href="">LED Drive Inductors</a>
-							</div>
-							<select name="" id="">
-								<option value="">Power Inductors</option>
-								<option value="">Coupled Power Inductors</option>
-								<option value="">Inductors for Class D Amplifier</option>
-								<option value="">Chip Inductors</option>
-								<option value="">Choke Coils for PFC</option>
-								<option value="">Toroidal Choke Coils</option>
-								<option value="">Transfonder Coils</option>
-								<option value="">LED Drive Inductors</option>
-							</select>
+							<form action="">
+								<div class="cm-products-search-form">
+									<div class="cm-products-search-list">
+										<div class="cm-products-search-item">
+											<div class="cm-products-search-item__title">Category</div>
+											<div class="cm-products-search-item__contents">
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col mo-col-12">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" checked />
+															<label class="form-check-label"> Power Inductors </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col mo-col-12">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Coupled Power Inductors </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col mo-col-12">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Inductors for Class D Amplifier </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col mo-col-12">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Chip Inductors </label>
+														</a>
+													</div>
+												</div>
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col mo-col-12">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Choke Coils for PFC </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col mo-col-12">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Toroidal Choke Coils </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col mo-col-12">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Transfonder Coils </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col mo-col-12">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> LED Drive Inductors </label>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="cm-products-search-item">
+											<div class="cm-products-search-item__title">Automotive(AEC Q200)</div>
+											<div class="cm-products-search-item__contents">
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" checked />
+															<label class="form-check-label"> Yes </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> No </label>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="cm-products-search-item">
+											<div class="cm-products-search-item__title">Structure</div>
+											<div class="cm-products-search-item__contents">
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" checked />
+															<label class="form-check-label"> Shield </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Semi-Shield </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Non-Shield </label>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="cm-products-search-item">
+											<div class="cm-products-search-item__title">Material</div>
+											<div class="cm-products-search-item__contents">
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" checked />
+															<label class="form-check-label"> Metal </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Ferrite </label>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="cm-products-search-item">
+											<div class="cm-products-search-item__title">Winding</div>
+											<div class="cm-products-search-item__contents">
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" checked />
+															<label class="form-check-label"> Wire Wound </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Multilayer </label>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="cm-products-search-item">
+											<div class="cm-products-search-item__title">Terminal</div>
+											<div class="cm-products-search-item__contents">
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" checked />
+															<label class="form-check-label"> Plating </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Wire Pin </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Pin </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> 4 Pin </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Base </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="checkbox" />
+															<label class="form-check-label"> Radial </label>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="cm-products-search-item">
+											<div class="cm-products-search-item__title">Max Temperature</div>
+											<div class="cm-products-search-item__contents">
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" checked />
+															<label class="form-check-label"> All </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label"> ≥ 85°C </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label"> ≥ 105°C </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label"> ≥ 125°C </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label"> ≥ 130°C </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label"> ≥ 145°C </label>
+														</a>
+													</div>
+												</div>
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label"> ≥ 150°C </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label"> ≥ 155°C </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label"> 165°C </label>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="cm-products-search-item">
+											<div class="cm-products-search-item__title">Min Temperature</div>
+											<div class="cm-products-search-item__contents">
+												<div class="cm-products-search-item__row">
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" checked />
+															<label class="form-check-label"> All </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label">- 55°C </label>
+														</a>
+													</div>
+													<div class="cm-products-search-item__col col-2 mo-col-6">
+														<a href="" class="form-check">
+															<input class="form-check-input" type="radio" />
+															<label class="form-check-label"> ≤ -40°C </label>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="pc">
+										<div class="cm-products-search-table">
+											<table>
+												<colgroup>
+													<col style="width: 180px" />
+													<col style="width: 180px" />
+													<col style="width: 180px" />
+													<col style="width: 180px" />
+													<col style="width: 180px" />
+													<col style="width: 180px" />
+													<col style="width: 360px" />
+												</colgroup>
+												<thead>
+													<tr>
+														<th>Size (L*W) <span>mm</span></th>
+														<th>Height Max <span>mm</span></th>
+														<th>Inductance <span>uH</span></th>
+														<th>DCR Max <span>mΩ</span></th>
+														<th>Isat Typ. <span>A</span></th>
+														<th>Itemp Typ. <span>A</span></th>
+														<th>Search By Part Number</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<select>
+																<option value="">Size</option>
+															</select>
+														</td>
+														<td>
+															<input type="text" placeholder="From" />
+															<p>~</p>
+															<input type="text" placeholder="To" />
+														</td>
+														<td>
+															<input type="text" placeholder="From" />
+															<p>~</p>
+															<input type="text" placeholder="To" />
+														</td>
+														<td>
+															<input type="text" placeholder="From" />
+															<p>~</p>
+															<input type="text" placeholder="To" />
+														</td>
+														<td>
+															<input type="text" placeholder="From" />
+															<p>~</p>
+															<input type="text" placeholder="To" />
+														</td>
+														<td>
+															<input type="text" placeholder="From" />
+															<p>~</p>
+															<input type="text" placeholder="To" />
+														</td>
+														<td>
+															<input type="text" placeholder="Search By Part Number" />
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="mo">
+										<div class="cm-products-search-table">
+											<div class="cm-products-search-table__title">Size (L*W) <span>mm</span></div>
+											<div class="cm-products-search-table__contents">
+												<select>
+													<option value="">Size</option>
+												</select>
+											</div>
+											<div class="cm-products-search-table__title">Height Max <span>mm</span></div>
+											<div class="cm-products-search-table__contents">
+												<input type="text" placeholder="From" />
+												<p>~</p>
+												<input type="text" placeholder="To" />
+											</div>
+											<div class="cm-products-search-table__title">Inductance <span>uH</span></div>
+											<div class="cm-products-search-table__contents">
+												<input type="text" placeholder="From" />
+												<p>~</p>
+												<input type="text" placeholder="To" />
+											</div>
+											<div class="cm-products-search-table__title">DCR Max <span>mΩ</span></div>
+											<div class="cm-products-search-table__contents">
+												<input type="text" placeholder="From" />
+												<p>~</p>
+												<input type="text" placeholder="To" />
+											</div>
+											<div class="cm-products-search-table__title">Isat Typ. <span>A</span></div>
+											<div class="cm-products-search-table__contents">
+												<input type="text" placeholder="From" />
+												<p>~</p>
+												<input type="text" placeholder="To" />
+											</div>
+											<div class="cm-products-search-table__title">Itemp Typ. <span>A</span></div>
+											<div class="cm-products-search-table__contents">
+												<input type="text" placeholder="From" />
+												<p>~</p>
+												<input type="text" placeholder="To" />
+											</div>
+											<div class="cm-products-search-table__title">earch By Part Number</div>
+											<div class="cm-products-search-table__contents">
+												<input type="text" placeholder="Search By Part Number" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cm-products-search-button">
+									<button class="cm-button cm-button--primary"><span>Search</span></button>
+								</div>
+								<button class="cm-products-search__toggle">Open</button>
+							</form>
 						</div>
+						<script>
+							$('.cm-products-search__toggle').on('click', function () {
+								if ($('.cm-products-search').hasClass('active')) {
+									$(this).text('Open');
+								} else {
+									$(this).text('Close');
+								}
+								$('.cm-products-search').toggleClass('active');
+								return false;
+							});
+						</script>
 					</div>
 					<div class="cm-inner">
+						<div class="cm-products-table__head">
+							<p>Total <strong>3</strong></p>
+						</div>
 						<div class="cm-products-table">
-							<div class="cm-products-table__head">
-								<p>Total<strong>3</strong></p>
-							</div>
 							<div class="cm-products-table__wrap">
 								<table>
 									<thead>
 										<tr>
-											<th>Image</th>
-											<th>Catalog</th>
-											<th>Automotive<br />Grade</th>
-											<th>Features</th>
-											<th>Series</th>
-											<th>Part Number</th>
-											<th>LxW<br /><span>mm</span></th>
 											<th>
-												Height <br /><span>mm</span>
-												Max.
+												<div class="cm-products-table__th"><p>Image</p></div>
 											</th>
-											<th>Inductance <br /><span>uH</span></th>
-											<th>DCR <br /><span>mo</span> Max.</th>
-											<th>Isat <br /><span>A</span> Typ.</th>
-											<th>Itemp <br /><span>A</span> Typ.</th>
-											<th>Inquiry</th>
+											<th>
+												<div class="cm-products-table__th"><p>Catalog</p></div>
+											</th>
+											<th>
+												<div class="cm-products-table__th">
+													<p>Automotive<br />Grade</p>
+												</div>
+											</th>
+											<th>
+												<div class="cm-products-table__th"><p>Features</p></div>
+											</th>
+											<th>
+												<div class="cm-products-table__th"><p>Series</p></div>
+											</th>
+											<th>
+												<div class="cm-products-table__th">
+													<p>Part Number</p>
+												</div>
+												<div class="cm-products-table__sort">
+													<a href="javascript:void(0)" class="down active"></a>
+													<a href="javascript:void(0)" class="up"></a>
+												</div>
+											</th>
+											<th>
+												<div class="cm-products-table__th">
+													<p>LxW<br /><span>mm</span></p>
+												</div>
+												<div class="cm-products-table__sort">
+													<a href="javascript:void(0)" class="down active"></a>
+													<a href="javascript:void(0)" class="up"></a>
+												</div>
+											</th>
+											<th>
+												<div class="cm-products-table__th">
+													<p>
+														Height <br /><span>mm</span>
+														Max.
+													</p>
+												</div>
+												<div class="cm-products-table__sort">
+													<a href="javascript:void(0)" class="down active"></a>
+													<a href="javascript:void(0)" class="up"></a>
+												</div>
+											</th>
+
+											<th>
+												<div class="cm-products-table__th">
+													<p>Inductance <br /><span>uH</span></p>
+												</div>
+												<div class="cm-products-table__sort">
+													<a href="javascript:void(0)" class="down active"></a>
+													<a href="javascript:void(0)" class="up"></a>
+												</div>
+											</th>
+											<th>
+												<div class="cm-products-table__th">
+													<p>DCR <br /><span>mo</span> Max.</p>
+												</div>
+												<div class="cm-products-table__sort">
+													<a href="javascript:void(0)" class="down active"></a>
+													<a href="javascript:void(0)" class="up"></a>
+												</div>
+											</th>
+											<th>
+												<div class="cm-products-table__th">
+													<p>Isat <br /><span>A</span> Typ.</p>
+												</div>
+												<div class="cm-products-table__sort">
+													<a href="javascript:void(0)" class="down active"></a>
+													<a href="javascript:void(0)" class="up"></a>
+												</div>
+											</th>
+											<th>
+												<div class="cm-products-table__th">
+													<p>Itemp <br /><span>A</span> Typ.</p>
+												</div>
+												<div class="cm-products-table__sort">
+													<a href="javascript:void(0)" class="down active"></a>
+													<a href="javascript:void(0)" class="up"></a>
+												</div>
+											</th>
+											<th>
+												<div class="cm-products-table__th"><p>Inquiry</p></div>
+												<div class="cm-products-table__sort">
+													<a href="javascript:void(0)" class="down active"></a>
+													<a href="javascript:void(0)" class="up"></a>
+												</div>
+											</th>
 										</tr>
 									</thead>
 
 									<tbody>
 										<tr>
 											<td>
-												<a href="/storage/items/CMMPF-SB.png">
+												<a href="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png">
 													<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
 												</a>
 											</td>
@@ -386,17 +821,17 @@
 											</td>
 
 											<td>
-												<span class="cm-badge" style="border-color: #2b64ab; background-color: #ebf4ff">Shield</span><br />
-												<span class="cm-badge" style="border-color: #9d65b2; background-color: #f8ebff">Metal</span><br />
-												<span class="cm-badge" style="border-color: #ff5f83; background-color: #ffe7ec">Wire wound</span><br />
-												<span class="cm-badge" style="border-color: #74a54c; background-color: #f1ffe6">Plating</span><br />
-												<span class="cm-badge" style="border-color: #ff9f5f; background-color: #fff4e7">Type</span><br />
-												<span class="cm-badge" style="border-color: #a6a6a6; background-color: #f5f5f5">Core Type</span>
+												<span class="cm-badge cm-badge--structure">Shield</span><br />
+												<span class="cm-badge cm-badge--material">Metal</span><br />
+												<span class="cm-badge cm-badge--winding">Wire wound</span><br />
+												<span class="cm-badge cm-badge--terminal">Plating</span><br />
+												<span class="cm-badge cm-badge--type">Type</span><br />
+												<span class="cm-badge cm-badge--coretype">Core Type</span>
 											</td>
 
 											<td>CMMPF-SB</td>
 
-											<td>CMMPF15100QL-SB</td>
+											<td><a href="">CMMPF15100QL-SB</a></td>
 
 											<td>15x15</td>
 
@@ -432,17 +867,17 @@
 											</td>
 
 											<td>
-												<span class="cm-badge" style="border-color: #2b64ab; background-color: #ebf4ff">Shield</span><br />
-												<span class="cm-badge" style="border-color: #9d65b2; background-color: #f8ebff">Metal</span><br />
-												<span class="cm-badge" style="border-color: #ff5f83; background-color: #ffe7ec">Wire wound</span><br />
-												<span class="cm-badge" style="border-color: #74a54c; background-color: #f1ffe6">Plating</span><br />
-												<span class="cm-badge" style="border-color: #ff9f5f; background-color: #fff4e7">Type</span><br />
-												<span class="cm-badge" style="border-color: #a6a6a6; background-color: #f5f5f5">Core Type</span>
+												<span class="cm-badge cm-badge--structure">Shield</span><br />
+												<span class="cm-badge cm-badge--material">Metal</span><br />
+												<span class="cm-badge cm-badge--winding">Wire wound</span><br />
+												<span class="cm-badge cm-badge--terminal">Plating</span><br />
+												<span class="cm-badge cm-badge--type">Type</span><br />
+												<span class="cm-badge cm-badge--coretype">Core Type</span>
 											</td>
 
 											<td>CMMPF-SB</td>
 
-											<td>CMMPF15100QL-SB</td>
+											<td><a href="">CMMPF15100QL-SB</a></td>
 
 											<td>15x15</td>
 
@@ -478,17 +913,16 @@
 											</td>
 
 											<td>
-												<span class="cm-badge" style="border-color: #2b64ab; background-color: #ebf4ff">Shield</span><br />
-												<span class="cm-badge" style="border-color: #9d65b2; background-color: #f8ebff">Metal</span><br />
-												<span class="cm-badge" style="border-color: #ff5f83; background-color: #ffe7ec">Wire wound</span><br />
-												<span class="cm-badge" style="border-color: #74a54c; background-color: #f1ffe6">Plating</span><br />
-												<span class="cm-badge" style="border-color: #ff9f5f; background-color: #fff4e7">Type</span><br />
-												<span class="cm-badge" style="border-color: #a6a6a6; background-color: #f5f5f5">Core Type</span>
+												<span class="cm-badge cm-badge--structure">Shield</span><br />
+												<span class="cm-badge cm-badge--material">Metal</span><br />
+												<span class="cm-badge cm-badge--winding">Wire wound</span><br />
+												<span class="cm-badge cm-badge--terminal">Plating</span><br />
+												<span class="cm-badge cm-badge--type">Type</span><br />
+												<span class="cm-badge cm-badge--coretype">Core Type</span>
 											</td>
-
 											<td>CMMPF-SB</td>
 
-											<td>CMMPF15100QL-SB</td>
+											<td><a href="">CMMPF15100QL-SB</a></td>
 
 											<td>15x15</td>
 
@@ -524,17 +958,17 @@
 											</td>
 
 											<td>
-												<span class="cm-badge" style="border-color: #2b64ab; background-color: #ebf4ff">Shield</span><br />
-												<span class="cm-badge" style="border-color: #9d65b2; background-color: #f8ebff">Metal</span><br />
-												<span class="cm-badge" style="border-color: #ff5f83; background-color: #ffe7ec">Wire wound</span><br />
-												<span class="cm-badge" style="border-color: #74a54c; background-color: #f1ffe6">Plating</span><br />
-												<span class="cm-badge" style="border-color: #ff9f5f; background-color: #fff4e7">Type</span><br />
-												<span class="cm-badge" style="border-color: #a6a6a6; background-color: #f5f5f5">Core Type</span>
+												<span class="cm-badge cm-badge--structure">Shield</span><br />
+												<span class="cm-badge cm-badge--material">Metal</span><br />
+												<span class="cm-badge cm-badge--winding">Wire wound</span><br />
+												<span class="cm-badge cm-badge--terminal">Plating</span><br />
+												<span class="cm-badge cm-badge--type">Type</span><br />
+												<span class="cm-badge cm-badge--coretype">Core Type</span>
 											</td>
 
 											<td>CMMPF-SB</td>
 
-											<td>CMMPF15100QL-SB</td>
+											<td><a href="">CMMPF15100QL-SB</a></td>
 
 											<td>15x15</td>
 
@@ -558,10 +992,10 @@
 							<div class="cm-products-table-list">
 								<div class="cm-products-table-item">
 									<div class="cm-products-table-item__info">
+										<span class="material-symbols-outlined"> directions_car </span>
 										<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf">
 											<span class="material-symbols-outlined"> picture_as_pdf </span>
 										</a>
-										<span class="material-symbols-outlined"> directions_car </span>
 									</div>
 									<div class="cm-products-table-item__thumb">
 										<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
@@ -574,12 +1008,12 @@
 										<li>
 											<strong> Feature : </strong>
 											<p>
-												<span class="cm-badge" style="border-color: #2b64ab; background-color: #ebf4ff">Shield</span><br />
-												<span class="cm-badge" style="border-color: #9d65b2; background-color: #f8ebff">Metal</span><br />
-												<span class="cm-badge" style="border-color: #ff5f83; background-color: #ffe7ec">Wire wound</span><br />
-												<span class="cm-badge" style="border-color: #74a54c; background-color: #f1ffe6">Plating</span><br />
-												<span class="cm-badge" style="border-color: #ff9f5f; background-color: #fff4e7">Type</span><br />
-												<span class="cm-badge" style="border-color: #a6a6a6; background-color: #f5f5f5">Core Type</span>
+												<span class="cm-badge cm-badge--structure">Shield</span><br />
+												<span class="cm-badge cm-badge--material">Metal</span><br />
+												<span class="cm-badge cm-badge--winding">Wire wound</span><br />
+												<span class="cm-badge cm-badge--terminal">Plating</span><br />
+												<span class="cm-badge cm-badge--type">Type</span><br />
+												<span class="cm-badge cm-badge--coretype">Core Type</span>
 											</p>
 										</li>
 										<li><strong> Serise : </strong>CTSCB</li>
@@ -601,11 +1035,9 @@
 										<li>
 											<strong> Itemp Typ. <span>A</span> : </strong>17x17
 										</li>
-										<li>
+										<li class="d-flex">
 											<strong>Inquiry</strong>
-											<p>
-												<a href=""><span class="material-symbols-outlined"> sms </span></a>
-											</p>
+											<a href=""><span class="material-symbols-outlined"> sms </span></a>
 										</li>
 									</ul>
 								</div>
@@ -627,12 +1059,12 @@
 										<li>
 											<strong> Feature : </strong>
 											<p>
-												<span class="cm-badge" style="border-color: #2b64ab; background-color: #ebf4ff">Shield</span><br />
-												<span class="cm-badge" style="border-color: #9d65b2; background-color: #f8ebff">Metal</span><br />
-												<span class="cm-badge" style="border-color: #ff5f83; background-color: #ffe7ec">Wire wound</span><br />
-												<span class="cm-badge" style="border-color: #74a54c; background-color: #f1ffe6">Plating</span><br />
-												<span class="cm-badge" style="border-color: #ff9f5f; background-color: #fff4e7">Type</span><br />
-												<span class="cm-badge" style="border-color: #a6a6a6; background-color: #f5f5f5">Core Type</span>
+												<span class="cm-badge cm-badge--structure">Shield</span><br />
+												<span class="cm-badge cm-badge--material">Metal</span><br />
+												<span class="cm-badge cm-badge--winding">Wire wound</span><br />
+												<span class="cm-badge cm-badge--terminal">Plating</span><br />
+												<span class="cm-badge cm-badge--type">Type</span><br />
+												<span class="cm-badge cm-badge--coretype">Core Type</span>
 											</p>
 										</li>
 										<li><strong> Serise : </strong>CTSCB</li>
@@ -654,11 +1086,9 @@
 										<li>
 											<strong> Itemp Typ. <span>A</span> : </strong>17x17
 										</li>
-										<li>
+										<li class="d-flex">
 											<strong>Inquiry</strong>
-											<p>
-												<a href=""><span class="material-symbols-outlined"> sms </span></a>
-											</p>
+											<a href=""><span class="material-symbols-outlined"> sms </span></a>
 										</li>
 									</ul>
 								</div>
@@ -669,8 +1099,8 @@
 			</div>
 
 			<div class="cm-quick">
-				<a href="" class="cm-quick__inquiry"> INQUIRY </a>
-				<a href="" class="cm-quick__product"> PRODUCT </a>
+				<a href="/inquiry" class="cm-quick__inquiry"> INQUIRY </a>
+				<a href="/products" class="cm-quick__product"> PRODUCT </a>
 				<a href="javascript:void(0)" class="cm-quick__top"> TOP </a>
 				<script>
 					$('.cm-quick__top').on('click', function () {

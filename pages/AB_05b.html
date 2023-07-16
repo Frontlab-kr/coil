@@ -65,33 +65,24 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-
 		<script>
 			function setZoomLevel() {
-				var windowWidth = window.innerWidth;
-				var minSize = 993;
-				var maxSize = 1480;
-				var minFontSize = 66;
-				var maxFontSize = 100;
+				const screenWidth = window.innerWidth;
 
-				if (windowWidth >= minSize && windowWidth <= maxSize) {
-					var percentage = (windowWidth - minSize) / (maxSize - minSize);
-					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
-					var result = (fontSize / 100) * 6.25;
-					document.documentElement.style.setProperty('--font-size', result + '%');
-					console.log(result);
-				}
-				if (windowWidth <= minSize) {
-					document.documentElement.style.setProperty('--font-size', '6.25%');
+				if (screenWidth >= 993 && screenWidth <= 1500) {
+					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
+					document.body.style.zoom = `${zoomPercentage}%`;
+				} else {
+					document.body.style.zoom = '100%';
 				}
 			}
 
 			$(window).on('resize', function () {
-				setZoomLevel();
+				//setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				setZoomLevel();
+				//setZoomLevel();
 			});
 		</script>
 	</head>
@@ -245,8 +236,8 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/support/header.jpg" alt="INQUIRY" />
-						<h1>INQUIRY</h1>
+						<img src="../assets/images/about-us/header.jpg" alt="" />
+						<h1>인재채용</h1>
 						<p></p>
 					</div>
 				</div>
@@ -254,7 +245,7 @@
 					<div class="cm-breadcrumb">
 						<a href="" class="cm-breadcrumb__home">Home</a>
 						<div class="cm-breadcrumb__select">
-							<strong>SUPPORT</strong>
+							<strong>ABOUT US</strong>
 							<ul>
 								<li><a href="/products">PRODUCTS</a></li>
 								<li><a href="/applications">APPLICATIONS</a></li>
@@ -264,15 +255,19 @@
 							</ul>
 						</div>
 						<div class="cm-breadcrumb__select">
-							<strong>INQUIRY</strong>
+							<strong>인재 채용</strong>
 							<ul>
-								<li><a href="">뉴스 및 공지사항</a></li>
-								<li><a href="">FAQ</a></li>
-								<li><a href="">INQUIRY</a></li>
+								<li><a href="">CEO 인사말</a></li>
+								<li><a href="">회사 연혁</a></li>
+								<li><a href="">CI 소개</a></li>
+								<li><a href="">인증서 및 상장</a></li>
+								<li><a href="">회사 약도</a></li>
+								<li><a href="">인재 채용</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
+
 				<div class="cm-support">
 					<div class="cm-inner">
 						<div class="cm-support-inquiry">
@@ -280,32 +275,10 @@
 								<form action="">
 									<div class="cm-support-inquiry-form__title">
 										<p>
-											제품, 기술, 인증, 채용, 회사 등 <strong class="color-blue">궁금하신 점</strong>에 대해 남겨 주시면<br />
-											입력하신 이메일 주소로 빠른 시일 내로 답변 드리겠습니다.
+											<strong class="color-blue">코일마스터</strong>에<br />
+											<strong>젊음과 열정</strong>을 아낌 없이 투자해 줄<br />
+											<strong>훌륭한 인재</strong>를 모십니다.
 										</p>
-									</div>
-
-									<div class="cm-support-inquiry-form__text">
-										<p><strong>※</strong> 남겨주신 내용은 coilmaster@coilmaster.com 으로 전송됩니다.</p>
-									</div>
-
-									<div class="cm-support-inquiry-form__category">
-										<div class="form-check">
-											<input class="form-check-input" type="radio" checked />
-											<label class="form-check-label"> 제품 문의 </label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" />
-											<label class="form-check-label"> 기술 문의 </label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" />
-											<label class="form-check-label"> 인증 문의 </label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" />
-											<label class="form-check-label"> 채용 문의 </label>
-										</div>
 									</div>
 
 									<div class="cm-support-inquiry-form__row">
@@ -313,32 +286,44 @@
 											<strong>이름<span>*</span></strong>
 											<input type="text" />
 										</p>
+										<p class="hide"></p>
+									</div>
+									<div class="cm-support-inquiry-form__row">
 										<p>
-											<strong>이메일<span>*</span></strong>
+											<strong>연락처<span>*</span></strong>
+											<input type="text" />
+										</p>
+										<p>
+											<strong>이메일</strong>
 											<input type="text" />
 										</p>
 									</div>
 									<div class="cm-support-inquiry-form__row">
 										<p>
-											<strong>회사명<span>*</span></strong>
-											<input type="text" />
-										</p>
-										<p>
-											<strong>전화번호</strong>
-											<input type="text" />
-										</p>
-									</div>
-									<div class="cm-support-inquiry-form__row">
-										<p>
-											<strong>제목</strong>
+											<strong>제목<span>*</span></strong>
 											<input type="text" />
 										</p>
 									</div>
 									<div class="cm-support-inquiry-form__row">
 										<p>
 											<strong>내용</strong>
-											<textarea placeholder="상세 제품 Value(용량값)는 직접 입력해주세요."></textarea>
+											<textarea></textarea>
 										</p>
+									</div>
+									<div class="cm-support-inquiry-form__file">
+										<strong>첨부파일</strong>
+										<span class="cm-file">
+											<span class="cm-file__text" id="file-name">선택된 파일 없음</span>
+											<input type="file" id="sm-ip-1" />
+											<label class="cm-file__button" for="sm-ip-1">파일선택</label>
+										</span>
+										<script>
+											$('.cm-file input').on('change', function (event) {
+												var name = event.target.files[0].name;
+												$(this).parents('.cm-file').find('.cm-file__text').text(name);
+												$(this).parents('.cm-file').addClass('active');
+											});
+										</script>
 									</div>
 
 									<div class="cm-support-inquiry-form__agree">
@@ -569,7 +554,7 @@
 										</div>
 									</div>
 									<div class="cm-support-inquiry-form__button">
-										<button class="cm-button"><span>등록</span></button>
+										<button class="cm-button"><span>지원하기</span></button>
 									</div>
 								</form>
 							</div>

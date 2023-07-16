@@ -97,7 +97,7 @@
 	<body>
 		<div class="cm">
 			<div class="cm-skip">
-				<a href="">본문영역 바로가기</a>
+				<a href="#cm-body">본문영역 바로가기</a>
 			</div>
 			<header id="cm-header" class="cm-header">
 				<div class="cm-inner">
@@ -238,24 +238,6 @@
 						} else {
 						}
 					});
-					// 스크롤 이벤트를 감지하는 함수
-
-					function handleScroll() {
-						var targetElement = document.querySelector('.cm-products-lineup');
-						var targetOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;
-						console.log(targetOffset);
-
-						var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-						if (scrollPosition >= targetOffset) {
-							$('html').addClass('mode-sticky');
-						} else if (scrollPosition <= targetOffset) {
-							$('html').removeClass('mode-sticky');
-						}
-					}
-
-					// 스크롤 이벤트 리스너를 등록합니다
-					window.addEventListener('scroll', handleScroll);
 				</script>
 			</header>
 
@@ -326,13 +308,17 @@
 							</script>
 						</div>
 
-						<div class="cm-products__text">CoilMaster는 원료 기술, 권선 기술, 공정 자동화설비 기술을 통해 고효율의 최적화 된 제품을 공급합니다.</div>
+						<div class="cm-products__text">
+							CoilMaster는 원료 기술, 권선 기술,<br class="mo" />
+							공정 자동화설비 기술을 통해<br class="mo" />
+							고효율의 최적화 된 제품을 공급합니다.
+						</div>
 					</div>
 					<div class="cm-products-lineup">
 						<div class="cm-inner">
 							<h3 class="cm-products-lineup__title">Product Lineup</h3>
 							<div class="cm-products-lineup__list">
-								<a href="" class="active">Power Inductors</a>
+								<a href="#test" class="active">Power Inductors</a>
 								<a href="">Coupled Power Inductors</a>
 								<a href="">Inductors for Class D Amplifier</a>
 								<a href="">Chip Inductors</a>
@@ -341,6 +327,16 @@
 								<a href="">Transfonder Coils</a>
 								<a href="">LED Drive Inductors</a>
 							</div>
+							<script>
+								$('.cm-products-lineup__list a ').on('click', function () {
+									var target = $(this).attr('href');
+									var offset = $(target).offset();
+									var tabHeight = $('.cm-products-lineup').outerHeight();
+									var margin = 40;
+									$('html, body').animate({ scrollTop: offset.top - tabHeight - margin }, 400);
+									return false;
+								});
+							</script>
 							<select name="" id="">
 								<option value="">Power Inductors</option>
 								<option value="">Coupled Power Inductors</option>
@@ -352,6 +348,28 @@
 								<option value="">LED Drive Inductors</option>
 							</select>
 						</div>
+						<script>
+							// 스크롤 이벤트를 감지하는 함수
+							function handleScroll() {
+								var targetElement = document.querySelector('.cm-products-lineup');
+								var targetOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;
+								var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+								if (scrollPosition >= targetOffset) {
+									$('html').addClass('mode-sticky');
+								} else if (scrollPosition <= targetOffset) {
+									$('html').removeClass('mode-sticky');
+								}
+							}
+
+							// 스크롤 이벤트 리스너를 등록합니다
+							window.addEventListener('scroll', handleScroll);
+
+							$(document).ready(function () {
+								var stickyHeight = $('.cm-products-lineup').outerHeight();
+								$('.cm-products-lineup ~ .cm-inner .cm-products-table table thead th').css('top', stickyHeight + 'rem');
+							});
+						</script>
 					</div>
 					<div class="cm-inner">
 						<div class="cm-products-spotlights">
@@ -454,40 +472,58 @@
 							</script>
 						</div>
 
-						<div class="cm-products-sort">
-							<dl>
-								<dt>Automotive(AEC Q200)</dt>
-								<dd>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault01" />
-										<label class="form-check-label" for="flexCheckDefault01"> Yes </label>
+						<form action="">
+							<div class="cm-products-search-form">
+								<div class="cm-products-search-list">
+									<div class="cm-products-search-item">
+										<div class="cm-products-search-item__title">Automotive(AEC Q200)</div>
+										<div class="cm-products-search-item__contents">
+											<div class="cm-products-search-item__row">
+												<div class="cm-products-search-item__col col-2 mo-col-6">
+													<a href="" class="form-check">
+														<input class="form-check-input" type="checkbox" checked />
+														<label class="form-check-label"> Yes </label>
+													</a>
+												</div>
+												<div class="cm-products-search-item__col col-2 mo-col-6">
+													<a href="" class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label"> No </label>
+													</a>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault02" />
-										<label class="form-check-label" for="flexCheckDefault02"> No </label>
+									<div class="cm-products-search-item">
+										<div class="cm-products-search-item__title">Structure</div>
+										<div class="cm-products-search-item__contents">
+											<div class="cm-products-search-item__row">
+												<div class="cm-products-search-item__col col-2 mo-col-6">
+													<a href="" class="form-check">
+														<input class="form-check-input" type="checkbox" checked />
+														<label class="form-check-label"> Shield </label>
+													</a>
+												</div>
+												<div class="cm-products-search-item__col col-2 mo-col-6">
+													<a href="" class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label"> Semi-Shield </label>
+													</a>
+												</div>
+												<div class="cm-products-search-item__col col-2 mo-col-6">
+													<a href="" class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label"> Non-Shield</label>
+													</a>
+												</div>
+											</div>
+										</div>
 									</div>
-								</dd>
-							</dl>
-							<dl>
-								<dt>Structure</dt>
-								<dd>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault01" />
-										<label class="form-check-label" for="flexCheckDefault01"> Shield </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault01" />
-										<label class="form-check-label" for="flexCheckDefault01"> Semi-Shield </label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault01" />
-										<label class="form-check-label" for="flexCheckDefault01"> Non-Shield </label>
-									</div>
-								</dd>
-							</dl>
-						</div>
+								</div>
+							</div>
+						</form>
 
-						<div class="cm-products-table">
+						<div class="cm-products-table" id="test">
 							<h4>Power Inductors</h4>
 
 							<div class="cm-products-table__wrap">
@@ -632,7 +668,7 @@
 											<td>22.00~35.00 A</td>
 
 											<td>
-												<a href="javascript:void(0)" data-toggle="modal" data-target="#messageModal"><span class="material-symbols-outlined"> sms </span> </a>
+												<a href="javascript:void(0)" class="open-inquiry"><span class="material-symbols-outlined"> sms </span> </a>
 											</td>
 										</tr>
 										<tr>
@@ -678,7 +714,7 @@
 											<td>22.00~35.00 A</td>
 
 											<td>
-												<a href="javascript:void(0)" data-toggle="modal" data-target="#messageModal"><span class="material-symbols-outlined"> sms </span> </a>
+												<a href="javascript:void(0)" class="open-inquiry"><span class="material-symbols-outlined"> sms </span> </a>
 											</td>
 										</tr>
 										<tr>
@@ -723,7 +759,7 @@
 											<td>22.00~35.00 A</td>
 
 											<td>
-												<a href="javascript:void(0)" data-toggle="modal" data-target="#messageModal"><span class="material-symbols-outlined"> sms </span> </a>
+												<a href="javascript:void(0)" class="open-inquiry"><span class="material-symbols-outlined"> sms </span> </a>
 											</td>
 										</tr>
 										<tr>
@@ -769,7 +805,7 @@
 											<td>22.00~35.00 A</td>
 
 											<td>
-												<a href="javascript:void(0)" data-toggle="modal" data-target="#messageModal"><span class="material-symbols-outlined"> sms </span> </a>
+												<a href="javascript:void(0)" class="open-inquiry"><span class="material-symbols-outlined"> sms </span> </a>
 											</td>
 										</tr>
 									</tbody>
@@ -778,10 +814,10 @@
 							<div class="cm-products-table-list">
 								<div class="cm-products-table-item">
 									<div class="cm-products-table-item__info">
+										<span class="material-symbols-outlined"> directions_car </span>
 										<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf">
 											<span class="material-symbols-outlined"> picture_as_pdf </span>
 										</a>
-										<span class="material-symbols-outlined"> directions_car </span>
 									</div>
 									<div class="cm-products-table-item__thumb">
 										<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
@@ -821,20 +857,18 @@
 										<li>
 											<strong> Itemp Typ. <span>A</span> : </strong>17x17
 										</li>
-										<li>
+										<li class="d-flex">
 											<strong>Inquiry</strong>
-											<p>
-												<a href=""><span class="material-symbols-outlined"> sms </span></a>
-											</p>
+											<a href="javascript:void(0)" class="open-inquiry"><span class="material-symbols-outlined"> sms </span> </a>
 										</li>
 									</ul>
 								</div>
 								<div class="cm-products-table-item">
 									<div class="cm-products-table-item__info">
+										<span class="material-symbols-outlined"> directions_car </span>
 										<a target="_blank" href="/storage/products/CMMPF15100QL-SB.pdf">
 											<span class="material-symbols-outlined"> picture_as_pdf </span>
 										</a>
-										<span class="material-symbols-outlined"> directions_car </span>
 									</div>
 									<div class="cm-products-table-item__thumb">
 										<img src="https://coilmaster20.lab812.com/storage/items/CMMPF-SB.png" />
@@ -874,11 +908,9 @@
 										<li>
 											<strong> Itemp Typ. <span>A</span> : </strong>17x17
 										</li>
-										<li>
+										<li class="d-flex">
 											<strong>Inquiry</strong>
-											<p>
-												<a href=""><span class="material-symbols-outlined"> sms </span></a>
-											</p>
+											<a href="javascript:void(0)" class="open-inquiry"><span class="material-symbols-outlined"> sms </span> </a>
 										</li>
 									</ul>
 								</div>
@@ -886,11 +918,303 @@
 						</div>
 					</div>
 				</div>
+				<script>
+					$(document).ready(function () {
+						$('.open-inquiry').on('click', function () {
+							$('.cm-inquiry').addClass('active');
+						});
+						$('.cm-inquiry__close,.cm-inquiry__bg').on('click', function () {
+							$('.cm-inquiry').removeClass('active');
+						});
+						$(document).keyup(function (e) {
+							if (e.key === 'Escape') {
+								$('.cm-inquiry').removeClass('active');
+							}
+						});
+					});
+				</script>
+			</div>
+
+			<div class="cm-inquiry">
+				<div class="cm-inquiry__bg"></div>
+				<div class="cm-inquiry__inner">
+					<h2 class="cm-inquiry__title">INQUIRY</h2>
+					<div class="cm-inquiry-form">
+						<form action="">
+							<div class="cm-inquiry-form__text">
+								<p>
+									<strong>※</strong> 이 제품에 대해 궁금하신 사항을 남겨 주시면<br />
+									입력하신 이메일 주소로 빠른 시일 내로 답변 드리겠습니다.<br />
+									남겨주신 내용은 coilmaster@coilmaster.com 으로 전송됩니다.
+								</p>
+							</div>
+
+							<div class="cm-inquiry-form__row">
+								<p>
+									<strong>이름<span>*</span></strong>
+									<input type="text" />
+								</p>
+								<p>
+									<strong>이메일<span>*</span></strong>
+									<input type="text" />
+								</p>
+							</div>
+							<div class="cm-inquiry-form__row">
+								<p>
+									<strong>회사명<span>*</span></strong>
+									<input type="text" />
+								</p>
+								<p>
+									<strong>전화번호</strong>
+									<input type="text" />
+								</p>
+							</div>
+							<div class="cm-inquiry-form__row">
+								<p>
+									<strong>제목</strong>
+									<input type="text" />
+								</p>
+							</div>
+							<div class="cm-inquiry-form__row">
+								<p>
+									<strong>내용</strong>
+									<textarea placeholder="상세 제품 Value(용량값)는 직접 입력해주세요."></textarea>
+								</p>
+							</div>
+
+							<div class="cm-inquiry-form__agree">
+								<div id="SE-08feee63-2d8c-4a64-bbbe-5f6cd7a99099" class="se-module se-module-text __se-unit">
+									<p id="SE-9e8d3e4f-a0ad-4f65-8289-7d82e3a41f50" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-a2fa6aef-a7c4-44b3-a963-7899e0bb2ff9" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											><b>개인정보 처리방침</b></span
+										>
+									</p>
+									<p id="SE-660b97d8-905e-43df-ac43-ce5545f7af43" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-f37f817b-503b-415a-987f-f64cf0bec1f2" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>(주)코일마스터는 개인정보 보호법 제30조에 따라 정보주체(고객)의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록
+											하기 위하여 다음과 같이 개인정보 처리지침을 수립․공개합니다.
+										</span>
+									</p>
+									<p id="SE-39333d88-86cf-48c3-86b0-e5bacf622f7a" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-7f7d0669-79e3-4487-a0ed-d9f445cc9bc8" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											1. 개인정보의 처리목적 (주)코일마스터는 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의 목적 이외의 용도로는 이용하지 않습니다.
+										</span>
+									</p>
+									<p id="SE-66f5aa8a-19cb-4f00-94ab-14abfda1ead9" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-6c9ae461-916e-4f2b-bb54-7940afa50145" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											- 고객에 대한 서비스 제공에 따른 본인 식별․인증,관리, 물품 또는 서비스 공급에 따른 금액 결제, 물품 또는 서비스의 공급․배송 등
+										</span>
+									</p>
+									<p id="SE-1d677ddf-a352-409a-b7fb-f8fd82791609" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-d9f538c1-0211-4b5e-9799-3d04fef54587" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>2. 개인정보의 처리 및 보유기간
+										</span>
+									</p>
+									<p id="SE-58124e38-5d6a-49ab-bfff-ea50699c3e35" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-434d3853-be17-4019-a8ef-d32640ea920a" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											① (주)코일마스터는 정보주체로부터 개인정보를 수집할 때 동의받은 개인정보 보유․이용기간 또는 법령에 따른 개인정보 보유․이용기간 내에서
+											개인정보를 처리․보유합니다.
+										</span>
+									</p>
+									<p id="SE-0fd371ea-362d-4ff3-9922-db421c237012" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-2f453945-2a2e-4179-9876-e1508bf41046" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											② 구체적인 개인정보 처리 및 보유 기간은 다음과 같습니다.
+										</span>
+									</p>
+									<p id="SE-44af1674-045a-4e88-803a-6c93be40f0bd" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-1d0ef907-bff6-483c-9a59-6ecd87f0846a" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											- 고객 문의 및 관리 : 서비스 이용계약 또는 회원가입 해지시까지, 다만 채권․채무관계 잔존시에는 해당 채권․채무관계 정산시까지
+										</span>
+									</p>
+									<p id="SE-03611896-f2e1-4202-96c3-6302e62b995b" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-cf8135cc-4e18-46aa-9c5e-c2504b41d70d" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											- 전자상거래에서의 계약․청약철회, 대금결제, 재화 등 공급기록 : 5년
+										</span>
+									</p>
+									<p id="SE-f26d5e6a-e2d9-4fd5-bd35-62e9dc048625" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-dc31b367-f013-40a8-82d4-2ac6c7be4fac" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>3. 개인정보의 제3자 제공 (주)코일마스터는 정보주체의 별도 동의, 법률의 특별한 규정 등 개인정보 보호법 제17조에 해당하는 경우 외에는
+											개인정보를 제3자에게 제공하지 않습니다.</span
+										>
+									</p>
+									<p id="SE-32a4a2e0-ab69-47f9-bd83-c304a8bc8b8f" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-800d290b-672e-4e34-925f-a8c2dab3726a" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>4. 개인정보처리의 위탁 ① (주)코일마스터는 업무처리를 위하여 개인정보 처리업무를 외부에 위탁하지 않습니다.</span
+										>
+									</p>
+									<p id="SE-da4b6fc0-b399-4bb8-ab28-861fbc4868d7" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-bc3b0dbd-0208-4eae-860e-316980fe9eb4" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>5. 정보주체와 법정대리인의 권리․의무 및 행사방법 정보주체는 (주)코일마스터에 대해 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할
+											수 있습니다.
+										</span>
+									</p>
+									<p id="SE-9aae7bf8-62ae-43f4-8075-b52eaf0a67fe" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-1efa5cc5-3d0e-41f8-90ff-4e318b462a36" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											1. 개인정보 열람요구</span
+										>
+									</p>
+									<p id="SE-265fb4d7-be4a-479c-af9e-0212694dfc44" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-c952cc26-d48a-484c-912e-ea827f4e3c20" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											2. 오류 등이 있을 경우 정정 요구
+										</span>
+									</p>
+									<p id="SE-4ecebb1a-27b9-4753-aee8-6b787149cf3a" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-1bcdedb3-3049-49fd-9c25-39e7fffe887a" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"> 3. 삭제요구 </span>
+									</p>
+									<p id="SE-6fa46bb3-c4f7-424e-aaba-af42eb3aa7ce" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-b2a6122d-fca3-455f-9f34-9fce07a0f875" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											4. 처리정지 요구
+										</span>
+									</p>
+									<p id="SE-987fbce2-9b1f-4f4b-a17c-3851ea414c9f" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-c4083e97-cc69-4109-a929-66fbe5c96568" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>6. 처리하는 개인정보 항목 (주)코일마스터는 다음의 개인정보 항목을 처리하고 있습니다.
+										</span>
+									</p>
+									<p id="SE-6fbfabe8-a7ea-47d1-a6b6-e8b008d22808" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-8f6350b2-9d74-4cb9-a48b-3d146c9c2756" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											- 성명, 주소, 전화번호, 휴대전화번호, 이메일주소,</span
+										>
+									</p>
+									<p id="SE-04fbd83b-bb3b-47dc-b223-445c1810ed2f" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-16b56747-8afa-4f86-978c-b6aa021c4cef" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>7. 개인정보의 파기 ① (주)코일마스터는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당
+											개인정보를 파기합니다.
+										</span>
+									</p>
+									<p id="SE-7d6f3f80-5956-474f-a621-7b3f67c67be7" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-27b8b8e1-3778-4934-8d48-f92a4849c785" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											② (주)코일마스터는 다음의 방법으로 개인정보를 파기합니다.
+										</span>
+									</p>
+									<p id="SE-dba4b742-24df-4c00-a396-6b7537d7c08f" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-3f5ad23f-e0b2-4566-ab77-9fbdbf494a71" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											- 전자적 파일 : 파일 삭제, 디스크 포맷
+										</span>
+									</p>
+									<p id="SE-1a958f2e-ca20-4c93-ab13-91ccf8442b46" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-ebe23565-bafe-4dcd-aa15-659f3d52a025" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											- 종이 문서 : 분쇄하거나 소각
+										</span>
+									</p>
+									<p id="SE-d305f0b4-ba07-4d3f-aa76-3af1f74e14aa" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-26b6d935-72ed-4abe-82b6-44bc3fecaa3e" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>8. 개인정보의 안전성 확보조치 (주)코일마스터는 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다.
+										</span>
+									</p>
+									<p id="SE-78b123ac-8132-49d8-8c80-66d2d0e7fcfe" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-594f13b7-174f-499c-b36d-5db28be41a11" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											- 관리적 조치 : 내부관리계획 수립․시행, 직원․종업원 등에 대한 정기적 교육</span
+										>
+									</p>
+									<p id="SE-54077971-77bc-4cc8-8bdf-6e25f8056320" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-d45f966b-b579-49ab-a0c7-ba2237951c8c" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											- 기술적 조치 : 개인정보처리시스템(또는 개인정보가 저장된 컴퓨터)의 비밀번호 설정 등 접근권한 관리, 백신소프트웨어 등 보안프로그램 설치,
+											개인정보가 저장된 파일의 암호화
+										</span>
+									</p>
+									<p id="SE-567280a6-404e-4ff7-a0eb-1af95a29b8eb" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-196ead84-6d00-4929-a411-bbe3d8eaf3e5" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											- 물리적 조치 : 개인정보가 저장․보관된 장소의 시건, 출입통제 등
+										</span>
+									</p>
+									<p id="SE-48080276-2cd5-4cc4-818d-eadd0b805629" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-d4515f1d-a05d-4718-a360-3ce770c27590" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>9. 개인정보 자동 수집 장치의 설치∙운영 및 거부에 관한 사항
+										</span>
+									</p>
+									<p id="SE-c3aa81df-7058-4f27-9048-87225c23ab4b" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-6abd12fc-596a-41eb-98d0-473b3f673290" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											① (주)코일마스터는 이용자에게 개별적인 맞춤서비스를 제공하기 위해 이용정보를 저장하고 수시로 불러오는 ‘쿠키(cookie)’를 사용합니다.</span
+										>
+									</p>
+									<p id="SE-1910b8e4-ab20-477a-9f6a-67f98db7b72a" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-b3c3955d-703f-44c5-b549-0bda91f50e2e" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											② 쿠키는 웹사이트를 운영하는데 이용되는 서버(http)가 이용자의 컴퓨터 브라우저에게 보내는 소량의 정보이며 이용자의 PC 컴퓨터내의
+											하드디스크에 저장되기도 합니다.</span
+										>
+									</p>
+									<p id="SE-da13b484-5196-4932-86f1-da6e78723027" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-633206fe-0fb5-421c-ae98-fd963be92df8" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											가. 쿠키의 사용목적: 이용자가 방문한 각 서비스와 웹 사이트들에 대한 방문 및 이용형태, 인기 검색어, 보안접속 여부, 등을 파악하여 이용자에게
+											최적화된 정보 제공을 위해 사용됩니다.</span
+										>
+									</p>
+									<p id="SE-630d4ad7-3268-4e31-8763-e35c98b429b3" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-12268c5c-7cae-4384-8dcf-a3c39bcb7ff4" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											나. 쿠키의 설치∙운영 및 거부 : 웹브라우저 상단의 도구&gt;인터넷 옵션&gt;개인정보 메뉴의 옵션 설정을 통해 쿠키 저장을 거부 할 수
+											있습니다.</span
+										>
+									</p>
+									<p id="SE-8d22920e-3b99-464b-b82f-60449dd6bf55" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-ed55fc99-74b7-4e75-a801-3826f4367acf" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											다. 쿠키 저장을 거부할 경우 맞춤형 서비스 이용에 어려움이 발생할 수 있습니다.</span
+										>
+									</p>
+									<p id="SE-56341566-7306-4cff-bee8-996015f0b64e" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-28c91083-c4af-4e3d-9324-1b1f35994a41" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>10. 개인정보 보호책임자 (주)코일마스터는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및
+											피해구제를 처리하기 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.
+										</span>
+									</p>
+									<p id="SE-d8af60e7-cb78-42a6-b7a2-9d239ffb174e" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-b3bb6096-8414-4485-8f08-b7588123a2ce" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											▶ 개인정보 보호책임자</span
+										>
+									</p>
+									<p id="SE-7cc5eb35-474d-42b1-997c-ae32ec737545" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-f4625d48-759b-40b6-a4d6-e0aad9b399ff" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"> 성 명 : 차상엽</span>
+									</p>
+									<p id="SE-4c8bea30-1134-4428-ab9e-67aa6ab93536" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-5ed027ba-70b2-49c4-a4bc-14d6ef369387" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											직 책 : 대표이사</span
+										>
+									</p>
+									<p id="SE-6cb2e7e0-525b-43e1-b512-f819e774bc5a" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-481f374d-32a0-4656-a19a-e5a93f213d4b" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											연락처 : 031-904-1444
+										</span>
+									</p>
+									<p id="SE-00afe86b-1a1d-4c32-88b4-6fdc317552c9" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-a9bf8b12-5bb9-4806-9627-dba1f06b68ca" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											E-mail : system@coilmaster.com
+										</span>
+									</p>
+									<p id="SE-90779e7c-d871-4d09-b5fd-e04829f9c4d1" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-bd190e35-cbd1-46ac-aa3a-b94f5be0026b" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											팩 스 : 063-263-1445
+										</span>
+									</p>
+									<p id="SE-2faadd9f-681e-4555-a758-e460a26ae220" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-c8d670e6-87fc-4c19-9aab-4f26c56ce095" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)"
+											>11. 개인정보 처리방침 변경
+										</span>
+									</p>
+									<p id="SE-d17fcb74-fc43-44e4-9981-6aec072ea83c" class="se-text-paragraph se-text-paragraph-align-left" style="line-height: 1.6">
+										<span id="SE-bd035509-f73d-4969-9692-4092da2d48b4" class="se-ff-system se-fs11 __se-node" style="color: rgb(0, 0, 0)">
+											이 개인정보 처리방침은 2016. 12. 1부터 적용됩니다.</span
+										>
+									</p>
+								</div>
+							</div>
+							<div class="cm-inquiry-form__check">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+									<label class="form-check-label" for="flexCheckDefault"> <strong>개인정보처리방침</strong> 안내에 동의합니다. </label>
+								</div>
+							</div>
+							<div class="cm-inquiry-form__button">
+								<button class="cm-button"><span>등록</span></button>
+							</div>
+						</form>
+					</div>
+					<a href="javascript:vod(0)" class="cm-inquiry__close">닫기</a>
+				</div>
 			</div>
 
 			<div class="cm-quick">
-				<a href="" class="cm-quick__inquiry"> INQUIRY </a>
-				<a href="" class="cm-quick__product"> PRODUCT </a>
+				<a href="/inquiry" class="cm-quick__inquiry"> INQUIRY </a>
+				<a href="/products" class="cm-quick__product"> PRODUCT </a>
 				<a href="javascript:void(0)" class="cm-quick__top"> TOP </a>
 				<script>
 					$('.cm-quick__top').on('click', function () {

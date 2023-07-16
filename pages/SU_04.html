@@ -98,7 +98,7 @@
 	<body>
 		<div class="cm">
 			<div class="cm-skip">
-				<a href="">본문영역 바로가기</a>
+				<a href="#cm-body">본문영역 바로가기</a>
 			</div>
 			<header id="cm-header" class="cm-header">
 				<div class="cm-inner">
@@ -245,8 +245,9 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/support/header.jpg" alt="뉴스 및 공지사항" />
-						<h1>뉴스 및 공지사항</h1>
+						<img src="../assets/images/support/header.jpg" alt="INQUIRY" />
+						<h1>INQUIRY</h1>
+						<p></p>
 					</div>
 				</div>
 				<div class="cm-inner">
@@ -263,7 +264,7 @@
 							</ul>
 						</div>
 						<div class="cm-breadcrumb__select">
-							<strong>FAQ</strong>
+							<strong>INQUIRY</strong>
 							<ul>
 								<li><a href="">뉴스 및 공지사항</a></li>
 								<li><a href="">FAQ</a></li>
@@ -272,17 +273,28 @@
 						</div>
 					</div>
 				</div>
-				<div class="cm-inquiry">
-					<div class="cm-inquiry__title">
-						<h2>제품, 기술, 인증, 채용, 회사 등 <strong>궁금하신 점</strong>에 대해 남겨 주시면 입력하신 이메일 주소로 빠른 시일 내로 답변.</h2>
-						<p>텍스트</p>
+				<div class="cm-support">
+					<div class="cm-inner">
+						<div class="cm-support-inquiry-result">
+							<div class="cm-support-inquiry-result__text">
+								<strong>문의 등록이 완료되었습니다.</strong>
+								<p>
+									입력하신 이메일 주소로<br />
+									빠른 시일내에 답변 드리겠습니다.
+								</p>
+							</div>
+							<div class="cm-support-inquiry-result__button">
+								<button class="cm-button"><span>이전 페이지로 이동</span></button>
+								<button class="cm-button cm-button--black"><span>메인 페이지로 이동</span></button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="cm-quick">
-				<a href="" class="cm-quick__inquiry"> INQUIRY </a>
-				<a href="" class="cm-quick__product"> PRODUCT </a>
+				<a href="/inquiry" class="cm-quick__inquiry"> INQUIRY </a>
+				<a href="/products" class="cm-quick__product"> PRODUCT </a>
 				<a href="javascript:void(0)" class="cm-quick__top"> TOP </a>
 				<script>
 					$('.cm-quick__top').on('click', function () {

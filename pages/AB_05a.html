@@ -65,33 +65,24 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-
 		<script>
 			function setZoomLevel() {
-				var windowWidth = window.innerWidth;
-				var minSize = 993;
-				var maxSize = 1480;
-				var minFontSize = 66;
-				var maxFontSize = 100;
+				const screenWidth = window.innerWidth;
 
-				if (windowWidth >= minSize && windowWidth <= maxSize) {
-					var percentage = (windowWidth - minSize) / (maxSize - minSize);
-					var fontSize = minFontSize + (maxFontSize - minFontSize) * percentage;
-					var result = (fontSize / 100) * 6.25;
-					document.documentElement.style.setProperty('--font-size', result + '%');
-					console.log(result);
-				}
-				if (windowWidth <= minSize) {
-					document.documentElement.style.setProperty('--font-size', '6.25%');
+				if (screenWidth >= 993 && screenWidth <= 1500) {
+					const zoomPercentage = ((screenWidth - 993) / (1500 - 993)) * 34 + 66;
+					document.body.style.zoom = `${zoomPercentage}%`;
+				} else {
+					document.body.style.zoom = '100%';
 				}
 			}
 
 			$(window).on('resize', function () {
-				setZoomLevel();
+				//setZoomLevel();
 			});
 			$(document).ready(function () {
 				AOS.init();
-				setZoomLevel();
+				//setZoomLevel();
 			});
 		</script>
 	</head>
@@ -245,8 +236,8 @@
 			<div id="cm-body" class="cm-body">
 				<div class="cm-body__header">
 					<div class="cm-inner">
-						<img src="../assets/images/support/header.jpg" alt="뉴스 및 공지사항" />
-						<h1>뉴스 및 공지사항</h1>
+						<img src="../assets/images/about-us/header.jpg" alt="" />
+						<h1>인재채용</h1>
 						<p></p>
 					</div>
 				</div>
@@ -254,7 +245,7 @@
 					<div class="cm-breadcrumb">
 						<a href="" class="cm-breadcrumb__home">Home</a>
 						<div class="cm-breadcrumb__select">
-							<strong>SUPPORT</strong>
+							<strong>ABOUT US</strong>
 							<ul>
 								<li><a href="/products">PRODUCTS</a></li>
 								<li><a href="/applications">APPLICATIONS</a></li>
@@ -264,144 +255,43 @@
 							</ul>
 						</div>
 						<div class="cm-breadcrumb__select">
-							<strong>뉴스 및 공지사항</strong>
+							<strong>인재 채용</strong>
 							<ul>
-								<li><a href="">뉴스 및 공지사항</a></li>
-								<li><a href="">FAQ</a></li>
-								<li><a href="">INQUIRY</a></li>
+								<li><a href="">CEO 인사말</a></li>
+								<li><a href="">회사 연혁</a></li>
+								<li><a href="">CI 소개</a></li>
+								<li><a href="">인증서 및 상장</a></li>
+								<li><a href="">회사 약도</a></li>
+								<li><a href="">인재 채용</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="cm-news">
-					<div class="cm-inner">
-						<div class="cm-list-head">
-							<div class="cm-total">
-								<p>Total <strong>17</strong></p>
-								<span>1 Page</span>
+
+				<div class="cm-inner">
+					<div class="cm-about-recruit">
+						<div class="cm-about-recruit__title">
+							<strong>코일마스터</strong>에<br />
+							<strong>젊음과 열정</strong>을 아낌 없이 투자해 줄<br />
+							<strong>훌륭한 인재</strong>를 모십니다.
+						</div>
+						<div class="cm-about-recruit-talent">
+							<div class="cm-about-recruit-talent__title">인재상</div>
+							<div class="cm-about-recruit-talent__list">
+								<div class="cm-about-recruit-talent__item">
+									<img src="" alt="" />
+									<strong>
+										열정
+										<span>Passion</span>
+									</strong>
+									<p>
+										새로운 분야에 과감하게<br />
+										도전하고 성취하고<br />
+										뜨거운 열정이 있는 인재
+									</p>
+								</div>
 							</div>
 						</div>
-						<div class="cm-list">
-							<a href="" class="cm-list-item">
-								<div class="cm-list-item__thumb">
-									<img src="https://picsum.photos/1000/1000" alt="" />
-								</div>
-								<div class="cm-list-item__title">SEPIC 토폴로지와 Coupled Inductor</div>
-								<div class="cm-list-item__text">
-									SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을
-									필요로 하는 응용프로그램SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을
-									단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램
-								</div>
-								<div class="cm-list-item__date">2023-06-23</div>
-							</a>
-							<a href="" class="cm-list-item">
-								<div class="cm-list-item__title">SEPIC 토폴로지와 Coupled Inductor</div>
-								<div class="cm-list-item__text">
-									SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을
-									필요로 하는 응용프로그램SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을
-									단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램
-								</div>
-								<div class="cm-list-item__date">2023-06-23</div>
-							</a>
-							<a href="" class="cm-list-item">
-								<div class="cm-list-item__thumb">
-									<img src="https://picsum.photos/1000/1000" alt="" />
-								</div>
-								<div class="cm-list-item__title">SEPIC 토폴로지와 Coupled Inductor</div>
-								<div class="cm-list-item__text">
-									SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을
-									필요로 하는 응용프로그램SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을
-									단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램
-								</div>
-								<div class="cm-list-item__date">2023-06-23</div>
-							</a>
-							<a href="" class="cm-list-item">
-								<div class="cm-list-item__thumb">
-									<img src="https://picsum.photos/1000/1000" alt="" />
-								</div>
-								<div class="cm-list-item__title">SEPIC 토폴로지와 Coupled Inductor</div>
-								<div class="cm-list-item__text">
-									SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을
-									필요로 하는 응용프로그램SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을
-									단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램
-								</div>
-								<div class="cm-list-item__date">2023-06-23</div>
-							</a>
-							<a href="" class="cm-list-item">
-								<div class="cm-list-item__thumb">
-									<img src="https://picsum.photos/1000/1000" alt="" />
-								</div>
-								<div class="cm-list-item__title">SEPIC 토폴로지와 Coupled Inductor</div>
-								<div class="cm-list-item__text">
-									SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을
-									필요로 하는 응용프로그램SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을
-									단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램
-								</div>
-								<div class="cm-list-item__date">2023-06-23</div>
-							</a>
-							<a href="" class="cm-list-item">
-								<div class="cm-list-item__title">SEPIC 토폴로지와 Coupled Inductor</div>
-								<div class="cm-list-item__text">
-									SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을
-									필요로 하는 응용프로그램SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을
-									단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램
-								</div>
-								<div class="cm-list-item__date">2023-06-23</div>
-							</a>
-							<a href="" class="cm-list-item">
-								<div class="cm-list-item__thumb">
-									<img src="https://picsum.photos/1000/1000" alt="" />
-								</div>
-								<div class="cm-list-item__title">SEPIC 토폴로지와 Coupled InductorSEPIC 토폴로지와 Coupled InductorSEPIC 토폴로지와 Coupled Inductor</div>
-								<div class="cm-list-item__text">
-									SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을
-									필요로 하는 응용프로그램SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을
-									단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램
-								</div>
-								<div class="cm-list-item__date">2023-06-23</div>
-							</a>
-							<a href="" class="cm-list-item">
-								<div class="cm-list-item__thumb">
-									<img src="https://picsum.photos/1000/1000" alt="" />
-								</div>
-								<div class="cm-list-item__title">SEPIC 토폴로지와 Coupled Inductor</div>
-								<div class="cm-list-item__text">
-									SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을 단계적으로 낮출 수 있는 기능을
-									필요로 하는 응용프로그램SEPIC (Single-Ended Primary Inductance Convertor) 토폴로지는Buck 및 Boost regulator의 특성, 특히 입력 전압을
-									단계적으로 낮출 수 있는 기능을 필요로 하는 응용프로그램
-								</div>
-								<div class="cm-list-item__date">2023-06-23</div>
-							</a>
-							<a href="" class="cm-list-item">
-								<div class="cm-list-item__title">납세자의 날 표창</div>
-								<div class="cm-list-item__text">
-									전주세무서(서장 류효석)는 5일 성실납세와 세정협조에 감사하고 건전한 납세의식을 함양하기 위해 세무서 대강당에서 '납세자의 날' 행사를 갖는 등
-									다양한 납세홍보를 펼쳤다.이날 전주서는 효사전주세무서(서장 류효석)는 5일 성실납세와 세정협조에 감사하고 건전한 납세의식을 함양하기 위해 세무서
-									대강당에서 '납세자의 날' 행사를 갖는 등 다양한 납세홍보를 펼쳤다.이날 전주서는 효사
-								</div>
-								<div class="cm-list-item__date">2023-06-23</div>
-							</a>
-							<script>
-								$('.cm-list-item').each(function (index, element) {
-									if ($(this).find('.cm-list-item__thumb').length > 0) {
-										$(this).addClass('has-thumb');
-									}
-								});
-							</script>
-						</div>
-						<nav class="cm-pagination">
-							<ul>
-								<li class="first"><a href="#">First</a></li>
-								<li class="prev"><a href="#">Previous</a></li>
-								<li class="active"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li class="next"><a href="#">Next</a></li>
-								<li class="last"><a href="#">Last</a></li>
-							</ul>
-						</nav>
 					</div>
 				</div>
 			</div>
