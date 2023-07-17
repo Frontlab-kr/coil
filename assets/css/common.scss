@@ -3389,18 +3389,18 @@ body {
 				&-slide {
 					position: relative;
 					overflow: hidden;
-					&::before {
-						content: '';
-						display: block;
-						position: absolute;
-						top: 0;
-						right: 0;
-						bottom: 0;
-						left: 0;
-						background: url(../images/main/kv.png) no-repeat 50% 50%;
-						background-size: cover;
-						transition: all 1s ease;
-					}
+					// &::before {
+					// 	content: '';
+					// 	display: block;
+					// 	position: absolute;
+					// 	top: 0;
+					// 	right: 0;
+					// 	bottom: 0;
+					// 	left: 0;
+					// 	background: url(../images/main/kv.png) no-repeat 50% 50%;
+					// 	background-size: cover;
+					// 	transition: all 1s ease;
+					// }
 					.cm-inner {
 						display: flex;
 						align-items: center;
@@ -3413,7 +3413,35 @@ body {
 					}
 				}
 			}
+			&__img {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 10;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background: rgba($color: #000000, $alpha: 0.2);
+					background-size: cover;
+					transition: all 1s ease;
+					z-index: 20;
+				}
+			}
 			&__title {
+				display: block;
+				position: relative;
 				margin-bottom: 19rem;
 				font-size: 52rem;
 				font-weight: 600;
@@ -3423,6 +3451,7 @@ body {
 				letter-spacing: -0.3rem;
 				text-align: left;
 				color: #fff;
+				z-index: 30;
 				@keyframes cm-main-keyvisual__title {
 					0% {
 						transform: translateY(100%);
@@ -3454,6 +3483,8 @@ body {
 			&__info {
 				display: flex;
 				align-items: center;
+				position: relative;
+				z-index: 30;
 				&-bar {
 					position: relative;
 					width: 240rem;
