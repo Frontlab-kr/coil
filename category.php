@@ -19,16 +19,20 @@
 
 					</div>
 				</div>
+				
 				<script>
-					var swiperTab = new Swiper('.cm-tab .swiper', {
-						slidesPerView: 'auto',
-						spaceBetween: 30,
-						breakpoints: {
-							992: {
-								spaceBetween: 40,
+					setTimeout(() => {
+						var swiperTab = new Swiper('.cm-tab .swiper', {
+							slidesPerView: 'auto',
+							spaceBetween: 30,
+							breakpoints: {
+								992: {
+									spaceBetween: 40,
+								},
 							},
-						},
-					});
+						});
+						swiperTab.slideTo(3);
+					}, 100);
 				</script>
 			</div>
 

@@ -2524,6 +2524,7 @@ body {
 		@media screen and (max-width: $mobile) {
 			padding: 0 20rem;
 			.swiper {
+				width: 100%;
 				&-slide {
 					width: auto !important;
 					height: 34rem;
@@ -5980,6 +5981,9 @@ body {
 				}
 			}
 		}
+		&-table ~ .cm-pagination {
+			margin-top: 30px;
+		}
 		&-lineup ~ .cm-inner .cm-products-table table thead th {
 			top: 192rem;
 		}
@@ -6643,6 +6647,9 @@ body {
 						}
 					}
 				}
+			}
+			&-table ~ .cm-pagination {
+				margin-top: 10px;
 			}
 			&-search {
 				margin: 26rem 0 64rem 0;

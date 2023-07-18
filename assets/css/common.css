@@ -2868,6 +2868,9 @@ body::-webkit-scrollbar-thumb {
   .cm-tab {
     padding: 0 20rem;
   }
+  .cm-tab .swiper {
+    width: 100%;
+  }
   .cm-tab .swiper-slide {
     width: auto !important;
     height: 34rem;
@@ -6422,6 +6425,9 @@ body::-webkit-scrollbar-thumb {
 .cm-products-table__sort a.active {
   background-color: #b1c8e6;
 }
+.cm-products-table ~ .cm-pagination {
+  margin-top: 30px;
+}
 .cm-products-lineup ~ .cm-inner .cm-products-table table thead th {
   top: 192rem;
 }
@@ -7066,6 +7072,9 @@ body::-webkit-scrollbar-thumb {
   .cm-products-table-item ul li a {
     margin: 0 10rem;
     font-size: 0;
+  }
+  .cm-products-table ~ .cm-pagination {
+    margin-top: 10px;
   }
   .cm-products-search {
     margin: 26rem 0 64rem 0;
