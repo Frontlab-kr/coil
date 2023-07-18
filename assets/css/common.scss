@@ -946,12 +946,12 @@ body {
 					z-index: 20;
 					margin-bottom: 30rem;
 					padding: 0 20rem;
-					font-size: 26px;
+					font-size: 26rem;
 					font-weight: bold;
 					font-stretch: normal;
 					font-style: normal;
 					line-height: 1.5;
-					letter-spacing: -0.39px;
+					letter-spacing: -0.39rem;
 					text-align: left;
 					color: #fff;
 				}
@@ -3049,7 +3049,7 @@ body {
 						display: flex;
 						align-items: flex-start;
 						margin-top: 6rem;
-						min-width: 70rem;
+						min-width: 90rem;
 						font-size: 18rem;
 						font-weight: 500;
 						font-stretch: normal;
@@ -3367,6 +3367,85 @@ body {
 		}
 	}
 	//page
+	&-404 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100vw;
+		height: 100vh;
+		padding: 20rem;
+		&__logo {
+			margin-bottom: 51rem;
+			img {
+				height: 27rem;
+			}
+		}
+		&__title {
+			font-size: 60rem;
+			font-weight: bold;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.5;
+			letter-spacing: -0.9rem;
+			text-align: center;
+			color: #000;
+			word-break: keep-all;
+		}
+		&__text {
+			margin-top: 9rem;
+			font-size: 24rem;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.5;
+			letter-spacing: -0.36rem;
+			text-align: left;
+			color: #666;
+		}
+		&__button {
+			margin-top: 77rem;
+		}
+	}
+	&-ready {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100vw;
+		height: 100vh;
+		padding: 20rem;
+		&__logo {
+			margin-bottom: 51rem;
+			img {
+				height: 27rem;
+			}
+		}
+		&__title {
+			font-size: 60rem;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.5;
+			letter-spacing: -0.9rem;
+			text-align: center;
+			color: #000;
+			word-break: keep-all;
+		}
+		&__text {
+			margin-top: 54rem;
+			font-size: 28rem;
+			font-weight: bold;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.5;
+			letter-spacing: -0.42rem;
+			text-align: left;
+			color: #333;
+		}
+		&__button {
+			margin-top: 77rem;
+		}
+	}
 	&-main {
 		&::before {
 			content: ' ';
@@ -3830,6 +3909,7 @@ body {
 					color: #343434;
 					word-break: keep-all;
 					@include text-clamp(2, 27);
+					height: 54rem;
 				}
 			}
 		}
@@ -4641,6 +4721,7 @@ body {
 						text-align: left;
 						color: #343434;
 						@include text-clamp(2, 24);
+						height: 48rem;
 					}
 				}
 			}
@@ -5810,11 +5891,11 @@ body {
 				&__row {
 					display: flex;
 					flex-wrap: wrap;
-					margin: -15rem;
+					margin: -10rem;
 					> * {
 						width: 100%;
 						max-width: 100%;
-						padding: 15rem;
+						padding: 10rem;
 					}
 				}
 				&__col {
@@ -6713,7 +6794,7 @@ body {
 							display: flex;
 							align-items: flex-start;
 							margin-top: 6rem;
-							min-width: 70rem;
+							min-width: 90rem;
 							font-size: 18rem;
 							font-weight: 500;
 							font-stretch: normal;
@@ -7003,6 +7084,21 @@ body {
 		}
 	}
 	&-card {
+		.cm-search {
+			margin-top: 40rem;
+		}
+		.cm-tab {
+			margin-top: 90rem;
+		}
+
+		@media screen and (max-width: $mobile) {
+			.cm-search {
+				margin-top: 43rem;
+			}
+			.cm-tab {
+				margin-top: 32rem;
+			}
+		}
 	}
 	&-catalogue {
 		position: relative;
@@ -7164,6 +7260,21 @@ body {
 	}
 
 	&-news {
+		.cm-search {
+			margin-top: 40rem;
+		}
+		.cm-tab {
+			margin-top: 90rem;
+		}
+
+		@media screen and (max-width: $mobile) {
+			.cm-search {
+				margin-top: 43rem;
+			}
+			.cm-tab {
+				margin-top: 32rem;
+			}
+		}
 	}
 	&-faq {
 		.cm-tab {
@@ -7619,10 +7730,10 @@ body {
 		}
 		&-certification {
 			overflow: hidden;
-			padding-top: 40px;
+			padding-top: 40rem;
 			&__item {
 				display: flex;
-				justify-content: center;
+
 				position: relative;
 				&-bg {
 					content: '';
@@ -7630,18 +7741,18 @@ body {
 					position: absolute;
 					z-index: 10;
 					bottom: 0;
-					left: -500px;
-					right: -60px;
-					height: 350px;
+					left: -500rem;
+					right: -60rem;
+					height: 350rem;
 					background: #f5f5f5;
-					border-radius: 0 20px 20px 0;
+					border-radius: 0 20rem 20rem 0;
 				}
 				&-row {
 					position: relative;
 					z-index: 20;
 					display: flex;
 					justify-content: center;
-					margin: 100px 0 60px 0;
+					margin: 100rem 0 60rem 0;
 					padding: 0;
 				}
 				&:first-child & {
@@ -7651,14 +7762,14 @@ body {
 				}
 				&:nth-child(2n) & {
 					&-bg {
-						left: -60px;
-						right: -500px;
-						border-radius: 20px 0 0 20px;
+						left: -60rem;
+						right: -500rem;
+						border-radius: 20rem 0 0 20rem;
 					}
 				}
 				a {
 					width: 300rem;
-					margin: 0 32px;
+					margin: 0 32rem;
 					text-align: center;
 					span {
 						display: block;
@@ -7692,7 +7803,7 @@ body {
 			}
 			@media screen and (max-width: $mobile) {
 				overflow: hidden;
-				padding-top: 43px;
+				padding-top: 43rem;
 				&__item {
 					display: block;
 					&-bg {
@@ -7703,25 +7814,25 @@ body {
 						z-index: 20;
 						display: flex;
 						justify-content: center;
-						margin: 0 0 60px 0;
+						margin: 0 0 60rem 0;
 						padding: 0;
 						&::before {
 							content: '';
 							display: block;
 							position: absolute;
 							z-index: 10;
-							bottom: -25px;
+							bottom: -25rem;
 							left: 0;
-							right: 10px;
-							height: 182px;
+							right: 10rem;
+							height: 182rem;
 							background: #f5f5f5;
-							border-radius: 0 10px 10px 0;
+							border-radius: 0 10rem 10rem 0;
 						}
 						&:nth-child(2n) {
 							&:before {
-								left: 10px;
+								left: 10rem;
 								right: 0;
-								border-radius: 10px 0 0 10px;
+								border-radius: 10rem 0 0 10rem;
 							}
 						}
 					}
@@ -7732,7 +7843,7 @@ body {
 					}
 					a {
 						width: 150rem;
-						margin: 0 7px;
+						margin: 0 7rem;
 						text-align: center;
 						position: relative;
 						z-index: 20;
@@ -7755,12 +7866,12 @@ body {
 						p {
 							min-height: 36rem;
 							margin: 10rem 0 0 0;
-							font-size: 12px;
+							font-size: 12rem;
 							font-weight: normal;
 							font-stretch: normal;
 							font-style: normal;
 							line-height: 1.5;
-							letter-spacing: -0.36px;
+							letter-spacing: -0.36rem;
 							text-align: center;
 							color: #000;
 						}
@@ -8012,9 +8123,9 @@ body {
 			}
 		}
 		&-recruit {
-			padding: 38px 0 0 0;
+			padding: 38rem 0 0 0;
 			&__title {
-				margin-bottom: 58px;
+				margin-bottom: 58rem;
 				font-size: 38rem;
 				font-weight: bold;
 				font-stretch: normal;
@@ -8034,69 +8145,69 @@ body {
 			&-talent {
 				position: relative;
 				overflow: hidden;
-				padding: 0 0 120px 0;
+				padding: 0 0 120rem 0;
 				&__text {
 					position: absolute;
-					top: 83px;
+					top: 83rem;
 					left: 0;
-					font-size: 300px;
+					font-size: 300rem;
 					font-weight: bold;
 					font-stretch: normal;
 					font-style: normal;
 					line-height: 1.5;
-					letter-spacing: -4.5px;
+					letter-spacing: -4.5rem;
 					text-align: left;
 					color: #ebebeb;
 					white-space: nowrap;
 				}
 				&__title {
-					margin-bottom: 55px;
-					font-size: 38px;
+					margin-bottom: 55rem;
+					font-size: 38rem;
 					font-weight: bold;
 					font-stretch: normal;
 					font-style: normal;
 					line-height: 1.5;
-					letter-spacing: -0.57px;
+					letter-spacing: -0.57rem;
 					text-align: center;
 					color: #000;
 				}
 				&__list {
-					padding: 0 20px;
+					padding: 0 20rem;
 					.swiper {
 						&-slide {
 							text-align: center;
 							strong {
 								display: block;
-								margin-top: 30px;
-								font-size: 28px;
+								margin-top: 30rem;
+								font-size: 28rem;
 								font-weight: bold;
 								font-stretch: normal;
 								font-style: normal;
 								line-height: 1;
-								letter-spacing: -0.42px;
+								letter-spacing: -0.42rem;
 								text-align: center;
 								color: #000;
 								span {
 									display: block;
-									margin-top: 12px;
-									font-size: 18px;
+									margin-top: 12rem;
+									font-size: 18rem;
 									font-weight: 500;
 									font-stretch: normal;
 									font-style: normal;
 									line-height: 1.5;
-									letter-spacing: -0.27px;
+									letter-spacing: -0.27rem;
 									text-align: center;
 									color: #2761ae;
 								}
 							}
 							p {
-								margin-top: 29px;
-								font-size: 18px;
+								margin-top: 29rem;
+								font-size: 18rem;
 								font-weight: normal;
 								font-stretch: normal;
 								font-style: normal;
 								line-height: 1.5;
-								letter-spacing: -0.27px;
+								letter-spacing: -0.27rem;
 								text-align: center;
 								color: #333;
 							}
@@ -8106,7 +8217,7 @@ body {
 			}
 			&-welfare {
 				position: relative;
-				height: 838px;
+				height: 838rem;
 				overflow: hidden;
 				&__bg {
 					content: '';
@@ -8123,13 +8234,13 @@ body {
 				&__title {
 					position: relative;
 					z-index: 20;
-					padding: 109px 0 48px 0;
-					font-size: 38px;
+					padding: 109rem 0 48rem 0;
+					font-size: 38rem;
 					font-weight: bold;
 					font-stretch: normal;
 					font-style: normal;
 					line-height: 1.5;
-					letter-spacing: -0.57px;
+					letter-spacing: -0.57rem;
 					text-align: center;
 					color: #fff;
 				}
@@ -8138,17 +8249,17 @@ body {
 					z-index: 20;
 					display: grid;
 					grid-template-columns: repeat(6, 1fr);
-					gap: 24px;
+					gap: 24rem;
 					justify-content: center;
 				}
 				&__item {
 					display: inline-flex;
 					align-items: center;
-					width: 464px;
-					height: 240px;
+					width: 464rem;
+					height: 240rem;
 					padding: 0;
-					border-radius: 20px;
-					box-shadow: 0px 6px 30px 0 rgba(0, 0, 0, 0.1);
+					border-radius: 20rem;
+					box-shadow: 0rem 6rem 30rem 0 rgba(0, 0, 0, 0.1);
 					background-color: #fff;
 					grid-column: auto / span 2;
 					&:nth-child(4) {
@@ -8161,8 +8272,8 @@ body {
 					&::before {
 						content: '';
 						display: block;
-						width: 167px;
-						height: 167px;
+						width: 167rem;
+						height: 167rem;
 						background: url(../images/about-us/welfare01.png) no-repeat 50% 50%;
 					}
 					&:nth-child(2) {
@@ -8186,24 +8297,24 @@ body {
 						}
 					}
 					p {
-						margin-top: 3px;
-						font-size: 18px;
+						margin-top: 3rem;
+						font-size: 18rem;
 						font-weight: normal;
 						font-stretch: normal;
 						font-style: normal;
 						line-height: 1.5;
-						letter-spacing: -0.54px;
+						letter-spacing: -0.54rem;
 						text-align: left;
 						color: #333;
 						span {
 							display: block;
-							margin-bottom: 21px;
-							font-size: 28px;
+							margin-bottom: 21rem;
+							font-size: 28rem;
 							font-weight: bold;
 							font-stretch: normal;
 							font-style: normal;
 							line-height: 1;
-							letter-spacing: -0.42px;
+							letter-spacing: -0.42rem;
 							text-align: left;
 							color: #000;
 						}
@@ -8211,27 +8322,27 @@ body {
 				}
 			}
 			&-button {
-				margin-top: 120px;
+				margin-top: 120rem;
 				a {
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
 					width: 100%;
-					height: 200px;
-					padding: 0 0 0 67px;
+					height: 200rem;
+					padding: 0 0 0 67rem;
 					background-color: #333;
 					p {
-						font-size: 28px;
+						font-size: 28rem;
 						font-weight: normal;
 						font-stretch: normal;
 						font-style: normal;
 						line-height: 1.5;
-						letter-spacing: -0.42px;
+						letter-spacing: -0.42rem;
 						text-align: left;
 						color: #fff;
 						strong {
-							font-size: 38px;
-							letter-spacing: -0.57px;
+							font-size: 38rem;
+							letter-spacing: -0.57rem;
 						}
 					}
 					span {
@@ -8239,87 +8350,87 @@ body {
 				}
 			}
 			@media screen and (max-width: $mobile) {
-				padding: 35px 0 0 0;
+				padding: 35rem 0 0 0;
 				&__title {
-					margin: 0 20px;
-					margin-bottom: 26px;
-					font-size: 24px;
+					margin: 0 20rem;
+					margin-bottom: 26rem;
+					font-size: 24rem;
 					font-weight: bold;
 					font-stretch: normal;
 					font-style: normal;
 					line-height: 1.56;
-					letter-spacing: -0.36px;
+					letter-spacing: -0.36rem;
 					text-align: left;
 					color: #666;
 				}
 				&-talent {
 					position: relative;
 					overflow: hidden;
-					padding: 0 0 56px 0;
+					padding: 0 0 56rem 0;
 					&__text {
 						position: absolute;
-						top: 31px;
+						top: 31rem;
 						left: 0;
-						font-size: 100px;
+						font-size: 100rem;
 						font-weight: bold;
 						font-stretch: normal;
 						font-style: normal;
 						line-height: 2.25;
-						letter-spacing: -1.5px;
+						letter-spacing: -1.5rem;
 						text-align: left;
 						color: #ebebeb;
 					}
 					&__title {
-						margin-bottom: 25px;
-						font-size: 20px;
+						margin-bottom: 25rem;
+						font-size: 20rem;
 						font-weight: bold;
 						font-stretch: normal;
 						font-style: normal;
 						line-height: 1.43;
-						letter-spacing: -0.3px;
+						letter-spacing: -0.3rem;
 						text-align: center;
 						color: #000;
 					}
 					&__list {
-						padding: 0 20px;
+						padding: 0 20rem;
 						.swiper {
 							&-slide {
 								text-align: center;
 								img {
-									width: 200px;
+									width: 200rem;
 								}
 								strong {
 									display: block;
-									margin-top: 9px;
-									font-size: 19px;
+									margin-top: 9rem;
+									font-size: 19rem;
 									font-weight: bold;
 									font-stretch: normal;
 									font-style: normal;
 									line-height: 1.5;
-									letter-spacing: -0.235px;
+									letter-spacing: -0.235rem;
 									text-align: center;
 									color: #000;
 									span {
 										display: block;
-										margin-top: 4px;
-										font-size: 14px;
+										margin-top: 4rem;
+										font-size: 14rem;
 										font-weight: 500;
 										font-stretch: normal;
 										font-style: normal;
 										line-height: 0.96;
-										letter-spacing: -0.21px;
+										letter-spacing: -0.21rem;
 										text-align: center;
 										color: #2761ae;
 									}
 								}
 								p {
-									margin-top: 14px;
-									font-size: 14px;
+									margin-top: 14rem;
+									font-size: 14rem;
 									font-weight: normal;
 									font-stretch: normal;
 									font-style: normal;
 									line-height: 1.5;
-									letter-spacing: -0.21px;
+									letter-spacing: -0.21rem;
 									text-align: center;
 									color: #333;
 								}
@@ -8328,8 +8439,8 @@ body {
 					}
 
 					.swiper-button-prev {
-						margin-top: -90px;
-						left: -10px;
+						margin-top: -90rem;
+						left: -10rem;
 						&::after {
 							@include google-icon();
 							content: '\e5cb';
@@ -8338,8 +8449,8 @@ body {
 						}
 					}
 					.swiper-button-next {
-						margin-top: -90px;
-						right: -10px;
+						margin-top: -90rem;
+						right: -10rem;
 						&::after {
 							@include google-icon();
 							content: '\e5cc';
@@ -8350,16 +8461,16 @@ body {
 				}
 				&-welfare {
 					position: relative;
-					height: 923px;
+					height: 923rem;
 					overflow: hidden;
 					&__title {
-						padding: 54px 0 5px 0;
-						font-size: 20px;
+						padding: 54rem 0 5rem 0;
+						font-size: 20rem;
 						font-weight: bold;
 						font-stretch: normal;
 						font-style: normal;
 						line-height: 1.43;
-						letter-spacing: -0.3px;
+						letter-spacing: -0.3rem;
 						text-align: center;
 						color: #fff;
 					}
@@ -8369,12 +8480,12 @@ body {
 					&__item {
 						display: flex;
 						align-items: center;
-						width: 320px;
-						height: 140px;
-						margin: 15px auto 0;
+						width: 320rem;
+						height: 140rem;
+						margin: 15rem auto 0;
 						padding: 0;
-						border-radius: 10px;
-						box-shadow: 0px 3px 15px 0 rgba(0, 0, 0, 0.1);
+						border-radius: 10rem;
+						box-shadow: 0rem 3rem 15rem 0 rgba(0, 0, 0, 0.1);
 						background-color: #fff;
 						grid-column: auto / span 2;
 						&:nth-child(4) {
@@ -8387,54 +8498,54 @@ body {
 						&::before {
 							content: '';
 							display: block;
-							width: 105px;
-							height: 105px;
+							width: 105rem;
+							height: 105rem;
 							background: url(../images/mo/about-us/welfare01.png) no-repeat 60% 50%;
-							background-size: 48px 48px;
+							background-size: 48rem 48rem;
 						}
 						&:nth-child(2) {
 							&::before {
 								background: url(../images/mo/about-us/welfare02.png) no-repeat 60% 50%;
-								background-size: 48px 42.5px;
+								background-size: 48rem 42.5rem;
 							}
 						}
 						&:nth-child(3) {
 							&::before {
 								background: url(../images/mo/about-us/welfare03.png) no-repeat 60% 50%;
-								background-size: 48px 48px;
+								background-size: 48rem 48rem;
 							}
 						}
 						&:nth-child(4) {
 							&::before {
 								background: url(../images/mo/about-us/welfare04.png) no-repeat 60% 50%;
-								background-size: 48.5px 48px;
+								background-size: 48.5rem 48rem;
 							}
 						}
 						&:nth-child(5) {
 							&::before {
 								background: url(../images/mo/about-us/welfare05.png) no-repeat 60% 50%;
-								background-size: 48px 48px;
+								background-size: 48rem 48rem;
 							}
 						}
 						p {
 							margin-top: 0;
-							font-size: 14px;
+							font-size: 14rem;
 							font-weight: normal;
 							font-stretch: normal;
 							font-style: normal;
 							line-height: 1.5;
-							letter-spacing: -0.42px;
+							letter-spacing: -0.42rem;
 							text-align: left;
 							color: #333;
 							span {
 								display: block;
-								margin-bottom: 3px;
-								font-size: 16px;
+								margin-bottom: 3rem;
+								font-size: 16rem;
 								font-weight: bold;
 								font-stretch: normal;
 								font-style: normal;
 								line-height: 1.78;
-								letter-spacing: -0.24px;
+								letter-spacing: -0.24rem;
 								text-align: left;
 								color: #000;
 							}
@@ -8443,19 +8554,19 @@ body {
 				}
 				&-button {
 					margin-top: 0;
-					margin-bottom: -100px;
+					margin-bottom: -100rem;
 					a {
-						height: 170px;
-						padding: 0 0 0 20px;
+						height: 170rem;
+						padding: 0 0 0 20rem;
 						background-color: #333;
 						p {
-							font-size: 16px;
+							font-size: 16rem;
 							font-weight: normal;
 							line-height: 1.3;
-							letter-spacing: -0.24px;
+							letter-spacing: -0.24rem;
 							strong {
-								font-size: 20px;
-								letter-spacing: -0.3px;
+								font-size: 20rem;
+								letter-spacing: -0.3rem;
 							}
 						}
 						span {
