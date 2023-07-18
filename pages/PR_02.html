@@ -314,6 +314,7 @@
 							고효율의 최적화 된 제품을 공급합니다.
 						</div>
 					</div>
+
 					<div class="cm-products-lineup">
 						<div class="cm-inner">
 							<h3 class="cm-products-lineup__title">Product Lineup</h3>
@@ -337,40 +338,57 @@
 									return false;
 								});
 							</script>
-							<select name="" id="">
-								<option value="">Power Inductors</option>
-								<option value="">Coupled Power Inductors</option>
-								<option value="">Inductors for Class D Amplifier</option>
-								<option value="">Chip Inductors</option>
-								<option value="">Choke Coils for PFC</option>
-								<option value="">Toroidal Choke Coils</option>
-								<option value="">Transfonder Coils</option>
-								<option value="">LED Drive Inductors</option>
-							</select>
 						</div>
-						<script>
-							// 스크롤 이벤트를 감지하는 함수
-							function handleScroll() {
-								var targetElement = document.querySelector('.cm-products-lineup');
-								var targetOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;
-								var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-								if (scrollPosition >= targetOffset) {
-									$('html').addClass('mode-sticky');
-								} else if (scrollPosition <= targetOffset) {
-									$('html').removeClass('mode-sticky');
-								}
-							}
-
-							// 스크롤 이벤트 리스너를 등록합니다
-							window.addEventListener('scroll', handleScroll);
-
-							$(document).ready(function () {
-								var stickyHeight = $('.cm-products-lineup').outerHeight();
-								$('.cm-products-lineup ~ .cm-inner .cm-products-table table thead th').css('top', stickyHeight + 'rem');
-							});
-						</script>
 					</div>
+
+					<div class="cm-products-lineup__select">
+						<div class="mo">
+							<div class="cm-inner">
+								<h3 class="cm-products-lineup__title">Product Lineup</h3>
+								<select name="" id="">
+									<option value="">Power Inductors</option>
+									<option value="">Coupled Power Inductors</option>
+									<option value="">Inductors for Class D Amplifier</option>
+									<option value="">Chip Inductors</option>
+									<option value="">Choke Coils for PFC</option>
+									<option value="">Toroidal Choke Coils</option>
+									<option value="">Transfonder Coils</option>
+									<option value="">LED Drive Inductors</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<script>
+						// 스크롤 이벤트를 감지하는 함수
+						function handleScroll() {
+							var targetElement;
+							var windowWidth = window.innerWidth;
+							var headerHeight = $('.cm-header').outerHeight();
+
+							if (windowWidth > 992) {
+								targetElement = document.querySelector('.cm-products-lineup');
+							}
+							if (windowWidth < 992) {
+								targetElement = document.querySelector('.cm-products-lineup__select');
+							}
+							var targetOffset = targetElement.getBoundingClientRect().top - headerHeight + window.pageYOffset;
+							var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+							if (scrollPosition >= targetOffset) {
+								$('html').addClass('mode-sticky');
+							} else if (scrollPosition <= targetOffset) {
+								$('html').removeClass('mode-sticky');
+							}
+						}
+
+						// 스크롤 이벤트 리스너를 등록합니다
+						window.addEventListener('scroll', handleScroll);
+
+						$(document).ready(function () {
+							var stickyHeight = $('.cm-products-lineup').outerHeight();
+							$('.cm-products-lineup ~ .cm-inner .cm-products-table table thead th').css('top', stickyHeight + 'rem');
+						});
+					</script>
 					<div class="cm-inner">
 						<div class="cm-products-spotlights">
 							<h3 class="cm-products-spotlights__title">Product Spotlights</h3>
