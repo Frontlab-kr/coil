@@ -655,7 +655,7 @@ body::-webkit-scrollbar-thumb {
 .cm-header__logo a {
   display: block;
   width: 182rem;
-  height: 26rem;
+  height: 28rem;
   background: url(../images/logo.png) no-repeat 50% 50%;
   background-size: cover;
   font-size: 0;
@@ -2837,6 +2837,7 @@ body::-webkit-scrollbar-thumb {
 .cm-tab .swiper-slide {
   width: auto !important;
   height: 68rem;
+  margin-right: 40px;
 }
 .cm-tab .swiper-slide a {
   display: flex;
@@ -3513,6 +3514,32 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+.cm-inquiry-form__result {
+  margin-top: 230px;
+  text-align: center;
+}
+.cm-inquiry-form__result strong {
+  font-size: 24rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.57rem;
+  text-align: center;
+  color: #000;
+}
+.cm-inquiry-form__result p {
+  margin-top: 37rem;
+  font-size: 18rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.36rem;
+  text-align: center;
+  color: #333;
+  word-break: keep-all;
 }
 @media screen and (max-width: 992px) {
   .cm-inquiry {
@@ -6086,7 +6113,7 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   transition: all 0.1s ease;
 }
-.cm-products-lineup__list a:hover {
+.cm-products-lineup__list a.active, .cm-products-lineup__list a:hover {
   background: #fff;
   box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
   color: #2761ae;
@@ -6359,10 +6386,10 @@ body::-webkit-scrollbar-thumb {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
-  height: 43rem;
+  height: 72rem;
   text-align: center;
 }
-.cm-products-table__th span {
+.cm-products-table__th em {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -7872,7 +7899,7 @@ body::-webkit-scrollbar-thumb {
   color: #2762b0;
 }
 .cm-search-result__none {
-  padding: 240rem 0 50rem 0;
+  padding: 80rem 0;
   font-size: 38rem;
   font-weight: normal;
   font-stretch: normal;
