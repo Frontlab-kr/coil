@@ -7075,7 +7075,7 @@ body::-webkit-scrollbar-thumb {
     text-align: left;
     color: #000;
   }
-  .cm-products-table-item ul li strong span {
+  .cm-products-table-item ul li strong em {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -7209,7 +7209,7 @@ body::-webkit-scrollbar-thumb {
     text-align: left;
     color: #000;
   }
-  .cm-products-search-table__title span {
+  .cm-products-search-table__title em {
     display: inline-flex;
     align-items: center;
     height: 17rem;
