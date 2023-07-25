@@ -54,6 +54,22 @@ $mobile-xs: 720px;
 			display: block;
 		}
 	}
+	@media screen and (max-width: $mobile) {
+		&::-webkit-scrollbar {
+			width: 11rem;
+			border: none;
+			border-color: transparent;
+			background-color: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: #ccc;
+			border-radius: 8rem;
+			background-clip: padding-box;
+			border: 4rem solid transparent;
+			cursor: pointer;
+			display: block;
+		}
+	}
 }
 html,
 body {
@@ -301,6 +317,14 @@ body {
 		&::placeholder {
 			color: #afafaf;
 		}
+		margin: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background: url(../images/mo/select.png) no-repeat calc(100% - 12rem) 50%;
+		background-size: 10rem 6rem;
 		@media screen and (max-width: $mobile) {
 			padding: 0 10rem;
 			border-radius: 0;
@@ -312,6 +336,8 @@ body {
 			letter-spacing: -0.18rem;
 			text-align: left;
 			color: #afafaf;
+			background: url(../images/mo/select.png) no-repeat calc(100% - 20rem) 50%;
+			background-size: 10rem 6rem;
 		}
 	}
 	.ico-youtube {
@@ -869,7 +895,7 @@ body {
 		}
 	}
 	&-body {
-		min-height: 100vh;
+		//min-height: 100vh;
 		&--bg {
 			background: url(../images/e-service/bg.png) no-repeat calc(100% + 380rem) 380rem;
 			background-size: 1353rem 561rem;
@@ -1464,12 +1490,13 @@ body {
 			height: 316rem;
 			padding: 30rem;
 			border-radius: 20rem;
-			box-shadow: 0rem 6rem 30rem 0 rgba(0, 0, 0, 0.1);
 			outline: solid 1rem #cdcdcd;
 			background-color: #fff;
 			overflow: hidden;
+			transition: box-shadow 0.2s ease;
 			&:hover {
 				outline: solid 2rem #2762b0;
+				box-shadow: 0rem 6rem 30rem 0 rgba(0, 0, 0, 0.1);
 			}
 			&:hover & {
 				&__title {
@@ -2163,7 +2190,6 @@ body {
 					}
 					a {
 						display: inline-flex;
-						align-items: center;
 						&::before {
 							@include google-icon();
 							content: '\e157';
@@ -2403,18 +2429,22 @@ body {
 				}
 			}
 			&__contents {
-				padding: 34rem 34rem 36rem 114rem;
-				border-bottom: 1rem solid #cdcdcd;
-				background-color: #f5f5f5;
-				font-size: 16rem;
-				font-weight: normal;
-				font-stretch: normal;
-				font-style: normal;
-				line-height: 1.5;
-				letter-spacing: -0.24rem;
-				text-align: left;
-				color: #333;
-				display: none;
+				max-height: 0;
+				overflow: hidden;
+				transition: none;
+				section {
+					padding: 34rem 34rem 36rem 114rem;
+					border-bottom: 1rem solid #cdcdcd;
+					background-color: #f5f5f5;
+					font-size: 16rem;
+					font-weight: normal;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 1.5;
+					letter-spacing: -0.24rem;
+					text-align: left;
+					color: #333;
+				}
 			}
 			&.active {
 				.cm-accordion-item__title {
@@ -2429,7 +2459,8 @@ body {
 				}
 			}
 			&.active .cm-accordion-item__contents {
-				display: block;
+				max-height: 2000rem;
+				transition: all 2s ease-in-out;
 			}
 		}
 		@media screen and (max-width: $mobile) {
@@ -2491,7 +2522,7 @@ body {
 			&-slide {
 				width: auto !important;
 				height: 68rem;
-				margin-right: 40px;
+				margin-right: 40rem;
 				a {
 					display: flex;
 					align-items: flex-end;
@@ -2667,7 +2698,7 @@ body {
 		height: 50rem;
 		padding: 0 20rem;
 		border: solid 1rem #000;
-		//transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
 		span {
 			position: relative;
 			display: inline;
@@ -2682,20 +2713,6 @@ body {
 			text-align: left;
 			color: #000;
 			transition: all 0.2s ease-in-out;
-		}
-		&--primary {
-			border-color: #2762b0;
-			background: #2762b0;
-			span {
-				color: #fff;
-			}
-		}
-		&--black {
-			border-color: #000;
-			background: #000;
-			span {
-				color: #fff;
-			}
 		}
 		&::before {
 			content: '';
@@ -2721,6 +2738,12 @@ body {
 				opacity: 0;
 				transition: all 0.2s ease-in-out;
 				z-index: 20;
+			}
+			&:hover {
+				&:after {
+					width: 20rem;
+					opacity: 1;
+				}
 			}
 		}
 		&.download {
@@ -2749,12 +2772,35 @@ body {
 				left: 0;
 			}
 			span {
-				width: 100%;
+				width: 112rem;
 				color: #fff;
 			}
-			&:after {
-				width: 16rem;
-				opacity: 1;
+		}
+		&--primary {
+			border-color: #2762b0;
+			background: #2762b0;
+			span {
+				color: #fff;
+			}
+			&:hover {
+				span {
+					width: auto;
+				}
+			}
+		}
+		&--black {
+			border-color: #000;
+			background: #000;
+			span {
+				color: #fff;
+			}
+		}
+		&--black {
+			&:before {
+				background: #000;
+			}
+			&:hover {
+				border-color: #000;
 			}
 		}
 		@media screen and (max-width: $mobile) {
@@ -2976,20 +3022,26 @@ body {
 			position: relative;
 			width: 708rem;
 			height: 100%;
-			padding: 35rem 30rem 50rem;
+			padding: 5rem;
 			border-radius: 20rem;
 			background-color: #fff;
 			z-index: 20;
-			overflow: auto;
-			&::-webkit-scrollbar {
-				border: 4rem solid #f5f5f5;
-				background-color: #f5f5f5;
-			}
-			&::-webkit-scrollbar-thumb {
-				background-color: #cdcdcd;
-				display: block;
-				&:hover {
+			section {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				padding: 30rem 25rem 45rem;
+				overflow: auto;
+				&::-webkit-scrollbar {
+					border: none;
+					background-color: transparent;
+				}
+				&::-webkit-scrollbar-thumb {
 					background-color: #cdcdcd;
+					display: block;
+					&:hover {
+						background-color: #cdcdcd;
+					}
 				}
 			}
 		}
@@ -3116,8 +3168,9 @@ body {
 				text-align: center;
 			}
 			&__result {
-				margin-top: 230px;
+				margin-top: 230rem;
 				text-align: center;
+				display: none;
 				strong {
 					font-size: 24rem;
 					font-weight: bold;
@@ -3155,11 +3208,12 @@ body {
 				position: relative;
 				width: 100%;
 				height: 100%;
-				padding: 22rem 20rem 40rem;
 				border-radius: 10rem;
 				background-color: #fff;
 				z-index: 20;
-				overflow: auto;
+				section {
+					padding: 22rem 20rem 40rem;
+				}
 			}
 			&__title {
 				margin-bottom: 3rem;
@@ -3393,11 +3447,11 @@ body {
 	//page
 	@keyframes type {
 		from {
-			box-shadow: inset -3px 0px 0px #000;
+			box-shadow: inset -3rem 0rem 0rem #000;
 		}
 
 		to {
-			box-shadow: inset -3px 0px 0px transparent;
+			box-shadow: inset -3rem 0rem 0rem transparent;
 		}
 	}
 
@@ -3416,7 +3470,7 @@ body {
 			}
 		}
 		&__title {
-			padding-right: 12px;
+			padding-right: 12rem;
 			font-size: 60rem;
 			font-weight: bold;
 			font-stretch: normal;
@@ -3858,48 +3912,6 @@ body {
 					z-index: 20;
 					transition: all 0.2s ease-in-out;
 				}
-				&::before {
-					content: '';
-					display: block;
-					width: 0;
-					height: 100%;
-					background: #2762b0;
-					position: absolute;
-					left: auto;
-					right: 0;
-					top: 0;
-					transition: all 0.3s linear;
-					z-index: 1;
-				}
-				&::after {
-					content: '';
-					display: block;
-					position: relative;
-					left: -16rem;
-					width: 0;
-					height: 16rem;
-					background: url(../images//main/product-arrow.png) no-repeat 50% 50%;
-					opacity: 0;
-					transition: all 0.2s ease-in-out;
-					z-index: 20;
-				}
-				&:hover {
-					border-color: #2762b0;
-					color: #fff;
-					&:before {
-						width: 100%;
-						right: auto;
-						left: 0;
-					}
-					span {
-						margin-left: -56rem;
-					}
-					&:after {
-						left: 56rem;
-						width: 16rem;
-						opacity: 1;
-					}
-				}
 			}
 			&__list {
 				@media screen and (min-width: ($mobile + 1)) {
@@ -3945,6 +3957,19 @@ body {
 						height: 196rem;
 						object-fit: cover;
 					}
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						height: 0;
+						background-image: linear-gradient(to top, #2762b0, transparent);
+						z-index: 10;
+						opacity: 0;
+						transition: all 0.4s ease-in-out;
+					}
 				}
 				&__text {
 					margin: 13rem 32rem 16rem;
@@ -3959,6 +3984,17 @@ body {
 					word-break: keep-all;
 					@include text-clamp(2, 27);
 					height: 54rem;
+				}
+				&:hover & {
+					&__thumb {
+						&::after {
+							opacity: 1;
+							height: 100%;
+						}
+					}
+					&__text {
+						color: #2b64ab;
+					}
 				}
 			}
 		}
@@ -4129,7 +4165,7 @@ body {
 						content: '\e5cb';
 						font-size: 40rem;
 						color: #fff;
-						margin-right: 3px;
+						margin-right: 3rem;
 					}
 					&:hover {
 						box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
@@ -4150,7 +4186,7 @@ body {
 						content: '\e5cc';
 						font-size: 40rem;
 						color: #fff;
-						margin-left: 3px;
+						margin-left: 3rem;
 					}
 					&:hover {
 						box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
@@ -4509,7 +4545,7 @@ body {
 					display: flex;
 					align-items: center;
 					position: absolute;
-					left: 20px;
+					left: 20rem;
 					bottom: -68rem;
 					p {
 						position: relative;
@@ -5029,7 +5065,7 @@ body {
 							content: '\e5cb';
 							font-size: 20rem;
 							color: #fff;
-							margin-right: 3px;
+							margin-right: 3rem;
 						}
 						&:hover {
 							box-shadow: none;
@@ -5052,7 +5088,7 @@ body {
 							content: '\e5cc';
 							font-size: 20rem;
 							color: #fff;
-							margin-left: 3px;
+							margin-left: 3rem;
 						}
 						&:hover {
 							box-shadow: none;
@@ -5785,7 +5821,7 @@ body {
 						content: '\e5cb';
 						font-size: 40rem;
 						color: #fff;
-						margin-right: 3px;
+						margin-right: 3rem;
 					}
 					&:hover {
 						box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
@@ -5805,7 +5841,7 @@ body {
 						content: '\e5cc';
 						font-size: 40rem;
 						color: #fff;
-						margin-left: 3px;
+						margin-left: 3rem;
 					}
 					&:hover {
 						box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
@@ -6010,7 +6046,7 @@ body {
 			}
 		}
 		&-table ~ .cm-pagination {
-			margin-top: 30px;
+			margin-top: 30rem;
 		}
 		&-lineup ~ .cm-inner .cm-products-table table thead th {
 			top: 192rem;
@@ -6456,9 +6492,9 @@ body {
 					z-index: 50;
 					background: #fff;
 					transition: all 0.4s ease;
-					box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+					box-shadow: 0rem 4rem 8rem 0 rgba(0, 0, 0, 0.2);
 					.cm-inner {
-						padding: 11px 20px 30px;
+						padding: 11rem 20rem 30rem;
 						select {
 							display: block;
 							width: 100%;
@@ -6677,7 +6713,7 @@ body {
 				}
 			}
 			&-table ~ .cm-pagination {
-				margin-top: 10px;
+				margin-top: 10rem;
 			}
 			&-search {
 				margin: 26rem 0 64rem 0;

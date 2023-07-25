@@ -316,6 +316,22 @@ time {
 *:hover::-webkit-scrollbar-thumb {
   display: block;
 }
+@media screen and (max-width: 992px) {
+  *::-webkit-scrollbar {
+    width: 11rem;
+    border: none;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 8rem;
+    background-clip: padding-box;
+    border: 4rem solid transparent;
+    cursor: pointer;
+    display: block;
+  }
+}
 
 html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
@@ -566,6 +582,12 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: -0.24rem;
   text-align: left;
   color: #000;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url(../images/mo/select.png) no-repeat calc(100% - 12rem) 50%;
+  background-size: 10rem 6rem;
 }
 .cm select::-moz-placeholder {
   color: #afafaf;
@@ -585,6 +607,8 @@ body::-webkit-scrollbar-thumb {
     letter-spacing: -0.18rem;
     text-align: left;
     color: #afafaf;
+    background: url(../images/mo/select.png) no-repeat calc(100% - 20rem) 50%;
+    background-size: 10rem 6rem;
   }
 }
 .cm .ico-youtube {
@@ -1113,9 +1137,6 @@ body::-webkit-scrollbar-thumb {
     background: url(../images/mo/header-search-search.png) no-repeat calc(100% - 3rem) 50%;
     background-size: 18rem 18.5rem;
   }
-}
-.cm-body {
-  min-height: 100vh;
 }
 .cm-body--bg {
   background: url(../images/e-service/bg.png) no-repeat calc(100% + 380rem) 380rem;
@@ -1732,13 +1753,14 @@ body::-webkit-scrollbar-thumb {
   height: 316rem;
   padding: 30rem;
   border-radius: 20rem;
-  box-shadow: 0rem 6rem 30rem 0 rgba(0, 0, 0, 0.1);
   outline: solid 1rem #cdcdcd;
   background-color: #fff;
   overflow: hidden;
+  transition: box-shadow 0.2s ease;
 }
 .cm-list-item:hover {
   outline: solid 2rem #2762b0;
+  box-shadow: 0rem 6rem 30rem 0 rgba(0, 0, 0, 0.1);
 }
 .cm-list-item:hover .cm-list-item__title {
   color: #2762b0;
@@ -2492,7 +2514,6 @@ body::-webkit-scrollbar-thumb {
 }
 .cm-view-body__file p a {
   display: inline-flex;
-  align-items: center;
   font-size: 14rem;
   font-weight: normal;
   font-stretch: normal;
@@ -2753,6 +2774,11 @@ body::-webkit-scrollbar-thumb {
   max-height: 72rem;
 }
 .cm-accordion-item__contents {
+  max-height: 0;
+  overflow: hidden;
+  transition: none;
+}
+.cm-accordion-item__contents section {
   padding: 34rem 34rem 36rem 114rem;
   border-bottom: 1rem solid #cdcdcd;
   background-color: #f5f5f5;
@@ -2764,7 +2790,6 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: -0.24rem;
   text-align: left;
   color: #333;
-  display: none;
 }
 .cm-accordion-item.active .cm-accordion-item__title a p {
   color: #2b64ab;
@@ -2773,7 +2798,8 @@ body::-webkit-scrollbar-thumb {
   transform: rotate(180deg);
 }
 .cm-accordion-item.active .cm-accordion-item__contents {
-  display: block;
+  max-height: 2000rem;
+  transition: all 2s ease-in-out;
 }
 @media screen and (max-width: 992px) {
   .cm-accordion {
@@ -2837,7 +2863,7 @@ body::-webkit-scrollbar-thumb {
 .cm-tab .swiper-slide {
   width: auto !important;
   height: 68rem;
-  margin-right: 40px;
+  margin-right: 40rem;
 }
 .cm-tab .swiper-slide a {
   display: flex;
@@ -3013,6 +3039,7 @@ body::-webkit-scrollbar-thumb {
   height: 50rem;
   padding: 0 20rem;
   border: solid 1rem #000;
+  transition: all 0.2s ease-in-out;
 }
 .cm-button span {
   position: relative;
@@ -3028,20 +3055,6 @@ body::-webkit-scrollbar-thumb {
   text-align: left;
   color: #000;
   transition: all 0.2s ease-in-out;
-}
-.cm-button--primary {
-  border-color: #2762b0;
-  background: #2762b0;
-}
-.cm-button--primary span {
-  color: #fff;
-}
-.cm-button--black {
-  border-color: #000;
-  background: #000;
-}
-.cm-button--black span {
-  color: #fff;
 }
 .cm-button::before {
   content: "";
@@ -3079,6 +3092,10 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.2s ease-in-out;
   z-index: 20;
 }
+.cm-button.link:hover:after {
+  width: 20rem;
+  opacity: 1;
+}
 .cm-button.download {
   justify-content: space-between;
 }
@@ -3115,12 +3132,31 @@ body::-webkit-scrollbar-thumb {
   left: 0;
 }
 .cm-button:hover span {
-  width: 100%;
+  width: 112rem;
   color: #fff;
 }
-.cm-button:hover:after {
-  width: 16rem;
-  opacity: 1;
+.cm-button--primary {
+  border-color: #2762b0;
+  background: #2762b0;
+}
+.cm-button--primary span {
+  color: #fff;
+}
+.cm-button--primary:hover span {
+  width: auto;
+}
+.cm-button--black {
+  border-color: #000;
+  background: #000;
+}
+.cm-button--black span {
+  color: #fff;
+}
+.cm-button--black:before {
+  background: #000;
+}
+.cm-button--black:hover {
+  border-color: #000;
 }
 @media screen and (max-width: 992px) {
   .cm-button {
@@ -3377,21 +3413,27 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   width: 708rem;
   height: 100%;
-  padding: 35rem 30rem 50rem;
+  padding: 5rem;
   border-radius: 20rem;
   background-color: #fff;
   z-index: 20;
+}
+.cm-inquiry__inner section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 30rem 25rem 45rem;
   overflow: auto;
 }
-.cm-inquiry__inner::-webkit-scrollbar {
-  border: 4rem solid #f5f5f5;
-  background-color: #f5f5f5;
+.cm-inquiry__inner section::-webkit-scrollbar {
+  border: none;
+  background-color: transparent;
 }
-.cm-inquiry__inner::-webkit-scrollbar-thumb {
+.cm-inquiry__inner section::-webkit-scrollbar-thumb {
   background-color: #cdcdcd;
   display: block;
 }
-.cm-inquiry__inner::-webkit-scrollbar-thumb:hover {
+.cm-inquiry__inner section::-webkit-scrollbar-thumb:hover {
   background-color: #cdcdcd;
 }
 .cm-inquiry__bg {
@@ -3516,8 +3558,9 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 .cm-inquiry-form__result {
-  margin-top: 230px;
+  margin-top: 230rem;
   text-align: center;
+  display: none;
 }
 .cm-inquiry-form__result strong {
   font-size: 24rem;
@@ -3556,11 +3599,12 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 22rem 20rem 40rem;
     border-radius: 10rem;
     background-color: #fff;
     z-index: 20;
-    overflow: auto;
+  }
+  .cm-inquiry__inner section {
+    padding: 22rem 20rem 40rem;
   }
   .cm-inquiry__title {
     margin-bottom: 3rem;
@@ -3814,10 +3858,10 @@ body::-webkit-scrollbar-thumb {
 }
 @keyframes type {
   from {
-    box-shadow: inset -3px 0px 0px #000;
+    box-shadow: inset -3rem 0rem 0rem #000;
   }
   to {
-    box-shadow: inset -3px 0px 0px transparent;
+    box-shadow: inset -3rem 0rem 0rem transparent;
   }
 }
 .cm-404 {
@@ -3836,7 +3880,7 @@ body::-webkit-scrollbar-thumb {
   height: 27rem;
 }
 .cm-404__title {
-  padding-right: 12px;
+  padding-right: 12rem;
   font-size: 60rem;
   font-weight: bold;
   font-stretch: normal;
@@ -4263,48 +4307,6 @@ body::-webkit-scrollbar-thumb {
   z-index: 20;
   transition: all 0.2s ease-in-out;
 }
-.cm-main-service__more::before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 100%;
-  background: #2762b0;
-  position: absolute;
-  left: auto;
-  right: 0;
-  top: 0;
-  transition: all 0.3s linear;
-  z-index: 1;
-}
-.cm-main-service__more::after {
-  content: "";
-  display: block;
-  position: relative;
-  left: -16rem;
-  width: 0;
-  height: 16rem;
-  background: url(../images//main/product-arrow.png) no-repeat 50% 50%;
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
-  z-index: 20;
-}
-.cm-main-service__more:hover {
-  border-color: #2762b0;
-  color: #fff;
-}
-.cm-main-service__more:hover:before {
-  width: 100%;
-  right: auto;
-  left: 0;
-}
-.cm-main-service__more:hover span {
-  margin-left: -56rem;
-}
-.cm-main-service__more:hover:after {
-  left: 56rem;
-  width: 16rem;
-  opacity: 1;
-}
 @media screen and (min-width: 993px) {
   .cm-main-service__list .swiper {
     overflow: visible;
@@ -4346,6 +4348,19 @@ body::-webkit-scrollbar-thumb {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.cm-main-service-item__thumb:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-image: linear-gradient(to top, #2762b0, transparent);
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
 .cm-main-service-item__text {
   margin: 13rem 32rem 16rem;
   font-size: 18rem;
@@ -4365,6 +4380,13 @@ body::-webkit-scrollbar-thumb {
   word-break: break-all;
   max-height: 54rem;
   height: 54rem;
+}
+.cm-main-service-item:hover .cm-main-service-item__thumb::after {
+  opacity: 1;
+  height: 100%;
+}
+.cm-main-service-item:hover .cm-main-service-item__text {
+  color: #2b64ab;
 }
 .cm-main-applications {
   position: relative;
@@ -4544,7 +4566,7 @@ body::-webkit-scrollbar-thumb {
   content: "\e5cb";
   font-size: 40rem;
   color: #fff;
-  margin-right: 3px;
+  margin-right: 3rem;
 }
 .cm-main-applications .swiper-button-prev:hover {
   box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
@@ -4577,7 +4599,7 @@ body::-webkit-scrollbar-thumb {
   content: "\e5cc";
   font-size: 40rem;
   color: #fff;
-  margin-left: 3px;
+  margin-left: 3rem;
 }
 .cm-main-applications .swiper-button-next:hover {
   box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
@@ -4938,7 +4960,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   position: absolute;
-  left: 20px;
+  left: 20rem;
   bottom: -68rem;
   font-size: 14rem;
   font-weight: normal;
@@ -5446,7 +5468,7 @@ body::-webkit-scrollbar-thumb {
     content: "\e5cb";
     font-size: 20rem;
     color: #fff;
-    margin-right: 3px;
+    margin-right: 3rem;
   }
   .cm-main-applications .swiper-button-prev:hover {
     box-shadow: none;
@@ -5481,7 +5503,7 @@ body::-webkit-scrollbar-thumb {
     content: "\e5cc";
     font-size: 20rem;
     color: #fff;
-    margin-left: 3px;
+    margin-left: 3rem;
   }
   .cm-main-applications .swiper-button-next:hover {
     box-shadow: none;
@@ -6219,7 +6241,7 @@ body::-webkit-scrollbar-thumb {
   content: "\e5cb";
   font-size: 40rem;
   color: #fff;
-  margin-right: 3px;
+  margin-right: 3rem;
 }
 .cm-products-spotlights .swiper-button-prev:hover {
   box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
@@ -6251,7 +6273,7 @@ body::-webkit-scrollbar-thumb {
   content: "\e5cc";
   font-size: 40rem;
   color: #fff;
-  margin-left: 3px;
+  margin-left: 3rem;
 }
 .cm-products-spotlights .swiper-button-next:hover {
   box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
@@ -6453,7 +6475,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #b1c8e6;
 }
 .cm-products-table ~ .cm-pagination {
-  margin-top: 30px;
+  margin-top: 30rem;
 }
 .cm-products-lineup ~ .cm-inner .cm-products-table table thead th {
   top: 192rem;
@@ -6894,10 +6916,10 @@ body::-webkit-scrollbar-thumb {
     z-index: 50;
     background: #fff;
     transition: all 0.4s ease;
-    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0rem 4rem 8rem 0 rgba(0, 0, 0, 0.2);
   }
   .cm-products-lineup__select .cm-inner {
-    padding: 11px 20px 30px;
+    padding: 11rem 20rem 30rem;
   }
   .cm-products-lineup__select .cm-inner select {
     display: block;
@@ -7101,7 +7123,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 0;
   }
   .cm-products-table ~ .cm-pagination {
-    margin-top: 10px;
+    margin-top: 10rem;
   }
   .cm-products-search {
     margin: 26rem 0 64rem 0;
