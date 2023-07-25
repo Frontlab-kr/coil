@@ -3550,7 +3550,7 @@ body::-webkit-scrollbar-thumb {
   padding: 0 0 46rem 0;
 }
 .cm-inquiry-form__check strong {
-  margin-right: 4rem;
+  margin: 0 4rem;
 }
 .cm-inquiry-form__button {
   display: flex;
@@ -3583,6 +3583,12 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   color: #333;
   word-break: keep-all;
+}
+.cm-inquiry-form.complete #productInquiryForm {
+  display: none;
+}
+.cm-inquiry-form.complete .cm-inquiry-form__result {
+  display: block;
 }
 @media screen and (max-width: 992px) {
   .cm-inquiry {
@@ -3691,7 +3697,7 @@ body::-webkit-scrollbar-thumb {
     padding: 0 0 36rem 0;
   }
   .cm-inquiry-form__check strong {
-    margin-right: 4rem;
+    margin: 0 4rem;
   }
   .cm-inquiry-form__button {
     display: flex;
@@ -7498,7 +7504,7 @@ body::-webkit-scrollbar-thumb {
   padding: 0 0 66rem 0;
 }
 .cm-support-inquiry-form__check strong {
-  margin-right: 4rem;
+  margin: 0 4rem;
 }
 .cm-support-inquiry-form__button {
   display: flex;
@@ -7624,7 +7630,7 @@ body::-webkit-scrollbar-thumb {
     padding: 0 0 36rem 0;
   }
   .cm-support-inquiry-form__check strong {
-    margin-right: 4rem;
+    margin: 0 4rem;
   }
   .cm-support-inquiry-form__button {
     display: flex;

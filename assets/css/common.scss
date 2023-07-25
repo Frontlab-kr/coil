@@ -3159,7 +3159,7 @@ body {
 			&__check {
 				padding: 0 0 46rem 0;
 				strong {
-					margin-right: 4rem;
+					margin: 0 4rem;
 				}
 			}
 			&__button {
@@ -3192,6 +3192,16 @@ body {
 					text-align: center;
 					color: #333;
 					word-break: keep-all;
+				}
+			}
+			&.complete {
+				#productInquiryForm {
+					display: none; 
+				}
+			}
+			&.complete &{
+				&__result {
+					display: block;
 				}
 			}
 		}
@@ -3300,7 +3310,7 @@ body {
 				&__check {
 					padding: 0 0 36rem 0;
 					strong {
-						margin-right: 4rem;
+						margin: 0 4rem;
 					}
 				}
 				&__button {
@@ -7091,7 +7101,7 @@ body {
 				&__check {
 					padding: 0 0 66rem 0;
 					strong {
-						margin-right: 4rem;
+						margin: 0 4rem;
 					}
 				}
 				&__button {
@@ -7217,7 +7227,7 @@ body {
 					&__check {
 						padding: 0 0 36rem 0;
 						strong {
-							margin-right: 4rem;
+							margin: 0 4rem;
 						}
 					}
 					&__button {
