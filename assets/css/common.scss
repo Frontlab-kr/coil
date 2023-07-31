@@ -323,7 +323,7 @@ body {
 		box-sizing: border-box;
 		-webkit-appearance: none;
 		-moz-appearance: none;
-		background: url(../images/mo/select.png) no-repeat calc(100% - 12rem) 50%;
+		background:#fff url(../images/mo/select.png) no-repeat calc(100% - 12rem) 50%;
 		background-size: 10rem 6rem;
 		@media screen and (max-width: $mobile) {
 			padding: 0 10rem;
@@ -336,7 +336,7 @@ body {
 			letter-spacing: -0.18rem;
 			text-align: left;
 			color: #afafaf;
-			background: url(../images/mo/select.png) no-repeat calc(100% - 20rem) 50%;
+			background:#fff url(../images/mo/select.png) no-repeat calc(100% - 20rem) 50%; 
 			background-size: 10rem 6rem;
 		}
 	}
@@ -7166,7 +7166,7 @@ body {
 								display: flex;
 								align-items: flex-start;
 								margin-top: 10rem;
-								min-width: 60rem;
+								min-width: 70rem;
 								font-size: 14rem;
 								font-weight: bold;
 								font-stretch: normal;
@@ -8288,6 +8288,7 @@ body {
 									letter-spacing: -0.42rem;
 									text-align: left;
 									color: #333;
+									vertical-align: top;
 								}
 							}
 						}
