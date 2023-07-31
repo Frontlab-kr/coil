@@ -942,13 +942,16 @@
 				<script>
 					$(document).ready(function () {
 						$('.open-inquiry').on('click', function () {
+							$('html').addClass('mode-modal');
 							$('.cm-inquiry').addClass('active');
 						});
 						$('.cm-inquiry__close,.cm-inquiry__bg').on('click', function () {
+							$('html').removeClass('mode-modal');
 							$('.cm-inquiry').removeClass('active');
 						});
 						$(document).keyup(function (e) {
 							if (e.key === 'Escape') {
+								$('html').removeClass('mode-modal');
 								$('.cm-inquiry').removeClass('active');
 							}
 						});
