@@ -2,7 +2,7 @@
 $mobile: 992px;
 $mobile-xs: 720px;
 
-html[lang=en] .cm-about-ceo__title {
+html[lang='en'] .cm-about-ceo__title {
 	font-family: 'Poppins', 'Pretendard', sans-serif;
 }
 @mixin text-clamp($lines: 2, $line-height: false) {
@@ -474,6 +474,12 @@ body {
 								&:last-child {
 									margin-bottom: 0;
 								}
+								&.active {
+									a {
+										font-weight: 700;
+										//color: #ff5f83;
+									}
+								}
 								> a {
 									display: inline-flex;
 									padding: 10rem 0;
@@ -493,8 +499,9 @@ body {
 						&:hover {
 							> li {
 								> ul {
-									max-height: 400rem;
+									max-height: 500rem;
 									margin-top: 28rem;
+									margin-bottom: 10rem;
 								}
 							}
 						}
@@ -4126,7 +4133,7 @@ body {
 					a {
 						display: inline-flex;
 						align-items: center;
-						margin: 48rem 0;
+						margin: 25rem 0;
 						height: 40rem;
 						font-size: 24rem;
 						font-weight: normal;
@@ -4137,6 +4144,7 @@ body {
 						text-align: left;
 						color: #cdcdcd;
 						transition: all 0.1s ease;
+						white-space: nowrap;
 						&:hover {
 							color: #666;
 							&::before {
@@ -4165,9 +4173,32 @@ body {
 								background-color: #2762b0;
 							}
 						}
-						&:nth-child(1),
+						&:nth-child(1) {
+							margin-left: 90rem;
+						}
+						&:nth-child(2) {
+							margin-left: 50rem;
+						}
 						&:nth-child(3) {
-							margin-left: 14rem;
+							margin-left: 24rem;
+						}
+						&:nth-child(4) {
+							margin-left: 8rem;
+						}
+						&:nth-child(5) {
+							margin-left: 00rem;
+						}
+						&:nth-child(6) {
+							margin-left: 7rem;
+						}
+						&:nth-child(7) {
+							margin-left: 21rem;
+						}
+						&:nth-child(8) {
+							margin-left: 47rem;
+						}
+						&:nth-child(9) {
+							margin-left: 86rem;
 						}
 					}
 				}

@@ -170,12 +170,6 @@ var {
   color: inherit;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 th,
 td,
 table,
@@ -751,6 +745,9 @@ body::-webkit-scrollbar-thumb {
 .cm-header-gnb__layer > ul > li > ul > li:last-child {
   margin-bottom: 0;
 }
+.cm-header-gnb__layer > ul > li > ul > li.active a {
+  font-weight: 700;
+}
 .cm-header-gnb__layer > ul > li > ul > li > a {
   display: inline-flex;
   padding: 10rem 0;
@@ -765,8 +762,9 @@ body::-webkit-scrollbar-thumb {
 }
 @media screen and (min-width: 993px) {
   .cm-header-gnb__layer > ul:hover > li > ul {
-    max-height: 400rem;
+    max-height: 500rem;
     margin-top: 28rem;
+    margin-bottom: 10rem;
   }
 }
 @media screen and (max-width: 992px) {
@@ -4512,7 +4510,7 @@ body::-webkit-scrollbar-thumb {
 .cm-main-applications__nav p a {
   display: inline-flex;
   align-items: center;
-  margin: 48rem 0;
+  margin: 25rem 0;
   height: 40rem;
   font-size: 24rem;
   font-weight: normal;
@@ -4523,6 +4521,7 @@ body::-webkit-scrollbar-thumb {
   text-align: left;
   color: #cdcdcd;
   transition: all 0.1s ease;
+  white-space: nowrap;
 }
 .cm-main-applications__nav p a:hover {
   color: #666;
@@ -4552,8 +4551,32 @@ body::-webkit-scrollbar-thumb {
   margin-right: 12rem;
   background-color: #2762b0;
 }
-.cm-main-applications__nav p a:nth-child(1), .cm-main-applications__nav p a:nth-child(3) {
-  margin-left: 14rem;
+.cm-main-applications__nav p a:nth-child(1) {
+  margin-left: 90rem;
+}
+.cm-main-applications__nav p a:nth-child(2) {
+  margin-left: 50rem;
+}
+.cm-main-applications__nav p a:nth-child(3) {
+  margin-left: 24rem;
+}
+.cm-main-applications__nav p a:nth-child(4) {
+  margin-left: 8rem;
+}
+.cm-main-applications__nav p a:nth-child(5) {
+  margin-left: 0rem;
+}
+.cm-main-applications__nav p a:nth-child(6) {
+  margin-left: 7rem;
+}
+.cm-main-applications__nav p a:nth-child(7) {
+  margin-left: 21rem;
+}
+.cm-main-applications__nav p a:nth-child(8) {
+  margin-left: 47rem;
+}
+.cm-main-applications__nav p a:nth-child(9) {
+  margin-left: 86rem;
 }
 .cm-main-applications__nav::before {
   content: "";
