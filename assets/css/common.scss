@@ -7552,7 +7552,6 @@ body {
 			}
 		}
 	}
-
 	&-news {
 		.cm-search-result__none {
 			padding: 240rem 0;
@@ -8997,6 +8996,729 @@ body {
 								}
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+	&-applications {
+		&-tab {
+			margin-top: 47rem;
+			&__col {
+				display: flex;
+				border-left: 1rem solid #cdcdcd;
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					height: 80rem;
+					border: solid 1rem #cdcdcd;
+					border-top: none;
+					border-left: none;
+					font-size: 18rem;
+					font-weight: normal;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 1.5;
+					letter-spacing: -0.27rem;
+					text-align: center;
+					color: #000;
+					transition: all 0.2s ease;
+					&.active {
+						box-shadow: 3rem 5.2rem 12rem 0 rgba(11, 45, 91, 0.3);
+						border: solid 2rem #2b64ab;
+						background-color: #2762b0;
+						color: #fff;
+						font-weight: 700;
+					}
+					&:hover {
+						color: #2762b0;
+					}
+				}
+				&:first-child {
+					a {
+						border-top: 1rem solid #cdcdcd;
+					}
+				}
+			}
+			&__select {
+				padding: 0 20rem;
+				select {
+					display: block;
+					width: 100%;
+					height: 50rem;
+					padding: 0 10rem;
+					border-radius: 0;
+					border: solid 1rem #2b64ab;
+					background-color: #fff;
+					font-size: 12rem;
+					font-weight: bold;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 1.5;
+					letter-spacing: -0.18rem;
+					text-align: left;
+					color: #2b64ab;
+				}
+			}
+			&__zoom {
+				margin: 40rem 20rem 0;
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100%;
+					height: 40rem;
+					border-radius: 5rem;
+					box-shadow: 0rem 2.5rem 5rem 0 rgba(11, 45, 91, 0.25);
+					border: solid 1rem #716c68;
+					background-color: #fff;
+					font-size: 12rem;
+					font-weight: bold;
+					font-stretch: normal;
+					font-style: normal;
+					line-height: 1.5;
+					letter-spacing: -0.18rem;
+					color: #000;
+					&::before {
+						margin-right: 2rem;
+						@include google-icon();
+						content: '\e8ff';
+						font-size: 20rem;
+						color: #333;
+					}
+				}
+				&.active {
+					a {
+						background-color: #2762b0;
+						border: solid 1rem #2762b0;
+						color: #fff;
+						&::before {
+							content: '\e900';
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+		@keyframes fadeout {
+			from {
+				opacity: 1;
+			}
+			to {
+				opacity: 0;
+			}
+		}
+		&-viewer {
+			position: relative;
+			margin-top: 48rem;
+			background-color: #bacfeb;
+			transition: all ease-out 0.3s;
+			@media screen and (min-width: ($mobile + 1)) {
+				height: 600px !important;
+				&__inner {
+					transform: scale(1) !important;
+				}
+			}
+			&__img {
+				position: relative;
+				width: 1440rem;
+				margin: 0 auto;
+				a,
+				em {
+					&:not(.link-group) {
+						position: absolute;
+						top: 0;
+						left: 0;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						width: 220rem;
+						height: 60rem;
+						border-radius: 30px;
+						background-color: #d6e5f9;
+						font-size: 16px;
+						font-weight: 700;
+						font-stretch: normal;
+						font-style: normal;
+						line-height: 1.5;
+						letter-spacing: normal;
+						text-align: center;
+						color: #243449;
+						transition: all 0.2s ease;
+					}
+					&:not(.disabled) {
+						box-shadow: 3px 5.2px 12px 0 rgba(11, 45, 91, 0.3);
+						background-color: #2762b0;
+						color: #fff;
+						&:after {
+							content: '';
+							display: block;
+							min-width: 20px;
+							width: 20px;
+							height: 20px;
+							margin-left: 8px;
+							background: url(../images/applications/arrow.png) no-repeat 50% 50%;
+						}
+						&:hover {
+							box-shadow: 3px 5.2px 12px 0 rgba(11, 45, 91, 0.3), 0px 5px 10px 0 rgba(11, 45, 91, 0.25);
+							background-color: #123461;
+						}
+					}
+					&.disabled {
+						pointer-events: none;
+						font-weight: 500;
+					}
+					&.none-link {
+						&:after {
+							display: none;
+						}
+						pointer-events: none;
+					}
+					&.coil {
+						background: #2762b0 url(../images/applications/coil.png) no-repeat 50% 50%;
+						font-size: 0;
+						&:after {
+							display: none;
+						}
+					}
+					&.link-group {
+						background: none;
+						box-shadow: none;
+						border-radius: 20px;
+						transition: all 0.2s ease;
+						border: solid 4px transparent;
+						&:after {
+							display: none;
+						}
+						&:hover {
+							box-shadow: none;
+							border-color: #123461;
+							background: rgba($color: #123461, $alpha: 0.3);
+							.none-link {
+								box-shadow: 3px 5.2px 12px 0 rgba(11, 45, 91, 0.3), 0px 5px 10px 0 rgba(11, 45, 91, 0.25);
+								background-color: #123461;
+							}
+						}
+					}
+				}
+				&.smartphone-tablet-pc {
+					.link01 {
+						top: 70rem;
+						left: 372rem;
+					}
+					.link02 {
+						top: 70rem;
+						left: 632rem;
+					}
+					.link03 {
+						top: 70rem;
+						left: 892rem;
+					}
+					.link04 {
+						top: 170rem;
+						left: 372rem;
+					}
+					.link05 {
+						top: 170rem;
+						left: 892rem;
+					}
+					.link-group {
+						position: absolute;
+						top: 270px;
+						left: 372px;
+						width: 220px;
+						height: 260px;
+						// background: #f60;
+						// opacity: 0.4;
+					}
+					.link06 {
+						top: 16rem;
+						left: 26rem;
+						width: 160rem;
+					}
+					.link07 {
+						top: 96rem;
+						left: 26rem;
+						width: 160rem;
+					}
+					.link08 {
+						top: 176rem;
+						left: 26rem;
+						width: 160rem;
+					}
+					.link09 {
+						top: 270rem;
+						left: 892rem;
+					}
+					.link10 {
+						top: 370rem;
+						left: 892rem;
+					}
+					.link11 {
+						top: 470rem;
+						left: 892rem;
+					}
+				}
+				&.tv {
+					.link01 {
+						top: 70rem;
+						left: 350rem;
+					}
+					.link02 {
+						top: 70rem;
+						left: 870rem;
+					}
+					.link03 {
+						top: 203rem;
+						left: 350rem;
+					}
+					.link04 {
+						top: 203rem;
+						left: 870rem;
+					}
+					.link05 {
+						top: 337rem;
+						left: 350rem;
+					}
+					.link06 {
+						top: 337rem;
+						left: 870rem;
+					}
+					.link07 {
+						top: 470rem;
+						left: 350rem;
+					}
+					.link08 {
+						top: 470rem;
+						left: 870rem;
+					}
+				}
+				&.ddr5 {
+					a {
+						width: 160px;
+					}
+					.link01 {
+						top: 70rem;
+						left: 110rem;
+					}
+					.link02 {
+						top: 140rem;
+						left: 110rem;
+					}
+					.link03 {
+						top: 211rem;
+						left: 110rem;
+					}
+					.link04 {
+						top: 291rem;
+						left: 110rem;
+					}
+					.link05 {
+						top: 431rem;
+						left: 110rem;
+					}
+					.link06 {
+						top: 271rem;
+						left: 360rem;
+					}
+					.link07 {
+						top: 138rem;
+						left: 610rem;
+					}
+					.link08 {
+						top: 289rem;
+						left: 610rem;
+					}
+					.link09 {
+						top: 430rem;
+						left: 610rem;
+					}
+					.link10 {
+						top: 271rem;
+						left: 850rem;
+					}
+					.link11 {
+						top: 271rem;
+						left: 1150rem;
+					}
+				}
+				&.voltage-regulator-module {
+					a {
+						width: 160px;
+					}
+					.link01 {
+						top: 270rem;
+						left: 130rem;
+					}
+					.link02 {
+						top: 88rem;
+						left: 548rem;
+					}
+					.link03 {
+						top: 213rem;
+						left: 548rem;
+					}
+					.link04 {
+						top: 355rem;
+						left: 548rem;
+					}
+					.link05 {
+						top: 470rem;
+						left: 550rem;
+					}
+					.link06 {
+						top: 130rem;
+						left: 970rem;
+					}
+					.link07 {
+						top: 270rem;
+						left: 970rem;
+					}
+					.link08 {
+						top: 410rem;
+						left: 970rem;
+					}
+					.link09 {
+						top: 190rem;
+						left: 1176rem;
+					}
+					.link10 {
+						top: 270rem;
+						left: 1176rem;
+					}
+					.link11 {
+						top: 350rem;
+						left: 1176rem;
+					}
+				}
+				&.automotive-infotainment {
+					.link01 {
+						top: 70rem;
+						left: 150rem;
+					}
+					.link02 {
+						top: 233rem;
+						left: 150rem;
+					}
+					.link03 {
+						top: 352rem;
+						left: 150rem;
+					}
+					.link04 {
+						top: 470rem;
+						left: 150rem;
+					}
+					.link05 {
+						width: 180px;
+						height: 40px;
+						top: 106rem;
+						left: 409rem;
+					}
+					.link06 {
+						width: 180px;
+						height: 40px;
+						top: 167rem;
+						left: 409rem;
+					}
+					.link07 {
+						width: 180px;
+						height: 40px;
+						top: 269rem;
+						left: 409rem;
+					}
+					.link08 {
+						width: 180px;
+						height: 40px;
+						top: 388rem;
+						left: 409rem;
+					}
+					.link09 {
+						top: 470rem;
+						left: 610rem;
+					}
+					.link10 {
+						width: 180px;
+						height: 40px;
+						top: 399rem;
+						left: 860rem;
+					}
+					.link11 {
+						top: 176rem;
+						left: 1070rem;
+					}
+					.link12 {
+						top: 269rem;
+						left: 1070rem;
+					}
+					.link13 {
+						top: 363rem;
+						left: 1070rem;
+					}
+				}
+				&.automotive-lighting {
+					.link01 {
+						width: 160px;
+						top: 101rem;
+						left: 150rem;
+					}
+					.link02 {
+						top: 101rem;
+						left: 351rem;
+					}
+					.link03 {
+						top: 231rem;
+						left: 351rem;
+					}
+					.link04 {
+						top: 101rem;
+						left: 611rem;
+					}
+					.link05 {
+						width: 160px;
+						top: 251rem;
+						left: 641rem;
+					}
+					.link06 {
+						width: 160px;
+						top: 321rem;
+						left: 641rem;
+					}
+					.link07 {
+						width: 160px;
+						height: 105px;
+						top: 391rem;
+						left: 641rem;
+					}
+					.link-group01 {
+						position: absolute;
+						top: 231px;
+						left: 611px;
+						width: 220px;
+						height: 285px;
+					}
+					.link05 {
+						top: 16rem;
+						left: 26rem;
+					}
+					.link06 {
+						top: 86rem;
+						left: 26rem;
+					}
+					.link07 {
+						top: 156rem;
+						left: 26rem;
+					}
+					.link08 {
+						top: 101rem;
+						left: 871rem;
+					}
+					.link09 {
+						width: 160px;
+						top: 251rem;
+						left: 901rem;
+					}
+					.link10 {
+						width: 160px;
+						top: 321rem;
+						left: 901rem;
+					}
+					.link11 {
+						width: 160px;
+						height: 105px;
+						top: 391rem;
+						left: 901rem;
+					}
+					.link-group02 {
+						position: absolute;
+						top: 231px;
+						left: 871px;
+						width: 220px;
+						height: 285px;
+					}
+					.link09 {
+						top: 16rem;
+						left: 26rem;
+					}
+					.link10 {
+						top: 86rem;
+						left: 26rem;
+					}
+					.link11 {
+						top: 156rem;
+						left: 26rem;
+					}
+					.link12 {
+						width: 160px;
+						top: 101rem;
+						left: 1131rem;
+					}
+					.link13 {
+						width: 160px;
+						height: 269px;
+						top: 231rem;
+						left: 1131rem;
+					}
+				}
+				&.automotive-driving {
+					.link01 {
+						width: 160px;
+						top: 270rem;
+						left: 151rem;
+					}
+					.link02 {
+						height: 90px;
+						top: 178rem;
+						left: 420rem;
+						border-radius: 100px;
+					}
+					.link03 {
+						top: 98rem;
+						left: 679rem;
+					}
+					.link04 {
+						top: 106rem;
+						left: 969rem;
+					}
+					.link05 {
+						top: 193rem;
+						left: 969rem;
+					}
+					.link06 {
+						height: 90px;
+						top: 419rem;
+						left: 420rem;
+						border-radius: 100px;
+					}
+					.link07 {
+						width: 509px;
+						height: 90px;
+						top: 419rem;
+						left: 680rem;
+						border-radius: 100px;
+					}
+				}
+				&.automotive-xev {
+					.link01 {
+						top: 142rem;
+						left: 152rem;
+					}
+					.link02 {
+						top: 142rem;
+						left: 463rem;
+					}
+					.link03 {
+						top: 142rem;
+						left: 703rem;
+					}
+					.link04 {
+						top: 142rem;
+						left: 943rem;
+					}
+					.link05 {
+						top: 368rem;
+						left: 152rem;
+					}
+					.link06 {
+						top: 368rem;
+						left: 463rem;
+					}
+					.link07 {
+						height: 100px;
+						top: 348rem;
+						left: 703rem;
+					}
+					.link08 {
+						height: 100px;
+						top: 348rem;
+						left: 943rem;
+					}
+					.link09 {
+						width: 200px;
+						top: 368rem;
+						left: 1183rem;
+					}
+				}
+				&.automotive-network {
+					.link01 {
+						top: 70px;
+						left: 610rem;
+					}
+					.link02 {
+						top: 167px;
+						left: 350rem;
+					}
+					.link03 {
+						top: 270px;
+						left: 350rem;
+					}
+					.link04 {
+						top: 374px;
+						left: 350rem;
+					}
+					.link05 {
+						top: 167px;
+						left: 870rem;
+					}
+					.link06 {
+						top: 270px;
+						left: 870rem;
+					}
+					.link07 {
+						top: 374px;
+						left: 870rem;
+					}
+					.link08 {
+						top: 470px;
+						left: 610rem;
+					}
+				}
+			}
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100rem;
+				height: 100rem;
+				background: url(../images/applications/swiper.png) no-repeat 50% 50%;
+				background-size: cover;
+				transition: all 0.4s ease;
+				transform: translate(-50%, -50%);
+				z-index: 100;
+				opacity: 0;
+			}
+			@media screen and (max-width: $mobile) {
+				height: 290rem;
+				margin-top: 20rem;
+				overflow: auto;
+				&__img {
+					// display: flex;
+					// justify-content: center;
+					width: 100%;
+					overflow: hidden;
+				}
+				&__inner {
+					transform: scale(0.375);
+					transform-origin: left top;
+					transition: all ease-out 0.3s;
+				}
+				&.active {
+					height: 600rem !important;
+					&:before {
+						opacity: 1;
+						animation: fadeout 1s;
+						animation-delay: 1s;
+						animation-fill-mode: forwards;
+					}
+					.cm-applications-viewer__img {
+						width: 1440rem;
+						//overflow: auto;
+					}
+					.cm-applications-viewer__inner {
+						transform: scale(1) !important;
 					}
 				}
 			}

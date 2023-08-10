@@ -9407,3 +9407,723 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
   }
 }
+.cm-applications-tab {
+  margin-top: 47rem;
+}
+.cm-applications-tab__col {
+  display: flex;
+  border-left: 1rem solid #cdcdcd;
+}
+.cm-applications-tab__col a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80rem;
+  border: solid 1rem #cdcdcd;
+  border-top: none;
+  border-left: none;
+  font-size: 18rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.27rem;
+  text-align: center;
+  color: #000;
+  transition: all 0.2s ease;
+}
+.cm-applications-tab__col a.active {
+  box-shadow: 3rem 5.2rem 12rem 0 rgba(11, 45, 91, 0.3);
+  border: solid 2rem #2b64ab;
+  background-color: #2762b0;
+  color: #fff;
+  font-weight: 700;
+}
+.cm-applications-tab__col a:hover {
+  color: #2762b0;
+}
+.cm-applications-tab__col:first-child a {
+  border-top: 1rem solid #cdcdcd;
+}
+.cm-applications-tab__select {
+  padding: 0 20rem;
+}
+.cm-applications-tab__select select {
+  display: block;
+  width: 100%;
+  height: 50rem;
+  padding: 0 10rem;
+  border-radius: 0;
+  border: solid 1rem #2b64ab;
+  background-color: #fff;
+  font-size: 12rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.18rem;
+  text-align: left;
+  color: #2b64ab;
+}
+.cm-applications-tab__zoom {
+  margin: 40rem 20rem 0;
+}
+.cm-applications-tab__zoom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40rem;
+  border-radius: 5rem;
+  box-shadow: 0rem 2.5rem 5rem 0 rgba(11, 45, 91, 0.25);
+  border: solid 1rem #716c68;
+  background-color: #fff;
+  font-size: 12rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.18rem;
+  color: #000;
+}
+.cm-applications-tab__zoom a::before {
+  margin-right: 2rem;
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  content: "\e8ff";
+  font-size: 20rem;
+  color: #333;
+}
+.cm-applications-tab__zoom.active a {
+  background-color: #2762b0;
+  border: solid 1rem #2762b0;
+  color: #fff;
+}
+.cm-applications-tab__zoom.active a::before {
+  content: "\e900";
+  color: #fff;
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.cm-applications-viewer {
+  position: relative;
+  margin-top: 48rem;
+  background-color: #bacfeb;
+  transition: all ease-out 0.3s;
+}
+@media screen and (min-width: 993px) {
+  .cm-applications-viewer {
+    height: 600px !important;
+  }
+  .cm-applications-viewer__inner {
+    transform: scale(1) !important;
+  }
+}
+.cm-applications-viewer__img {
+  position: relative;
+  width: 1440rem;
+  margin: 0 auto;
+}
+.cm-applications-viewer__img a:not(.link-group),
+.cm-applications-viewer__img em:not(.link-group) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220rem;
+  height: 60rem;
+  border-radius: 30px;
+  background-color: #d6e5f9;
+  font-size: 16px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: center;
+  color: #243449;
+  transition: all 0.2s ease;
+}
+.cm-applications-viewer__img a:not(.disabled),
+.cm-applications-viewer__img em:not(.disabled) {
+  box-shadow: 3px 5.2px 12px 0 rgba(11, 45, 91, 0.3);
+  background-color: #2762b0;
+  color: #fff;
+}
+.cm-applications-viewer__img a:not(.disabled):after,
+.cm-applications-viewer__img em:not(.disabled):after {
+  content: "";
+  display: block;
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  background: url(../images/applications/arrow.png) no-repeat 50% 50%;
+}
+.cm-applications-viewer__img a:not(.disabled):hover,
+.cm-applications-viewer__img em:not(.disabled):hover {
+  box-shadow: 3px 5.2px 12px 0 rgba(11, 45, 91, 0.3), 0px 5px 10px 0 rgba(11, 45, 91, 0.25);
+  background-color: #123461;
+}
+.cm-applications-viewer__img a.disabled,
+.cm-applications-viewer__img em.disabled {
+  pointer-events: none;
+  font-weight: 500;
+}
+.cm-applications-viewer__img a.none-link,
+.cm-applications-viewer__img em.none-link {
+  pointer-events: none;
+}
+.cm-applications-viewer__img a.none-link:after,
+.cm-applications-viewer__img em.none-link:after {
+  display: none;
+}
+.cm-applications-viewer__img a.coil,
+.cm-applications-viewer__img em.coil {
+  background: #2762b0 url(../images/applications/coil.png) no-repeat 50% 50%;
+  font-size: 0;
+}
+.cm-applications-viewer__img a.coil:after,
+.cm-applications-viewer__img em.coil:after {
+  display: none;
+}
+.cm-applications-viewer__img a.link-group,
+.cm-applications-viewer__img em.link-group {
+  background: none;
+  box-shadow: none;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  border: solid 4px transparent;
+}
+.cm-applications-viewer__img a.link-group:after,
+.cm-applications-viewer__img em.link-group:after {
+  display: none;
+}
+.cm-applications-viewer__img a.link-group:hover,
+.cm-applications-viewer__img em.link-group:hover {
+  box-shadow: none;
+  border-color: #123461;
+  background: rgba(18, 52, 97, 0.3);
+}
+.cm-applications-viewer__img a.link-group:hover .none-link,
+.cm-applications-viewer__img em.link-group:hover .none-link {
+  box-shadow: 3px 5.2px 12px 0 rgba(11, 45, 91, 0.3), 0px 5px 10px 0 rgba(11, 45, 91, 0.25);
+  background-color: #123461;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link01 {
+  top: 70rem;
+  left: 372rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link02 {
+  top: 70rem;
+  left: 632rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link03 {
+  top: 70rem;
+  left: 892rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link04 {
+  top: 170rem;
+  left: 372rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link05 {
+  top: 170rem;
+  left: 892rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link-group {
+  position: absolute;
+  top: 270px;
+  left: 372px;
+  width: 220px;
+  height: 260px;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link06 {
+  top: 16rem;
+  left: 26rem;
+  width: 160rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link07 {
+  top: 96rem;
+  left: 26rem;
+  width: 160rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link08 {
+  top: 176rem;
+  left: 26rem;
+  width: 160rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link09 {
+  top: 270rem;
+  left: 892rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link10 {
+  top: 370rem;
+  left: 892rem;
+}
+.cm-applications-viewer__img.smartphone-tablet-pc .link11 {
+  top: 470rem;
+  left: 892rem;
+}
+.cm-applications-viewer__img.tv .link01 {
+  top: 70rem;
+  left: 350rem;
+}
+.cm-applications-viewer__img.tv .link02 {
+  top: 70rem;
+  left: 870rem;
+}
+.cm-applications-viewer__img.tv .link03 {
+  top: 203rem;
+  left: 350rem;
+}
+.cm-applications-viewer__img.tv .link04 {
+  top: 203rem;
+  left: 870rem;
+}
+.cm-applications-viewer__img.tv .link05 {
+  top: 337rem;
+  left: 350rem;
+}
+.cm-applications-viewer__img.tv .link06 {
+  top: 337rem;
+  left: 870rem;
+}
+.cm-applications-viewer__img.tv .link07 {
+  top: 470rem;
+  left: 350rem;
+}
+.cm-applications-viewer__img.tv .link08 {
+  top: 470rem;
+  left: 870rem;
+}
+.cm-applications-viewer__img.ddr5 a {
+  width: 160px;
+}
+.cm-applications-viewer__img.ddr5 .link01 {
+  top: 70rem;
+  left: 110rem;
+}
+.cm-applications-viewer__img.ddr5 .link02 {
+  top: 140rem;
+  left: 110rem;
+}
+.cm-applications-viewer__img.ddr5 .link03 {
+  top: 211rem;
+  left: 110rem;
+}
+.cm-applications-viewer__img.ddr5 .link04 {
+  top: 291rem;
+  left: 110rem;
+}
+.cm-applications-viewer__img.ddr5 .link05 {
+  top: 431rem;
+  left: 110rem;
+}
+.cm-applications-viewer__img.ddr5 .link06 {
+  top: 271rem;
+  left: 360rem;
+}
+.cm-applications-viewer__img.ddr5 .link07 {
+  top: 138rem;
+  left: 610rem;
+}
+.cm-applications-viewer__img.ddr5 .link08 {
+  top: 289rem;
+  left: 610rem;
+}
+.cm-applications-viewer__img.ddr5 .link09 {
+  top: 430rem;
+  left: 610rem;
+}
+.cm-applications-viewer__img.ddr5 .link10 {
+  top: 271rem;
+  left: 850rem;
+}
+.cm-applications-viewer__img.ddr5 .link11 {
+  top: 271rem;
+  left: 1150rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module a {
+  width: 160px;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link01 {
+  top: 270rem;
+  left: 130rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link02 {
+  top: 88rem;
+  left: 548rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link03 {
+  top: 213rem;
+  left: 548rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link04 {
+  top: 355rem;
+  left: 548rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link05 {
+  top: 470rem;
+  left: 550rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link06 {
+  top: 130rem;
+  left: 970rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link07 {
+  top: 270rem;
+  left: 970rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link08 {
+  top: 410rem;
+  left: 970rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link09 {
+  top: 190rem;
+  left: 1176rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link10 {
+  top: 270rem;
+  left: 1176rem;
+}
+.cm-applications-viewer__img.voltage-regulator-module .link11 {
+  top: 350rem;
+  left: 1176rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link01 {
+  top: 70rem;
+  left: 150rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link02 {
+  top: 233rem;
+  left: 150rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link03 {
+  top: 352rem;
+  left: 150rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link04 {
+  top: 470rem;
+  left: 150rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link05 {
+  width: 180px;
+  height: 40px;
+  top: 106rem;
+  left: 409rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link06 {
+  width: 180px;
+  height: 40px;
+  top: 167rem;
+  left: 409rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link07 {
+  width: 180px;
+  height: 40px;
+  top: 269rem;
+  left: 409rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link08 {
+  width: 180px;
+  height: 40px;
+  top: 388rem;
+  left: 409rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link09 {
+  top: 470rem;
+  left: 610rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link10 {
+  width: 180px;
+  height: 40px;
+  top: 399rem;
+  left: 860rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link11 {
+  top: 176rem;
+  left: 1070rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link12 {
+  top: 269rem;
+  left: 1070rem;
+}
+.cm-applications-viewer__img.automotive-infotainment .link13 {
+  top: 363rem;
+  left: 1070rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link01 {
+  width: 160px;
+  top: 101rem;
+  left: 150rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link02 {
+  top: 101rem;
+  left: 351rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link03 {
+  top: 231rem;
+  left: 351rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link04 {
+  top: 101rem;
+  left: 611rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link05 {
+  width: 160px;
+  top: 251rem;
+  left: 641rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link06 {
+  width: 160px;
+  top: 321rem;
+  left: 641rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link07 {
+  width: 160px;
+  height: 105px;
+  top: 391rem;
+  left: 641rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link-group01 {
+  position: absolute;
+  top: 231px;
+  left: 611px;
+  width: 220px;
+  height: 285px;
+}
+.cm-applications-viewer__img.automotive-lighting .link05 {
+  top: 16rem;
+  left: 26rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link06 {
+  top: 86rem;
+  left: 26rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link07 {
+  top: 156rem;
+  left: 26rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link08 {
+  top: 101rem;
+  left: 871rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link09 {
+  width: 160px;
+  top: 251rem;
+  left: 901rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link10 {
+  width: 160px;
+  top: 321rem;
+  left: 901rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link11 {
+  width: 160px;
+  height: 105px;
+  top: 391rem;
+  left: 901rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link-group02 {
+  position: absolute;
+  top: 231px;
+  left: 871px;
+  width: 220px;
+  height: 285px;
+}
+.cm-applications-viewer__img.automotive-lighting .link09 {
+  top: 16rem;
+  left: 26rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link10 {
+  top: 86rem;
+  left: 26rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link11 {
+  top: 156rem;
+  left: 26rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link12 {
+  width: 160px;
+  top: 101rem;
+  left: 1131rem;
+}
+.cm-applications-viewer__img.automotive-lighting .link13 {
+  width: 160px;
+  height: 269px;
+  top: 231rem;
+  left: 1131rem;
+}
+.cm-applications-viewer__img.automotive-driving .link01 {
+  width: 160px;
+  top: 270rem;
+  left: 151rem;
+}
+.cm-applications-viewer__img.automotive-driving .link02 {
+  height: 90px;
+  top: 178rem;
+  left: 420rem;
+  border-radius: 100px;
+}
+.cm-applications-viewer__img.automotive-driving .link03 {
+  top: 98rem;
+  left: 679rem;
+}
+.cm-applications-viewer__img.automotive-driving .link04 {
+  top: 106rem;
+  left: 969rem;
+}
+.cm-applications-viewer__img.automotive-driving .link05 {
+  top: 193rem;
+  left: 969rem;
+}
+.cm-applications-viewer__img.automotive-driving .link06 {
+  height: 90px;
+  top: 419rem;
+  left: 420rem;
+  border-radius: 100px;
+}
+.cm-applications-viewer__img.automotive-driving .link07 {
+  width: 509px;
+  height: 90px;
+  top: 419rem;
+  left: 680rem;
+  border-radius: 100px;
+}
+.cm-applications-viewer__img.automotive-xev .link01 {
+  top: 142rem;
+  left: 152rem;
+}
+.cm-applications-viewer__img.automotive-xev .link02 {
+  top: 142rem;
+  left: 463rem;
+}
+.cm-applications-viewer__img.automotive-xev .link03 {
+  top: 142rem;
+  left: 703rem;
+}
+.cm-applications-viewer__img.automotive-xev .link04 {
+  top: 142rem;
+  left: 943rem;
+}
+.cm-applications-viewer__img.automotive-xev .link05 {
+  top: 368rem;
+  left: 152rem;
+}
+.cm-applications-viewer__img.automotive-xev .link06 {
+  top: 368rem;
+  left: 463rem;
+}
+.cm-applications-viewer__img.automotive-xev .link07 {
+  height: 100px;
+  top: 348rem;
+  left: 703rem;
+}
+.cm-applications-viewer__img.automotive-xev .link08 {
+  height: 100px;
+  top: 348rem;
+  left: 943rem;
+}
+.cm-applications-viewer__img.automotive-xev .link09 {
+  width: 200px;
+  top: 368rem;
+  left: 1183rem;
+}
+.cm-applications-viewer__img.automotive-network .link01 {
+  top: 70px;
+  left: 610rem;
+}
+.cm-applications-viewer__img.automotive-network .link02 {
+  top: 167px;
+  left: 350rem;
+}
+.cm-applications-viewer__img.automotive-network .link03 {
+  top: 270px;
+  left: 350rem;
+}
+.cm-applications-viewer__img.automotive-network .link04 {
+  top: 374px;
+  left: 350rem;
+}
+.cm-applications-viewer__img.automotive-network .link05 {
+  top: 167px;
+  left: 870rem;
+}
+.cm-applications-viewer__img.automotive-network .link06 {
+  top: 270px;
+  left: 870rem;
+}
+.cm-applications-viewer__img.automotive-network .link07 {
+  top: 374px;
+  left: 870rem;
+}
+.cm-applications-viewer__img.automotive-network .link08 {
+  top: 470px;
+  left: 610rem;
+}
+.cm-applications-viewer::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100rem;
+  height: 100rem;
+  background: url(../images/applications/swiper.png) no-repeat 50% 50%;
+  background-size: cover;
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  opacity: 0;
+}
+@media screen and (max-width: 992px) {
+  .cm-applications-viewer {
+    height: 290rem;
+    margin-top: 20rem;
+    overflow: auto;
+  }
+  .cm-applications-viewer__img {
+    width: 100%;
+    overflow: hidden;
+  }
+  .cm-applications-viewer__inner {
+    transform: scale(0.375);
+    transform-origin: left top;
+    transition: all ease-out 0.3s;
+  }
+  .cm-applications-viewer.active {
+    height: 600rem !important;
+  }
+  .cm-applications-viewer.active:before {
+    opacity: 1;
+    animation: fadeout 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  .cm-applications-viewer.active .cm-applications-viewer__img {
+    width: 1440rem;
+  }
+  .cm-applications-viewer.active .cm-applications-viewer__inner {
+    transform: scale(1) !important;
+  }
+}
