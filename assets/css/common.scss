@@ -3758,6 +3758,15 @@ body {
 					}
 				}
 			}
+			&__inner {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100vh;
+				padding: 80rem 0;
+				z-index: 50;
+			}
 		}
 		&-products {
 			.cm-inner {
@@ -9116,7 +9125,7 @@ body {
 			background-color: #bacfeb;
 			transition: all ease-out 0.3s;
 			@media screen and (min-width: ($mobile + 1)) {
-				height: 600px !important;
+				height: 600rem !important;
 				&__inner {
 					transform: scale(1) !important;
 				}
@@ -9136,9 +9145,9 @@ body {
 						justify-content: center;
 						width: 220rem;
 						height: 60rem;
-						border-radius: 30px;
+						border-radius: 30rem;
 						background-color: #d6e5f9;
-						font-size: 16px;
+						font-size: 16rem;
 						font-weight: 700;
 						font-stretch: normal;
 						font-style: normal;
@@ -9149,20 +9158,20 @@ body {
 						transition: all 0.2s ease;
 					}
 					&:not(.disabled) {
-						box-shadow: 3px 5.2px 12px 0 rgba(11, 45, 91, 0.3);
+						box-shadow: 3rem 5.2rem 12rem 0 rgba(11, 45, 91, 0.3);
 						background-color: #2762b0;
 						color: #fff;
 						&:after {
 							content: '';
 							display: block;
-							min-width: 20px;
-							width: 20px;
-							height: 20px;
-							margin-left: 8px;
+							min-width: 20rem;
+							width: 20rem;
+							height: 20rem;
+							margin-left: 8rem;
 							background: url(../images/applications/arrow.png) no-repeat 50% 50%;
 						}
 						&:hover {
-							box-shadow: 3px 5.2px 12px 0 rgba(11, 45, 91, 0.3), 0px 5px 10px 0 rgba(11, 45, 91, 0.25);
+							box-shadow: 3rem 5.2rem 12rem 0 rgba(11, 45, 91, 0.3), 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
 							background-color: #123461;
 						}
 					}
@@ -9186,9 +9195,9 @@ body {
 					&.link-group {
 						background: none;
 						box-shadow: none;
-						border-radius: 20px;
+						border-radius: 20rem;
 						transition: all 0.2s ease;
-						border: solid 4px transparent;
+						border: solid 4rem transparent;
 						&:after {
 							display: none;
 						}
@@ -9197,7 +9206,7 @@ body {
 							border-color: #123461;
 							background: rgba($color: #123461, $alpha: 0.3);
 							.none-link {
-								box-shadow: 3px 5.2px 12px 0 rgba(11, 45, 91, 0.3), 0px 5px 10px 0 rgba(11, 45, 91, 0.25);
+								box-shadow: 3rem 5.2rem 12rem 0 rgba(11, 45, 91, 0.3), 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
 								background-color: #123461;
 							}
 						}
@@ -9226,10 +9235,10 @@ body {
 					}
 					.link-group {
 						position: absolute;
-						top: 270px;
-						left: 372px;
-						width: 220px;
-						height: 260px;
+						top: 270rem;
+						left: 372rem;
+						width: 220rem;
+						height: 260rem;
 						// background: #f60;
 						// opacity: 0.4;
 					}
@@ -9297,7 +9306,7 @@ body {
 				}
 				&.ddr5 {
 					a {
-						width: 160px;
+						width: 160rem;
 					}
 					.link01 {
 						top: 70rem;
@@ -9346,7 +9355,7 @@ body {
 				}
 				&.voltage-regulator-module {
 					a {
-						width: 160px;
+						width: 160rem;
 					}
 					.link01 {
 						top: 270rem;
@@ -9411,26 +9420,26 @@ body {
 						left: 150rem;
 					}
 					.usb {
-						width: 180px;
-						height: 40px;
+						width: 180rem;
+						height: 40rem;
 						top: 106rem;
 						left: 409rem;
 					}
 					.can-1 {
-						width: 180px;
-						height: 40px;
+						width: 180rem;
+						height: 40rem;
 						top: 167rem;
 						left: 409rem;
 					}
 					.ldvs-interface-1 {
-						width: 180px;
-						height: 40px;
+						width: 180rem;
+						height: 40rem;
 						top: 269rem;
 						left: 409rem;
 					}
 					.can-2 {
-						width: 180px;
-						height: 40px;
+						width: 180rem;
+						height: 40rem;
 						top: 388rem;
 						left: 409rem;
 					}
@@ -9439,8 +9448,8 @@ body {
 						left: 610rem;
 					}
 					.ldvs-interface-2 {
-						width: 180px;
-						height: 40px;
+						width: 180rem;
+						height: 40rem;
 						top: 399rem;
 						left: 860rem;
 					}
@@ -9459,7 +9468,7 @@ body {
 				}
 				&.automotive-lighting {
 					.link01 {
-						width: 160px;
+						width: 160rem;
 						top: 101rem;
 						left: 150rem;
 					}
@@ -9476,27 +9485,27 @@ body {
 						left: 611rem;
 					}
 					.link05 {
-						width: 160px;
+						width: 160rem;
 						top: 251rem;
 						left: 641rem;
 					}
 					.link06 {
-						width: 160px;
+						width: 160rem;
 						top: 321rem;
 						left: 641rem;
 					}
 					.link07 {
-						width: 160px;
-						height: 105px;
+						width: 160rem;
+						height: 105rem;
 						top: 391rem;
 						left: 641rem;
 					}
 					.link-group01 {
 						position: absolute;
-						top: 231px;
-						left: 611px;
-						width: 220px;
-						height: 285px;
+						top: 231rem;
+						left: 611rem;
+						width: 220rem;
+						height: 285rem;
 					}
 					.link05 {
 						top: 16rem;
@@ -9515,27 +9524,27 @@ body {
 						left: 871rem;
 					}
 					.link09 {
-						width: 160px;
+						width: 160rem;
 						top: 251rem;
 						left: 901rem;
 					}
 					.link10 {
-						width: 160px;
+						width: 160rem;
 						top: 321rem;
 						left: 901rem;
 					}
 					.link11 {
-						width: 160px;
-						height: 105px;
+						width: 160rem;
+						height: 105rem;
 						top: 391rem;
 						left: 901rem;
 					}
 					.link-group02 {
 						position: absolute;
-						top: 231px;
-						left: 871px;
-						width: 220px;
-						height: 285px;
+						top: 231rem;
+						left: 871rem;
+						width: 220rem;
+						height: 285rem;
 					}
 					.link09 {
 						top: 16rem;
@@ -9550,28 +9559,28 @@ body {
 						left: 26rem;
 					}
 					.link12 {
-						width: 160px;
+						width: 160rem;
 						top: 101rem;
 						left: 1131rem;
 					}
 					.link13 {
-						width: 160px;
-						height: 269px;
+						width: 160rem;
+						height: 269rem;
 						top: 231rem;
 						left: 1131rem;
 					}
 				}
 				&.automotive-driving {
 					.link01 {
-						width: 160px;
+						width: 160rem;
 						top: 270rem;
 						left: 151rem;
 					}
 					.pmic {
-						height: 90px;
+						height: 90rem;
 						top: 178rem;
 						left: 420rem;
-						border-radius: 100px;
+						border-radius: 100rem;
 					}
 					.link03 {
 						top: 98rem;
@@ -9586,17 +9595,17 @@ body {
 						left: 969rem;
 					}
 					.dc-dc {
-						height: 90px;
+						height: 90rem;
 						top: 419rem;
 						left: 420rem;
-						border-radius: 100px;
+						border-radius: 100rem;
 					}
 					.camera-radar-sensor-mcu-can-memory {
-						width: 509px;
-						height: 90px;
+						width: 509rem;
+						height: 90rem;
 						top: 419rem;
 						left: 680rem;
-						border-radius: 100px;
+						border-radius: 100rem;
 					}
 				}
 				&.automotive-xev {
@@ -9625,52 +9634,52 @@ body {
 						left: 463rem;
 					}
 					.battery-management-system {
-						height: 100px;
+						height: 100rem;
 						top: 348rem;
 						left: 703rem;
 					}
 					.high-to-low-dc-dc-converter {
-						height: 100px;
+						height: 100rem;
 						top: 348rem;
 						left: 943rem;
 					}
 					.link09 {
-						width: 200px;
+						width: 200rem;
 						top: 368rem;
 						left: 1183rem;
 					}
 				}
 				&.automotive-network {
 					.link01 {
-						top: 70px;
+						top: 70rem;
 						left: 610rem;
 					}
 					.can-interface {
-						top: 167px;
+						top: 167rem;
 						left: 350rem;
 					}
 					.can-fd-interface {
-						top: 270px;
+						top: 270rem;
 						left: 350rem;
 					}
 					.link04 {
-						top: 374px;
+						top: 374rem;
 						left: 350rem;
 					}
 					.ethernet-interface {
-						top: 167px;
+						top: 167rem;
 						left: 870rem;
 					}
 					.flexray-interface {
-						top: 270px;
+						top: 270rem;
 						left: 870rem;
 					}
 					.link07 {
-						top: 374px;
+						top: 374rem;
 						left: 870rem;
 					}
 					.pmic {
-						top: 470px;
+						top: 470rem;
 						left: 610rem;
 					}
 				}
