@@ -9204,7 +9204,7 @@ body {
 					}
 				}
 				&.smartphone-tablet-pc {
-					.link01 {
+					.rf-circuit {
 						top: 70rem;
 						left: 372rem;
 					}
@@ -9212,15 +9212,15 @@ body {
 						top: 70rem;
 						left: 632rem;
 					}
-					.link03 {
+					.display {
 						top: 70rem;
 						left: 892rem;
 					}
-					.link04 {
+					.usb {
 						top: 170rem;
 						left: 372rem;
 					}
-					.link05 {
+					.camera-module {
 						top: 170rem;
 						left: 892rem;
 					}
@@ -9233,17 +9233,17 @@ body {
 						// background: #f60;
 						// opacity: 0.4;
 					}
-					.link06 {
+					.wifi {
 						top: 16rem;
 						left: 26rem;
 						width: 160rem;
 					}
-					.link07 {
+					.bluetooth {
 						top: 96rem;
 						left: 26rem;
 						width: 160rem;
 					}
-					.link08 {
+					.gps {
 						top: 176rem;
 						left: 26rem;
 						width: 160rem;
@@ -9252,45 +9252,45 @@ body {
 						top: 270rem;
 						left: 892rem;
 					}
-					.link10 {
+					.power-management {
 						top: 370rem;
 						left: 892rem;
 					}
-					.link11 {
+					.battery-switch-charger {
 						top: 470rem;
 						left: 892rem;
 					}
 				}
 				&.tv {
-					.link01 {
+					.tuner {
 						top: 70rem;
 						left: 350rem;
 					}
-					.link02 {
+					.sound {
 						top: 70rem;
 						left: 870rem;
 					}
-					.link03 {
+					.usb-hdmi {
 						top: 203rem;
 						left: 350rem;
 					}
-					.link04 {
+					.led-driver {
 						top: 203rem;
 						left: 870rem;
 					}
-					.link05 {
+					.lan {
 						top: 337rem;
 						left: 350rem;
 					}
-					.link06 {
+					.t-con {
 						top: 337rem;
 						left: 870rem;
 					}
-					.link07 {
+					.smps {
 						top: 470rem;
 						left: 350rem;
 					}
-					.link08 {
+					.dc-dc-converter {
 						top: 470rem;
 						left: 870rem;
 					}
@@ -9323,15 +9323,15 @@ body {
 						top: 271rem;
 						left: 360rem;
 					}
-					.link07 {
+					.circuit-1 {
 						top: 138rem;
 						left: 610rem;
 					}
-					.link08 {
+					.circuit-2 {
 						top: 289rem;
 						left: 610rem;
 					}
-					.link09 {
+					.circuit-3 {
 						top: 430rem;
 						left: 610rem;
 					}
@@ -9352,15 +9352,15 @@ body {
 						top: 270rem;
 						left: 130rem;
 					}
-					.link02 {
+					.circuit-1 {
 						top: 88rem;
 						left: 548rem;
 					}
-					.link03 {
+					.circuit-2 {
 						top: 213rem;
 						left: 548rem;
 					}
-					.link04 {
+					.circuit-3 {
 						top: 355rem;
 						left: 548rem;
 					}
@@ -9406,39 +9406,39 @@ body {
 						top: 352rem;
 						left: 150rem;
 					}
-					.link04 {
+					.battery-switch-charger {
 						top: 470rem;
 						left: 150rem;
 					}
-					.link05 {
+					.usb {
 						width: 180px;
 						height: 40px;
 						top: 106rem;
 						left: 409rem;
 					}
-					.link06 {
+					.can-1 {
 						width: 180px;
 						height: 40px;
 						top: 167rem;
 						left: 409rem;
 					}
-					.link07 {
+					.ldvs-interface-1 {
 						width: 180px;
 						height: 40px;
 						top: 269rem;
 						left: 409rem;
 					}
-					.link08 {
+					.can-2 {
 						width: 180px;
 						height: 40px;
 						top: 388rem;
 						left: 409rem;
 					}
-					.link09 {
+					.dc-dc {
 						top: 470rem;
 						left: 610rem;
 					}
-					.link10 {
+					.ldvs-interface-2 {
 						width: 180px;
 						height: 40px;
 						top: 399rem;
@@ -9463,15 +9463,15 @@ body {
 						top: 101rem;
 						left: 150rem;
 					}
-					.link02 {
+					.input-filter {
 						top: 101rem;
 						left: 351rem;
 					}
-					.link03 {
+					.boost {
 						top: 231rem;
 						left: 351rem;
 					}
-					.link04 {
+					.led-driver-1 {
 						top: 101rem;
 						left: 611rem;
 					}
@@ -9510,7 +9510,7 @@ body {
 						top: 156rem;
 						left: 26rem;
 					}
-					.link08 {
+					.output-filter-1 {
 						top: 101rem;
 						left: 871rem;
 					}
@@ -9567,7 +9567,7 @@ body {
 						top: 270rem;
 						left: 151rem;
 					}
-					.link02 {
+					.pmic {
 						height: 90px;
 						top: 178rem;
 						left: 420rem;
@@ -9577,21 +9577,21 @@ body {
 						top: 98rem;
 						left: 679rem;
 					}
-					.link04 {
+					.can-interface {
 						top: 106rem;
 						left: 969rem;
 					}
-					.link05 {
+					.ethernet-interface {
 						top: 193rem;
 						left: 969rem;
 					}
-					.link06 {
+					.dc-dc {
 						height: 90px;
 						top: 419rem;
 						left: 420rem;
 						border-radius: 100px;
 					}
-					.link07 {
+					.camera-radar-sensor-mcu-can-memory {
 						width: 509px;
 						height: 90px;
 						top: 419rem;
@@ -9604,7 +9604,7 @@ body {
 						top: 142rem;
 						left: 152rem;
 					}
-					.link02 {
+					.on-board-charger {
 						top: 142rem;
 						left: 463rem;
 					}
@@ -9616,7 +9616,7 @@ body {
 						top: 142rem;
 						left: 943rem;
 					}
-					.link05 {
+					.off-board-charger {
 						top: 368rem;
 						left: 152rem;
 					}
@@ -9624,12 +9624,12 @@ body {
 						top: 368rem;
 						left: 463rem;
 					}
-					.link07 {
+					.battery-management-system {
 						height: 100px;
 						top: 348rem;
 						left: 703rem;
 					}
-					.link08 {
+					.high-to-low-dc-dc-converter {
 						height: 100px;
 						top: 348rem;
 						left: 943rem;
@@ -9645,11 +9645,11 @@ body {
 						top: 70px;
 						left: 610rem;
 					}
-					.link02 {
+					.can-interface {
 						top: 167px;
 						left: 350rem;
 					}
-					.link03 {
+					.can-fd-interface {
 						top: 270px;
 						left: 350rem;
 					}
@@ -9657,11 +9657,11 @@ body {
 						top: 374px;
 						left: 350rem;
 					}
-					.link05 {
+					.ethernet-interface {
 						top: 167px;
 						left: 870rem;
 					}
-					.link06 {
+					.flexray-interface {
 						top: 270px;
 						left: 870rem;
 					}
@@ -9669,7 +9669,7 @@ body {
 						top: 374px;
 						left: 870rem;
 					}
-					.link08 {
+					.pmic {
 						top: 470px;
 						left: 610rem;
 					}
