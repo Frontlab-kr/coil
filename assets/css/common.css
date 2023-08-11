@@ -4435,7 +4435,7 @@ body::-webkit-scrollbar-thumb {
 }
 .cm-main-applications {
   position: relative;
-  height: 916rem;
+  min-height: 866rem;
   background-color: #fff;
   overflow: hidden;
 }
@@ -4445,181 +4445,94 @@ body::-webkit-scrollbar-thumb {
 .cm-main-applications .swiper {
   height: 100%;
 }
-.cm-main-applications .swiper-slide {
-  display: flex;
-  height: 916rem;
-  background-color: #fff;
-}
-.cm-main-applications__info {
-  width: 412rem;
-  margin-top: 200rem;
-}
 .cm-main-applications__title {
-  margin-bottom: 52rem;
-  font-size: 52rem;
+  padding: 115px 0 53px 0;
+  font-size: 52px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1;
-  letter-spacing: -0.78rem;
+  line-height: 1.5;
+  letter-spacing: -0.78px;
   color: #191919;
 }
-.cm-main-applications__text {
-  margin-bottom: 38rem;
-}
-.cm-main-applications__text strong {
-  font-size: 38rem;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: -0.57rem;
-  text-align: left;
-  color: #2762b0;
-}
-.cm-main-applications__text p {
-  margin-top: 10rem;
-  font-size: 18rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: #666;
-}
-.cm-main-applications__chip .cm-chip {
-  margin: 0 6rem 9rem 0;
-}
-.cm-main-applications__thumb {
-  height: 608rem;
-  margin-top: 120rem;
-  padding: 22rem;
-  border: solid 2rem #cdcdcd;
-  border-radius: 564rem;
-}
-.cm-main-applications__thumb img {
-  width: 564rem;
-  height: 564rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 564rem;
-  box-shadow: 0rem 10rem 18rem 0 rgba(20, 20, 20, 0.3);
-}
-.cm-main-applications__nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  width: 364rem;
-}
-.cm-main-applications__nav p {
+.cm-main-applications .swiper-slide {
   position: relative;
-  z-index: 20;
+  width: 342px;
+  height: 440px;
+}
+.cm-main-applications .swiper-slide:nth-child(2n) {
+  margin-top: 60px;
+}
+.cm-main-applications .swiper-slide a {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   position: relative;
-  left: -7rem;
-  margin-bottom: 50rem;
+  height: 100%;
+  padding: 50px 40px;
 }
-.cm-main-applications__nav p a {
-  display: inline-flex;
-  align-items: center;
-  margin: 25rem 0;
-  height: 40rem;
-  font-size: 24rem;
+.cm-main-applications .swiper-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.cm-main-applications .swiper-slide strong {
+  position: relative;
+  z-index: 20;
+  font-size: 28rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.42rem;
+  text-align: left;
+  color: #fff;
+}
+.cm-main-applications .swiper-slide p {
+  position: relative;
+  z-index: 20;
+  font-size: 16rem;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
-  letter-spacing: -0.36rem;
+  letter-spacing: -0.48rem;
   text-align: left;
-  color: #cdcdcd;
-  transition: all 0.1s ease;
-  white-space: nowrap;
+  color: #fff;
+  height: 0;
+  opacity: 0;
+  transition: all 1.2s ease;
+  overflow: hidden;
 }
-.cm-main-applications__nav p a:hover {
-  color: #666;
-}
-.cm-main-applications__nav p a:hover::before {
-  background-color: #666;
-}
-.cm-main-applications__nav p a:before {
-  content: "";
+.cm-main-applications .swiper-slide span {
   display: block;
-  width: 12rem;
-  height: 12rem;
-  margin-right: 16rem;
-  background-color: #cdcdcd;
-  border-radius: 12rem;
-  transition: all 0.1s ease;
+  position: relative;
+  z-index: 20;
+  font-size: 14rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.21rem;
+  text-align: left;
+  color: #fff;
+  height: 0;
+  opacity: 0;
+  transition: all 1.2s ease;
+  overflow: hidden;
 }
-.cm-main-applications__nav p a.active {
-  font-size: 28rem;
-  font-weight: bold;
-  color: #2762b0;
-  letter-spacing: -0.42rem;
-}
-.cm-main-applications__nav p a.active:before {
-  width: 16rem;
-  height: 16rem;
-  margin-right: 12rem;
-  background-color: #2762b0;
-}
-.cm-main-applications__nav p a:nth-child(1) {
-  margin-left: 90rem;
-}
-.cm-main-applications__nav p a:nth-child(2) {
-  margin-left: 50rem;
-}
-.cm-main-applications__nav p a:nth-child(3) {
-  margin-left: 24rem;
-}
-.cm-main-applications__nav p a:nth-child(4) {
-  margin-left: 8rem;
-}
-.cm-main-applications__nav p a:nth-child(5) {
-  margin-left: 0rem;
-}
-.cm-main-applications__nav p a:nth-child(6) {
-  margin-left: 7rem;
-}
-.cm-main-applications__nav p a:nth-child(7) {
-  margin-left: 21rem;
-}
-.cm-main-applications__nav p a:nth-child(8) {
-  margin-left: 47rem;
-}
-.cm-main-applications__nav p a:nth-child(9) {
-  margin-left: 86rem;
-}
-.cm-main-applications__nav::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
+.cm-main-applications .swiper .swiper-button-prev {
   left: 0;
-  width: 1600rem;
-  height: 1600rem;
-  margin-top: -20rem;
-  border-radius: 100000rem;
-  transform: translateY(-50%);
-  border: solid 2rem #cdcdcd;
-  z-index: 10;
-}
-.cm-main-applications .swiper-button-prev {
-  left: 50%;
-  right: auto;
   width: 42rem;
   height: 42rem;
-  margin: 295rem 0 0 -50rem;
+  margin: -46rem 0 0 -20rem;
   border-radius: 42rem;
-  background: #ddd;
+  background: rgba(0, 0, 0, 0.3);
   transition: all 0.1s ease;
 }
-.cm-main-applications .swiper-button-prev::after {
+.cm-main-applications .swiper .swiper-button-prev::after {
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
@@ -4638,21 +4551,20 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   margin-right: 3rem;
 }
-.cm-main-applications .swiper-button-prev:hover {
+.cm-main-applications .swiper .swiper-button-prev:hover {
   box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
   background-color: #2762b0;
 }
-.cm-main-applications .swiper-button-next {
-  left: 50%;
-  right: auto;
+.cm-main-applications .swiper .swiper-button-next {
+  right: 0;
   width: 42rem;
   height: 42rem;
-  margin: 295rem 0 0 4rem;
+  margin: -46rem -20rem 0 0;
   border-radius: 42rem;
-  background: #ddd;
+  background: rgba(0, 0, 0, 0.3);
   transition: all 0.1s ease;
 }
-.cm-main-applications .swiper-button-next::after {
+.cm-main-applications .swiper .swiper-button-next::after {
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
@@ -4671,7 +4583,7 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   margin-left: 3rem;
 }
-.cm-main-applications .swiper-button-next:hover {
+.cm-main-applications .swiper .swiper-button-next:hover {
   box-shadow: 0rem 5rem 10rem 0 rgba(11, 45, 91, 0.25);
   background-color: #2762b0;
 }
@@ -10134,5 +10046,178 @@ body::-webkit-scrollbar-thumb {
   }
   .cm-applications-viewer.active .cm-applications-viewer__inner {
     transform: scale(1) !important;
+  }
+}
+.cm-applications-main__title {
+  margin-top: 50rem;
+  font-size: 38rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.57rem;
+  text-align: left;
+  color: #666;
+}
+.cm-applications-main__title strong {
+  color: #2762b0;
+}
+.cm-applications-main__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 24rem;
+       column-gap: 24rem;
+  row-gap: 20rem;
+  margin-top: 80rem;
+}
+.cm-applications-main__list a {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  height: 350rem;
+  padding: 47rem;
+}
+.cm-applications-main__list a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-image: linear-gradient(to top, #2762b0, transparent);
+  z-index: 15;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.cm-applications-main__list a img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.cm-applications-main__list a strong {
+  position: relative;
+  z-index: 20;
+  font-size: 28rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.42rem;
+  text-align: left;
+  color: #fff;
+}
+.cm-applications-main__list a p {
+  position: relative;
+  z-index: 20;
+  font-size: 16rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.48rem;
+  text-align: left;
+  color: #fff;
+  height: 0;
+  opacity: 0;
+  transition: all 1.2s ease;
+  overflow: hidden;
+}
+.cm-applications-main__list a span {
+  display: block;
+  position: relative;
+  z-index: 20;
+  font-size: 14rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.21rem;
+  text-align: left;
+  color: #fff;
+  height: 0;
+  opacity: 0;
+  transition: all 1.2s ease;
+  overflow: hidden;
+}
+.cm-applications-main__list a:hover:before {
+  opacity: 1;
+  height: 100%;
+}
+.cm-applications-main__list a:hover p {
+  margin-top: 20rem;
+  opacity: 1;
+  height: 100%;
+}
+.cm-applications-main__list a:hover span {
+  margin-top: 40rem;
+  opacity: 1;
+  height: 100%;
+}
+@media screen and (max-width: 992px) {
+  .cm-applications-main {
+    padding: 0 20rem;
+  }
+  .cm-applications-main__title {
+    margin-top: 43rem;
+    font-size: 24rem;
+    letter-spacing: -0.36rem;
+  }
+  .cm-applications-main__list {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 20rem;
+         column-gap: 20rem;
+    row-gap: 20rem;
+    margin-top: 40rem;
+  }
+  .cm-applications-main__list a {
+    height: 100%;
+    padding: 0;
+  }
+  .cm-applications-main__list a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-image: linear-gradient(to top, #2762b0, transparent);
+    z-index: 15;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+  }
+  .cm-applications-main__list a img {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  .cm-applications-main__list a strong {
+    position: absolute;
+    left: 15rem;
+    bottom: 15rem;
+    font-size: 16rem;
+    letter-spacing: -0.24rem;
+  }
+  .cm-applications-main__list a p {
+    display: none;
+  }
+  .cm-applications-main__list a span {
+    display: none;
+  }
+  .cm-applications-main__list a:hover:before {
+    opacity: 0;
+  }
+  .cm-applications-main__list a:hover p {
+    margin: 0;
+  }
+  .cm-applications-main__list a:hover span {
+    margin: 0;
   }
 }
