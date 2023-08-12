@@ -4443,7 +4443,10 @@ body::-webkit-scrollbar-thumb {
   height: 100%;
 }
 .cm-main-applications .swiper {
-  height: 100%;
+  min-height: 530px;
+}
+.cm-main-applications__inner .swiper {
+  height: 530px;
 }
 .cm-main-applications__title {
   padding: 115px 0 53px 0;
@@ -4454,6 +4457,9 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.5;
   letter-spacing: -0.78px;
   color: #191919;
+}
+.cm-main-applications .swiper {
+  padding: 0 230px;
 }
 .cm-main-applications .swiper-slide {
   position: relative;
