@@ -251,12 +251,8 @@
 									<a href="" class="cm-main-keyvisual__img"><img src="https://picsum.photos/1000/1001" alt="" /></a>
 									<div class="cm-inner">
 										<div class="cm-main-keyvisual__inner">
-											<a href="" class="cm-main-keyvisual__title">
-												<p><span class="animate">We will lead our company</span></p>
-												<p><span class="animate">to become The best magnetic</span></p>
-												<p><span class="animate"> in the world</span></p>
-											</a>
-											<div class="cm-main-keyvisual__info" data-aos="fade-up" data-aos-delay="600">
+											<a href="" class="cm-main-keyvisual__title"> </a>
+											<div class="cm-main-keyvisual__info" data-aos="fade-up">
 												<div class="cm-main-keyvisual__info-bar"></div>
 												<div class="cm-main-keyvisual__info-pagination"><strong>01</strong><span>/</span>04</div>
 												<button>stop</button>
@@ -268,11 +264,7 @@
 									<a href="" class="cm-main-keyvisual__img"><img src="https://picsum.photos/1000/1002" alt="" /></a>
 									<div class="cm-inner">
 										<div class="cm-main-keyvisual__inner">
-											<a href="" class="cm-main-keyvisual__title">
-												<p><span>We will lead our company</span></p>
-												<p><span>to become The best magnetic</span></p>
-												<p><span>product supplier in the world</span></p>
-											</a>
+											<a href="" class="cm-main-keyvisual__title"> </a>
 											<div class="cm-main-keyvisual__info">
 												<div class="cm-main-keyvisual__info-bar"></div>
 												<div class="cm-main-keyvisual__info-pagination"><strong>02</strong><span>/</span>04</div>
@@ -285,11 +277,7 @@
 									<a href="" class="cm-main-keyvisual__img"><img src="https://picsum.photos/1000/1003" alt="" /></a>
 									<div class="cm-inner">
 										<div class="cm-main-keyvisual__inner">
-											<a href="" class="cm-main-keyvisual__title">
-												<p><span>We will lead our company</span></p>
-												<p><span>to become The best magnetic</span></p>
-												<p><span>product supplier in the world</span></p>
-											</a>
+											<a href="" class="cm-main-keyvisual__title"> </a>
 											<div class="cm-main-keyvisual__info">
 												<div class="cm-main-keyvisual__info-bar"></div>
 												<div class="cm-main-keyvisual__info-pagination"><strong>03</strong><span>/</span>04</div>
@@ -300,8 +288,14 @@
 								</div>
 							</div>
 						</div>
+						<div class="swiper-button-next" data-aos="fade-up"></div>
+						<div class="swiper-button-prev" data-aos="fade-up"></div>
 						<script>
 							var swiperKeyvisual = new Swiper('.cm-main-keyvisual .swiper', {
+								navigation: {
+									nextEl: '.cm-main-keyvisual .swiper-button-next',
+									prevEl: '.cm-main-keyvisual .swiper-button-prev',
+								},
 								effect: 'fade',
 								autoplay: {
 									delay: 4000,
@@ -465,10 +459,10 @@
 					<div class="cm-main-applications">
 						<div class="cm-inner">
 							<div class="cm-main-applications__inner">
-								<div class="cm-main-applications__title">Applications</div>
+								<div class="cm-main-applications__title" data-aos="fade-up">Applications</div>
 							</div>
 						</div>
-						<div class="swiper">
+						<div class="swiper" data-aos="fade-up">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
 									<a href="">
@@ -598,10 +592,10 @@
 							var swiperApplications = new Swiper('.cm-main-applications .swiper', {
 								slidesPerView: 'auto',
 								spaceBetween: 24,
-								// navigation: {
-								// 	nextEl: '.cm-main-applications .swiper-button-next',
-								// 	prevEl: '.cm-main-applications .swiper-button-prev',
-								// },
+								navigation: {
+									nextEl: '.cm-main-applications .swiper-button-next',
+									prevEl: '.cm-main-applications .swiper-button-prev',
+								},
 							});
 						</script>
 					</div>

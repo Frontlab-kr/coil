@@ -4076,6 +4076,7 @@ body::-webkit-scrollbar-thumb {
 .cm-main-keyvisual__info {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 30;
 }
@@ -4138,9 +4139,64 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
   height: 100vh;
   padding: 80rem 0;
   z-index: 50;
+}
+.cm-main-keyvisual .swiper-button-prev {
+  left: 0;
+  width: 100rem;
+  height: 100rem;
+  margin: -50rem 0 0 20rem;
+  background: url(../images/main/kv-left.svg) no-repeat 50% 50%;
+  transition: all 0.1s ease;
+}
+.cm-main-keyvisual .swiper-button-prev:hover {
+  background: url(../images/main/kv-left-hover.svg) no-repeat 50% 50%;
+}
+.cm-main-keyvisual .swiper-button-prev::after {
+  display: none;
+}
+.cm-main-keyvisual .swiper-button-next {
+  right: 0;
+  width: 100rem;
+  height: 100rem;
+  margin: -50rem 20rem 0 0;
+  background: url(../images/main/kv-right.svg) no-repeat 50% 50%;
+  transition: all 0.1s ease;
+}
+.cm-main-keyvisual .swiper-button-next:hover {
+  background: url(../images/main/kv-right-hover.svg) no-repeat 50% 50%;
+}
+.cm-main-keyvisual .swiper-button-next::after {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .cm-main-keyvisual .swiper-button-prev {
+    left: 0;
+    width: 50rem;
+    height: 50rem;
+    margin: -25rem 0 0 0;
+    background: url(../images/main/kv-left-hover.svg) no-repeat 50% 50%;
+    background-size: 21rem 38.5rem;
+  }
+  .cm-main-keyvisual .swiper-button-prev:hover {
+    background: url(../images/main/kv-left-hover.svg) no-repeat 50% 50%;
+    background-size: 21rem 38.5rem;
+  }
+  .cm-main-keyvisual .swiper-button-next {
+    right: 0;
+    width: 50rem;
+    height: 50rem;
+    margin: -25rem 0 0 0;
+    background: url(../images/main/kv-right-hover.svg) no-repeat 50% 50%;
+    background-size: 21rem 38.5rem;
+  }
+  .cm-main-keyvisual .swiper-button-next:hover {
+    background: url(../images/main/kv-right-hover.svg) no-repeat 50% 50%;
+    background-size: 21rem 38.5rem;
+  }
 }
 .cm-main-products .cm-inner {
   display: flex;
@@ -4465,6 +4521,8 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   width: 342px;
   height: 440px;
+  overflow: hidden;
+  border-radius: 20px;
 }
 .cm-main-applications .swiper-slide:nth-child(2n) {
   margin-top: 60px;
@@ -4475,7 +4533,22 @@ body::-webkit-scrollbar-thumb {
   justify-content: flex-end;
   position: relative;
   height: 100%;
-  padding: 50px 40px;
+  padding: 38px 40px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.cm-main-applications .swiper-slide a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: rgba(39, 98, 176, 0.8);
+  z-index: 15;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
 }
 .cm-main-applications .swiper-slide img {
   position: absolute;
@@ -4509,7 +4582,7 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   height: 0;
   opacity: 0;
-  transition: all 1.2s ease;
+  transition: all 0.6s ease;
   overflow: hidden;
 }
 .cm-main-applications .swiper-slide span {
@@ -4526,15 +4599,32 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   height: 0;
   opacity: 0;
-  transition: all 1.2s ease;
+  transition: all 0.6s ease;
   overflow: hidden;
 }
+.cm-main-applications .swiper-slide:hover {
+  box-shadow: 0px 10px 18px 0 rgba(20, 20, 20, 0.3);
+}
+.cm-main-applications .swiper-slide:hover a:before {
+  opacity: 1;
+}
+.cm-main-applications .swiper-slide:hover p {
+  margin-top: 5rem;
+  opacity: 1;
+  height: 48px;
+}
+.cm-main-applications .swiper-slide:hover span {
+  margin-top: 31rem;
+  margin-bottom: 6rem;
+  opacity: 1;
+  height: 21px;
+}
 .cm-main-applications .swiper .swiper-button-prev {
-  left: 0;
-  width: 42rem;
-  height: 42rem;
-  margin: -46rem 0 0 -20rem;
-  border-radius: 42rem;
+  left: 50%;
+  width: 60rem;
+  height: 60rem;
+  margin: -76rem 0 0 -752rem;
+  border-radius: 60rem;
   background: rgba(0, 0, 0, 0.3);
   transition: all 0.1s ease;
 }
@@ -4562,11 +4652,11 @@ body::-webkit-scrollbar-thumb {
   background-color: #2762b0;
 }
 .cm-main-applications .swiper .swiper-button-next {
-  right: 0;
-  width: 42rem;
-  height: 42rem;
-  margin: -46rem -20rem 0 0;
-  border-radius: 42rem;
+  right: 50%;
+  width: 60rem;
+  height: 60rem;
+  margin: -76rem -744rem 0 0;
+  border-radius: 60rem;
   background: rgba(0, 0, 0, 0.3);
   transition: all 0.1s ease;
 }
@@ -5244,6 +5334,125 @@ body::-webkit-scrollbar-thumb {
     min-height: 638rem;
     overflow: hidden;
   }
+  .cm-main-applications .swiper {
+    padding: 0 20px 60px;
+  }
+  .cm-main-applications .swiper-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    transform: none !important;
+  }
+  .cm-main-applications .swiper-slide {
+    position: relative;
+    width: 100% !important;
+    height: 100px !important;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  .cm-main-applications .swiper-slide:nth-child(2n) {
+    margin-top: 0;
+  }
+  .cm-main-applications .swiper-slide a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    height: 100%;
+    padding: 8px 15px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  .cm-main-applications .swiper-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .cm-main-applications .swiper-slide strong {
+    position: relative;
+    z-index: 20;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
+    text-align: left;
+    color: #fff;
+  }
+  .cm-main-applications .swiper-slide p {
+    position: relative;
+    z-index: 20;
+    font-size: 16rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.48rem;
+    text-align: left;
+    color: #fff;
+    height: 0;
+    opacity: 0;
+    transition: all 0.6s ease;
+    overflow: hidden;
+  }
+  .cm-main-applications .swiper-slide span {
+    display: block;
+    position: relative;
+    z-index: 20;
+    font-size: 14rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.21rem;
+    text-align: left;
+    color: #fff;
+    height: 0;
+    opacity: 0;
+    transition: all 0.6s ease;
+    overflow: hidden;
+  }
+  .cm-main-applications .swiper-slide:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-image: linear-gradient(to top, #2762b0, transparent);
+    z-index: 15;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+  }
+  .cm-main-applications .swiper-slide:hover:before {
+    opacity: 0;
+    height: 0;
+  }
+  .cm-main-applications .swiper-slide:hover p {
+    margin: 0;
+    opacity: 0;
+    height: 0;
+  }
+  .cm-main-applications .swiper-slide:hover span {
+    margin: 0;
+    opacity: 0;
+    height: 0;
+  }
+  .cm-main-applications .swiper .swiper-button-prev {
+    display: none;
+  }
+  .cm-main-applications .swiper .swiper-button-next {
+    display: none;
+  }
   .cm-main-applications .swiper-slide {
     display: flex;
     flex-direction: column-reverse;
@@ -5256,11 +5465,7 @@ body::-webkit-scrollbar-thumb {
     padding: 0 20rem;
   }
   .cm-main-applications__title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding-top: 38rem;
+    padding: 38rem 0 26rem 0;
     font-size: 30rem;
     font-weight: bold;
     font-stretch: normal;
@@ -10082,7 +10287,24 @@ body::-webkit-scrollbar-thumb {
   justify-content: flex-end;
   position: relative;
   height: 350rem;
-  padding: 47rem;
+  padding: 34rem 42rem;
+}
+.cm-applications-main__list a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 80px 464px 0 0;
+  border-color: #fff transparent transparent transparent;
+  z-index: 20;
+  opacity: 0;
+  transition: all 0.4s ease;
 }
 .cm-applications-main__list a:before {
   content: "";
@@ -10091,11 +10313,11 @@ body::-webkit-scrollbar-thumb {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 0;
-  background-image: linear-gradient(to top, #2762b0, transparent);
+  top: 0;
+  background: rgba(39, 98, 176, 0.8);
   z-index: 15;
   opacity: 0;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease;
 }
 .cm-applications-main__list a img {
   position: absolute;
@@ -10129,7 +10351,7 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   height: 0;
   opacity: 0;
-  transition: all 1.2s ease;
+  transition: all 0.4s ease;
   overflow: hidden;
 }
 .cm-applications-main__list a span {
@@ -10146,68 +10368,67 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   height: 0;
   opacity: 0;
-  transition: all 1.2s ease;
+  transition: all 0.4s ease;
   overflow: hidden;
 }
-.cm-applications-main__list a:hover:before {
+.cm-applications-main__list a:hover:after, .cm-applications-main__list a:hover:before {
   opacity: 1;
-  height: 100%;
 }
 .cm-applications-main__list a:hover p {
-  margin-top: 20rem;
+  margin-top: 4rem;
   opacity: 1;
-  height: 100%;
+  height: 48px;
 }
 .cm-applications-main__list a:hover span {
-  margin-top: 40rem;
+  margin-top: 31rem;
+  margin-bottom: 10rem;
   opacity: 1;
-  height: 100%;
+  height: 21px;
 }
 @media screen and (max-width: 992px) {
   .cm-applications-main {
     padding: 0 20rem;
   }
   .cm-applications-main__title {
-    margin-top: 43rem;
+    margin-top: 36rem;
     font-size: 24rem;
     letter-spacing: -0.36rem;
   }
   .cm-applications-main__list {
     grid-template-columns: 1fr 1fr;
-    -moz-column-gap: 20rem;
-         column-gap: 20rem;
-    row-gap: 20rem;
-    margin-top: 40rem;
+    -moz-column-gap: 10rem;
+         column-gap: 10rem;
+    row-gap: 10rem;
+    margin-top: 32rem;
   }
   .cm-applications-main__list a {
-    height: 100%;
+    position: relative;
+    height: 115px;
     padding: 0;
+    overflow: hidden;
+  }
+  .cm-applications-main__list a:after {
+    display: none;
   }
   .cm-applications-main__list a:before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 0;
-    background-image: linear-gradient(to top, #2762b0, transparent);
-    z-index: 15;
-    opacity: 0;
-    transition: all 0.4s ease-in-out;
+    display: none;
   }
   .cm-applications-main__list a img {
     position: relative;
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     width: 100%;
+    height: 100%;
     z-index: 10;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .cm-applications-main__list a strong {
     position: absolute;
     left: 15rem;
-    bottom: 15rem;
+    bottom: 9rem;
     font-size: 16rem;
     letter-spacing: -0.24rem;
   }
