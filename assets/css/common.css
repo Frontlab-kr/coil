@@ -360,9 +360,6 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   opacity: 0;
 }
-.mode-sticky .cm-products-lineup {
-  box-shadow: 0rem 4rem 4rem 0 rgba(0, 0, 0, 0.2);
-}
 @media screen and (max-width: 992px) {
   .mode-sticky .cm-products-lineup__select {
     max-height: 150rem;
@@ -4077,8 +4074,12 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 30;
+  padding: 80rem;
 }
 .cm-main-keyvisual__info-bar {
   position: relative;
@@ -4133,6 +4134,14 @@ body::-webkit-scrollbar-thumb {
 }
 .cm-main-keyvisual__info button.stop {
   background: url(../images/main/kv-play.png) no-repeat 50% 50%;
+}
+.cm-main-keyvisual__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
 }
 .cm-main-keyvisual__inner {
   position: relative;
@@ -6285,7 +6294,6 @@ body::-webkit-scrollbar-thumb {
   word-break: keep-all;
 }
 .cm-products-lineup {
-  position: sticky;
   top: 0;
   z-index: 20;
   background: #fff;
@@ -6527,7 +6535,7 @@ body::-webkit-scrollbar-thumb {
 }
 .cm-products-table table thead th {
   position: sticky;
-  top: 142rem;
+  top: 0;
   border-top: 2rem solid #000;
   padding: 15rem 10rem 20rem 10rem;
   background-color: #fff;
@@ -6670,9 +6678,6 @@ body::-webkit-scrollbar-thumb {
 }
 .cm-products-table ~ .cm-pagination {
   margin-top: 30rem;
-}
-.cm-products-lineup ~ .cm-inner .cm-products-table table thead th {
-  top: 192rem;
 }
 .cm-products-search {
   margin: 20rem 0 74rem 0;
@@ -10447,4 +10452,9 @@ body::-webkit-scrollbar-thumb {
   .cm-applications-main__list a:hover span {
     margin: 0;
   }
+}
+
+.product_badge_new {
+  background: #f60;
+  color: #fff;
 }

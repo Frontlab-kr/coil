@@ -106,7 +106,7 @@ body {
 		opacity: 0;
 	}
 	.cm-products-lineup {
-		box-shadow: 0rem 4rem 4rem 0 rgba(0, 0, 0, 0.2);
+		//box-shadow: 0rem 4rem 4rem 0 rgba(0, 0, 0, 0.2);
 	}
 	@media screen and (max-width: $mobile) {
 		.cm-products-lineup__select {
@@ -3700,8 +3700,12 @@ body {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				position: relative;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
 				z-index: 30;
+				padding: 80rem;
 				&-bar {
 					position: relative;
 					width: 240rem;
@@ -3758,6 +3762,14 @@ body {
 						background: url(../images/main/kv-play.png) no-repeat 50% 50%;
 					}
 				}
+			}
+			&__link {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 20;
 			}
 			&__inner {
 				position: relative;
@@ -5908,7 +5920,7 @@ body {
 			word-break: keep-all;
 		}
 		&-lineup {
-			position: sticky;
+			// position: sticky;
 			top: 0;
 			z-index: 20;
 			background: #fff;
@@ -6129,7 +6141,7 @@ body {
 				thead {
 					th {
 						position: sticky;
-						top: 142rem;
+						top: 0;
 						border-top: 2rem solid #000;
 						padding: 15rem 10rem 20rem 10rem;
 						background-color: #fff;
@@ -6272,7 +6284,7 @@ body {
 			margin-top: 30rem;
 		}
 		&-lineup ~ .cm-inner .cm-products-table table thead th {
-			top: 192rem;
+			//top: 192rem;
 		}
 		&-search {
 			margin: 20rem 0 74rem 0;
@@ -10067,4 +10079,9 @@ body {
 			}
 		}
 	}
+}
+
+.product_badge_new {
+	background: #f60;
+	color: #fff;
 }
