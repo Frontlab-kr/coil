@@ -910,7 +910,7 @@ body {
 	&-body {
 		//min-height: 100vh;
 		&--bg {
-			background: url(../images/e-service/bg.png) no-repeat calc(100% + 330rem) 330rem;
+			background: url(../images/e-service/bg.png) no-repeat calc(100% + 310rem) 310rem;
 			background-size: 1353rem 561rem;
 			@media screen and (max-width: $mobile) {
 				background: none;
@@ -918,7 +918,7 @@ body {
 		}
 		&__header {
 			position: relative;
-			height: 330rem;
+			height: 310rem;
 			overflow: hidden;
 			background-color: #000;
 			.cm-inner {
@@ -5904,7 +5904,7 @@ body {
 			justify-content: center;
 			height: 100rem;
 			margin-top: 20rem;
-			margin-bottom: 50rem;
+			margin-bottom: 30rem;
 			border-radius: 10rem;
 			background-color: #f5f5f5;
 			font-size: 24rem;
@@ -10080,6 +10080,16 @@ body {
 }
 
 .product_badge_new {
-	background: #f60;
+	display: inline-block;
+	margin-top: 3px;
+	padding: 0 4px;
+	background-color: #d90513;
+	font-size: 12px;
+	font-weight: 500;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.5;
+	letter-spacing: -0.18px;
+	text-align: center;
 	color: #fff;
 }
